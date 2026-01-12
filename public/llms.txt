@@ -1,0 +1,40 @@
+# MDEx
+
+> The fastest Markdown parser for Elixir. Phoenix LiveView native, AI streaming support. Built on Rust (comrak, ammonia, autumnus).
+
+MDEx transforms markdown into HTML, HEEx, JSON, XML, and more with native Phoenix LiveView integration. Significantly faster and more memory-efficient than pure Elixir alternatives.
+
+## Key Features
+- Blazingly fast (Rust-powered via comrak)
+- Native Phoenix LiveView HEEx rendering via ~MD sigil
+- AI streaming for incomplete markdown fragments
+- 70+ languages syntax highlighting with 100+ themes (Tree-sitter powered)
+- Multiple output formats: HTML, JSON, XML, Quill Delta, HEEx
+- Floki-like AST with Req-like pipeline API
+- Built-in XSS protection with ammonia
+
+## Docs
+- [Getting Started](https://hexdocs.pm/mdex/readme.html): Installation and basic usage
+- [Phoenix LiveView Integration](https://hexdocs.pm/mdex/phoenix_live_view_heex.html): ~MD sigil and HEEx components
+- [Syntax Highlighting](https://hexdocs.pm/mdex/syntax_highlight.html): 70+ languages, 100+ themes
+- [Document Manipulation](https://hexdocs.pm/mdex/MDEx.Document.html): AST traversal and transformation
+- [Streaming](https://hexdocs.pm/mdex/MDEx.Document.html#module-streaming): AI application support
+- [Plugins](https://hexdocs.pm/mdex/plugins.html): Extending functionality
+- [Safety](https://hexdocs.pm/mdex/safety.html): XSS protection and sanitization
+- [API Reference](https://hexdocs.pm/mdex/MDEx.html): Complete API documentation
+
+## Examples
+- [Code Block Decorators](https://hexdocs.pm/mdex/code_block_decorators-2.html): Theme overrides and line highlighting
+
+## Source
+- [GitHub Repository](https://github.com/leandrocp/mdex): Source code and issues
+- [Hex.pm Package](https://hex.pm/packages/mdex): Package downloads
+- [Changelog](https://github.com/leandrocp/mdex/blob/main/CHANGELOG.md): Version history
+
+## Related Projects
+- [Autumnus](https://autumnus.dev): Syntax highlighting engine
+- [comrak](https://github.com/kivikakk/comrak): Rust CommonMark parser
+- [ammonia](https://github.com/rust-ammonia/ammonia): HTML sanitization
+
+## Optional
+- [Benchmark Script](https://github.com/leandrocp/mdex/blob/main/benchmark.exs): Performance benchmarks
