@@ -197,10 +197,8 @@
         </div>
       </div>
 
-      <div class="absolute bottom-8 left-1/2 -translate-x-1/2 text-stone-400">
-        <pre class="text-xs text-center animate-bounce" aria-hidden="true">│
-│
-↓</pre>
+      <div class="absolute bottom-2 sm:bottom-6 left-1/2 -translate-x-1/2 text-stone-400 pointer-events-none">
+        <pre class="text-sm sm:text-lg md:text-2xl text-center animate-bounce" aria-hidden="true">↓</pre>
       </div>
     </section>
 
@@ -466,14 +464,12 @@ MDEx.to_html!(<span class="text-emerald-700">"# Hello"</span>)
             <span class="card-corner absolute -top-2 -right-1 text-stone-300 group-hover:text-brand text-sm select-none bg-stone-50">+</span>
             <span class="card-corner absolute -bottom-2 -left-1 text-stone-300 group-hover:text-brand text-sm select-none bg-stone-50">+</span>
             <span class="card-corner absolute -bottom-2 -right-1 text-stone-300 group-hover:text-brand text-sm select-none bg-stone-50">+</span>
-            <div class="mb-1 text-brand text-lg font-bold">
-              {*}
-            </div>
-            <h3 class="text-lg font-semibold mb-2 group-hover:text-brand transition">
-              <a href="https://hexdocs.pm/mdex/phoenix_live_view_heex.html" target="_blank" rel="noopener" class="hover:underline">
-                Phoenix HEEx Integration<sup class="text-xs text-stone-400 group-hover:text-brand ml-1 font-normal">↗</sup>
-              </a>
+            <h3 class="text-lg font-semibold group-hover:text-brand transition">
+              <span class="text-brand">{*}</span> Phoenix HEEx Integration
             </h3>
+            <a href="https://hexdocs.pm/mdex/phoenix_live_view_heex.html" target="_blank" rel="noopener" class="text-xs text-stone-400 hover:text-brand transition mb-3 inline-block">
+              docs →
+            </a>
             <p class="text-stone-600 text-sm mb-4">
               Native rendering to <a href="https://hexdocs.pm/phoenix_live_view/Phoenix.LiveView.Rendered.html" target="_blank" rel="noopener" class="text-brand hover:underline">Phoenix.LiveView.Rendered</a> for LiveView integration.
             </p>
@@ -487,14 +483,12 @@ MDEx.to_html!(<span class="text-emerald-700">"# Hello"</span>)
             <span class="card-corner absolute -top-2 -right-1 text-stone-300 group-hover:text-brand text-sm select-none bg-stone-50">+</span>
             <span class="card-corner absolute -bottom-2 -left-1 text-stone-300 group-hover:text-brand text-sm select-none bg-stone-50">+</span>
             <span class="card-corner absolute -bottom-2 -right-1 text-stone-300 group-hover:text-brand text-sm select-none bg-stone-50">+</span>
-            <div class="mb-1 text-brand text-lg font-bold">
-              [#]
-            </div>
-            <h3 class="text-lg font-semibold mb-2 group-hover:text-brand transition">
-              <a href="https://hexdocs.pm/mdex/syntax_highlight.html" target="_blank" rel="noopener" class="hover:underline">
-                Built-in Syntax Highlighting<sup class="text-xs text-stone-400 group-hover:text-brand ml-1 font-normal">↗</sup>
-              </a>
+            <h3 class="text-lg font-semibold group-hover:text-brand transition">
+              <span class="text-brand">[#]</span> Syntax Highlighting
             </h3>
+            <a href="https://hexdocs.pm/mdex/syntax_highlight.html" target="_blank" rel="noopener" class="text-xs text-stone-400 hover:text-brand transition mb-3 inline-block">
+              docs →
+            </a>
             <p class="text-stone-600 text-sm mb-4">
               100+ themes and 70+ languages powered by Tree-sitter and Neovim. Code blocks look beautiful out of the box.
             </p>
@@ -508,14 +502,12 @@ MDEx.to_html!(<span class="text-emerald-700">"# Hello"</span>)
             <span class="card-corner absolute -top-2 -right-1 text-stone-300 group-hover:text-brand text-sm select-none bg-stone-50">+</span>
             <span class="card-corner absolute -bottom-2 -left-1 text-stone-300 group-hover:text-brand text-sm select-none bg-stone-50">+</span>
             <span class="card-corner absolute -bottom-2 -right-1 text-stone-300 group-hover:text-brand text-sm select-none bg-stone-50">+</span>
-            <div class="mb-1 text-brand text-lg font-bold">
-              &lt;/&gt;
-            </div>
-            <h3 class="text-lg font-semibold mb-2 group-hover:text-brand transition">
-              <a href="https://hexdocs.pm/mdex/MDEx.Document.html" target="_blank" rel="noopener" class="hover:underline">
-                Document Manipulation<sup class="text-xs text-stone-400 group-hover:text-brand ml-1 font-normal">↗</sup>
-              </a>
+            <h3 class="text-lg font-semibold group-hover:text-brand transition">
+              <span class="text-brand">&lt;/&gt;</span> Document Manipulation
             </h3>
+            <a href="https://hexdocs.pm/mdex/MDEx.Document.html" target="_blank" rel="noopener" class="text-xs text-stone-400 hover:text-brand transition mb-3 inline-block">
+              docs →
+            </a>
             <p class="text-stone-600 text-sm mb-4">
               Full AST with Enumerable, Collectable, and Access protocols. Parse, traverse, and transform.
             </p>
@@ -529,14 +521,12 @@ MDEx.to_html!(<span class="text-emerald-700">"# Hello"</span>)
             <span class="card-corner absolute -top-2 -right-1 text-stone-300 group-hover:text-brand text-sm select-none bg-stone-50">+</span>
             <span class="card-corner absolute -bottom-2 -left-1 text-stone-300 group-hover:text-brand text-sm select-none bg-stone-50">+</span>
             <span class="card-corner absolute -bottom-2 -right-1 text-stone-300 group-hover:text-brand text-sm select-none bg-stone-50">+</span>
-            <div class="mb-1 text-brand text-lg font-bold">
-              [+]
-            </div>
-            <h3 class="text-lg font-semibold mb-2 group-hover:text-brand transition">
-              <a href="https://hexdocs.pm/mdex/plugins.html" target="_blank" rel="noopener" class="hover:underline">
-                Plugin System<sup class="text-xs text-stone-400 group-hover:text-brand ml-1 font-normal">↗</sup>
-              </a>
+            <h3 class="text-lg font-semibold group-hover:text-brand transition">
+              <span class="text-brand">[+]</span> Plugin System
             </h3>
+            <a href="https://hexdocs.pm/mdex/plugins.html" target="_blank" rel="noopener" class="text-xs text-stone-400 hover:text-brand transition mb-3 inline-block">
+              docs →
+            </a>
             <p class="text-stone-600 text-sm mb-4">
               Extend functionality with custom plugins. Process documents at any stage of the pipeline.
             </p>
@@ -550,14 +540,12 @@ MDEx.to_html!(<span class="text-emerald-700">"# Hello"</span>)
             <span class="card-corner absolute -top-2 -right-1 text-stone-300 group-hover:text-brand text-sm select-none bg-stone-50">+</span>
             <span class="card-corner absolute -bottom-2 -left-1 text-stone-300 group-hover:text-brand text-sm select-none bg-stone-50">+</span>
             <span class="card-corner absolute -bottom-2 -right-1 text-stone-300 group-hover:text-brand text-sm select-none bg-stone-50">+</span>
-            <div class="mb-1 text-brand text-lg font-bold">
-              &gt;&gt;&gt;
-            </div>
-            <h3 class="text-lg font-semibold mb-2 group-hover:text-brand transition">
-              <a href="https://hexdocs.pm/mdex/MDEx.Document.html#module-streaming" target="_blank" rel="noopener" class="hover:underline">
-                AI Streaming Support<sup class="text-xs text-stone-400 group-hover:text-brand ml-1 font-normal">↗</sup>
-              </a>
+            <h3 class="text-lg font-semibold group-hover:text-brand transition">
+              <span class="text-brand">&gt;&gt;&gt;</span> AI Streaming Support
             </h3>
+            <a href="https://hexdocs.pm/mdex/MDEx.Document.html#module-streaming" target="_blank" rel="noopener" class="text-xs text-stone-400 hover:text-brand transition mb-3 inline-block">
+              docs →
+            </a>
             <p class="text-stone-600 text-sm mb-4">
               Process incomplete markdown fragments progressively. Perfect for ChatGPT-style interfaces.
             </p>
@@ -571,12 +559,12 @@ MDEx.to_html!(<span class="text-emerald-700">"# Hello"</span>)
             <span class="card-corner absolute -top-2 -right-1 text-stone-300 group-hover:text-brand text-sm select-none bg-stone-50">+</span>
             <span class="card-corner absolute -bottom-2 -left-1 text-stone-300 group-hover:text-brand text-sm select-none bg-stone-50">+</span>
             <span class="card-corner absolute -bottom-2 -right-1 text-stone-300 group-hover:text-brand text-sm select-none bg-stone-50">+</span>
-            <div class="mb-1 text-brand text-lg font-bold">
-              &lt;-&gt;
-            </div>
-            <h3 class="text-lg font-semibold mb-2 group-hover:text-brand transition">
-              Multiple Output Formats
+            <h3 class="text-lg font-semibold group-hover:text-brand transition">
+              <span class="text-brand">&lt;-&gt;</span> Multiple Output Formats
             </h3>
+            <a href="https://hexdocs.pm/mdex/MDEx.html" target="_blank" rel="noopener" class="text-xs text-stone-400 hover:text-brand transition mb-3 inline-block">
+              docs →
+            </a>
             <p class="text-stone-600 text-sm mb-4">
               Output to HTML, HEEx, JSON, XML, Quill Delta, and Markdown. One parser, many outputs.
             </p>
@@ -590,14 +578,12 @@ MDEx.to_html!(<span class="text-emerald-700">"# Hello"</span>)
             <span class="card-corner absolute -top-2 -right-1 text-stone-300 group-hover:text-brand text-sm select-none bg-stone-50">+</span>
             <span class="card-corner absolute -bottom-2 -left-1 text-stone-300 group-hover:text-brand text-sm select-none bg-stone-50">+</span>
             <span class="card-corner absolute -bottom-2 -right-1 text-stone-300 group-hover:text-brand text-sm select-none bg-stone-50">+</span>
-            <div class="mb-1 text-brand text-lg font-bold">
-              [!]
-            </div>
-            <h3 class="text-lg font-semibold mb-2 group-hover:text-brand transition">
-              <a href="https://hexdocs.pm/mdex/safety.html" target="_blank" rel="noopener" class="hover:underline">
-                Safety & Sanitization<sup class="text-xs text-stone-400 group-hover:text-brand ml-1 font-normal">↗</sup>
-              </a>
+            <h3 class="text-lg font-semibold group-hover:text-brand transition">
+              <span class="text-brand">[!]</span> Safety & Sanitization
             </h3>
+            <a href="https://hexdocs.pm/mdex/safety.html" target="_blank" rel="noopener" class="text-xs text-stone-400 hover:text-brand transition mb-3 inline-block">
+              docs →
+            </a>
             <p class="text-stone-600 text-sm mb-4">
               Built-in XSS protection with configurable sanitization. Safely render untrusted markdown content.
             </p>
@@ -611,14 +597,12 @@ MDEx.to_html!(<span class="text-emerald-700">"# Hello"</span>)
             <span class="card-corner absolute -top-2 -right-1 text-stone-300 group-hover:text-brand text-sm select-none bg-stone-50">+</span>
             <span class="card-corner absolute -bottom-2 -left-1 text-stone-300 group-hover:text-brand text-sm select-none bg-stone-50">+</span>
             <span class="card-corner absolute -bottom-2 -right-1 text-stone-300 group-hover:text-brand text-sm select-none bg-stone-50">+</span>
-            <div class="mb-1 text-brand text-lg font-bold">
-              ```
-            </div>
-            <h3 class="text-lg font-semibold mb-2 group-hover:text-brand transition">
-              <a href="https://hexdocs.pm/mdex/code_block_decorators-2.html" target="_blank" rel="noopener" class="hover:underline">
-                Code Block Decorators<sup class="text-xs text-stone-400 group-hover:text-brand ml-1 font-normal">↗</sup>
-              </a>
+            <h3 class="text-lg font-semibold group-hover:text-brand transition">
+              <span class="text-brand">```</span> Code Block Decorators
             </h3>
+            <a href="https://hexdocs.pm/mdex/code_block_decorators-2.html" target="_blank" rel="noopener" class="text-xs text-stone-400 hover:text-brand transition mb-3 inline-block">
+              docs →
+            </a>
             <p class="text-stone-600 text-sm mb-4">
               Override themes, highlight lines, and add CSS classes to code blocks with inline attributes.
             </p>
@@ -632,17 +616,17 @@ MDEx.to_html!(<span class="text-emerald-700">"# Hello"</span>)
             <span class="card-corner absolute -top-2 -right-1 text-stone-300 group-hover:text-brand text-sm select-none bg-stone-50">+</span>
             <span class="card-corner absolute -bottom-2 -left-1 text-stone-300 group-hover:text-brand text-sm select-none bg-stone-50">+</span>
             <span class="card-corner absolute -bottom-2 -right-1 text-stone-300 group-hover:text-brand text-sm select-none bg-stone-50">+</span>
-            <div class="mb-1 text-brand text-lg font-bold">
-              :)
-            </div>
-            <h3 class="text-lg font-semibold mb-2 group-hover:text-brand transition">
-              Emoji Built-in
+            <h3 class="text-lg font-semibold group-hover:text-brand transition">
+              <span class="text-brand">:)</span> Emoji Built-in
             </h3>
+            <a href="https://hexdocs.pm/mdex/MDEx.Document.html#t:options/0-options" target="_blank" rel="noopener" class="text-xs text-stone-400 hover:text-brand transition mb-3 inline-block">
+              docs →
+            </a>
             <p class="text-stone-600 text-sm mb-4">
-              Shortcode support for emoji conversion. Write :rocket: and get the actual emoji rendered.
+              Shortcode support for emoji conversion. Write :rocket: and get the actual 🚀 emoji.
             </p>
             <code class="text-xs bg-stone-100 px-2 py-1 text-brand border border-stone-200">
-              :rocket: :heart: :elixir:
+              shortcodes: true
             </code>
           </div>
         </div>
