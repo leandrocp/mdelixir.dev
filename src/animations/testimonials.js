@@ -1,5 +1,47 @@
 const testimonials = [
   {
+    author: "Bradley Golden",
+    handle: "exbradleygolden",
+    text: "Congrats on big milestone! I absolutely loove MDEx ❤️",
+    url: "https://x.com/exbradleygolden/status/2010801212715909350"
+  },
+  {
+    author: "Aníbal Rojas",
+    handle: "anibal",
+    text: "En un mundo Markdowncéntrico esta librería que a partir de texto en Markdow hace lo que le da la gana está súper cool.",
+    url: "https://x.com/anibal/status/2010794938334921067"
+  },
+  {
+    author: "Jakub Skałecki",
+    handle: "jskalc",
+    text: "This is a great Elixir library! 💜\nI'm using it in multiple projects. Glad it's growing.\nAnd that new website looks awesome!",
+    url: "https://x.com/jskalc/status/2010793457414258841"
+  },
+  {
+    author: "Peter Ullrich",
+    handle: "peterullrich",
+    text: "If you're interested in how I built my blog with NimblePublisher + MDEx + LiveView, I've documented the setup here.",
+    url: "https://bsky.app/profile/peterullrich.com/post/3li4xd6iz3k2m"
+  },
+  {
+    author: "ElixirClub.DEV",
+    handle: "elixirclub",
+    text: "Need Markdown expressions support in Elixir? Take a look at  MDEx library.",
+    url: "https://bsky.app/profile/elixirclub.bsky.social/post/3lpro3zrkok2q"
+  },
+  {
+    author: "Terris Linenbach",
+    handle: "dev-guy",
+    text: "We should be talking more about MDEx #elixirlang",
+    url: "https://bsky.app/profile/dev-guy.bsky.social/post/3mbtzqnhz3k27"
+  },
+  {
+    author: "Pieter Claerhout",
+    handle: "yellowduck",
+    text: "🐥 Converting markdown to HTML using MDEx with syntax highlighting",
+    url: "https://bsky.app/profile/yellowduck.be/post/3lq3nthjwhc2e"
+  },
+  {
     author: "Jakub Skalecki",
     handle: "jskalc",
     text: "I needed a Markdown -> Quill Delta conversion.\n\nSo on Sunday in ~3h I've made a non-trivial OS contribution to the popular Elixir library MDEx by @leandrocesquini",
