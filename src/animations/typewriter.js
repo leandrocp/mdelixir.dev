@@ -5,6 +5,7 @@ export function initTypewriter() {
   const statsEl = document.getElementById('hero-stats')
   const codeEl = document.getElementById('hero-code')
   const ctaEl = document.getElementById('hero-cta')
+  const poweredEl = document.getElementById('hero-powered')
 
   if (!titleEl) return
 
@@ -54,6 +55,14 @@ export function initTypewriter() {
     if (ctaEl) {
       ctaEl.classList.remove('opacity-0')
       ctaEl.classList.add('animate-slide-up')
+    }
+    setTimeout(showPowered, 400)
+  }
+
+  function showPowered() {
+    if (poweredEl) {
+      poweredEl.classList.remove('opacity-0')
+      poweredEl.classList.add('animate-fade-in')
     }
   }
 

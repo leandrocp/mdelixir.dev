@@ -195,6 +195,13 @@
             View on GitHub
           </a>
         </div>
+
+        <p id="hero-powered" class="mt-8 text-sm text-stone-400 opacity-0">
+          powered by
+          <a href="https://comrak.ee" target="_blank" rel="noopener" class="hover:text-brand transition">comrak</a> |
+          <a href="https://crates.io/crates/ammonia" target="_blank" rel="noopener" class="hover:text-brand transition">ammonia</a> |
+          <a href="https://autumnus.dev" target="_blank" rel="noopener" class="hover:text-brand transition">autumnus</a>
+        </p>
       </div>
 
       <div class="absolute bottom-2 sm:bottom-6 left-1/2 -translate-x-1/2 text-stone-400 pointer-events-none">
@@ -798,7 +805,7 @@ MDEx.to_html!(<span class="text-emerald-700">"# Hello"</span>)
               <tr class="border-b border-stone-100">
                 <td class="py-3 px-4 text-stone-700">AST to Markdown</td>
                 <td class="py-3 px-4 bg-brand/5 text-center border-x border-stone-200"><span class="text-emerald-600">[x]</span></td>
-                <td class="py-3 px-4 text-center"><span class="text-amber-600">[~]</span><sup class="text-xs text-stone-400 ml-0.5">2</sup></td>
+                <td class="py-3 px-4 text-center"><span class="relative"><span class="text-amber-600">[~]</span><sup class="absolute -right-3 -top-1 text-xs text-stone-400">2</sup></span></td>
                 <td class="py-3 px-4 text-center"><span class="text-red-600">[ ]</span></td>
                 <td class="py-3 px-4 text-center"><span class="text-red-600">[ ]</span></td>
               </tr>
@@ -859,15 +866,15 @@ MDEx.to_html!(<span class="text-emerald-700">"# Hello"</span>)
                 <td class="py-3 px-4 text-center"><span class="text-red-600">[ ]</span></td>
               </tr>
               <tr class="border-b border-stone-100">
-                <td class="py-3 px-4 text-stone-700">GitLab<sup class="text-xs text-stone-400 ml-0.5">4</sup></td>
-                <td class="py-3 px-4 bg-brand/5 text-center border-x border-stone-200"><span class="text-amber-600">[~]</span><sup class="text-xs text-stone-400 ml-0.5">1</sup></td>
+                <td class="py-3 px-4 text-stone-700">GLFM<sup class="text-xs text-stone-400 ml-0.5">4</sup></td>
+                <td class="py-3 px-4 bg-brand/5 text-center border-x border-stone-200"><span class="text-emerald-600">[x]</span></td>
                 <td class="py-3 px-4 text-center"><span class="text-red-600">[ ]</span></td>
                 <td class="py-3 px-4 text-center"><span class="text-red-600">[ ]</span></td>
                 <td class="py-3 px-4 text-center"><span class="text-red-600">[ ]</span></td>
               </tr>
               <tr>
                 <td class="py-3 px-4 text-stone-700">Discord<sup class="text-xs text-stone-400 ml-0.5">5</sup></td>
-                <td class="py-3 px-4 bg-brand/5 text-center border-x border-stone-200"><span class="text-amber-600">[~]</span><sup class="text-xs text-stone-400 ml-0.5">1</sup></td>
+                <td class="py-3 px-4 bg-brand/5 text-center border-x border-stone-200"><span class="relative"><span class="text-amber-600">[~]</span><sup class="absolute -right-3 -top-1 text-xs text-stone-400">1</sup></span></td>
                 <td class="py-3 px-4 text-center"><span class="text-red-600">[ ]</span></td>
                 <td class="py-3 px-4 text-center"><span class="text-red-600">[ ]</span></td>
                 <td class="py-3 px-4 text-center"><span class="text-red-600">[ ]</span></td>
@@ -879,8 +886,8 @@ MDEx.to_html!(<span class="text-emerald-700">"# Hello"</span>)
         <div class="mt-6 text-xs font-mono text-stone-500 space-y-1" data-animate="fade-in">
           <p><sup>1</sup> Partial support</p>
           <p><sup>2</sup> Possible with <a href="https://hex.pm/packages/earmark_reversal" class="text-brand hover:underline">earmark_reversal</a></p>
-          <p><sup>3</sup> GitHub Flavored Markdown</p>
-          <p><sup>4</sup> GitLab Flavored Markdown</p>
+          <p><sup>3</sup> <a href="https://github.github.com/gfm/" target="_blank" rel="noopener" class="text-brand hover:underline">GitHub Flavored Markdown</a></p>
+          <p><sup>4</sup> <a href="https://docs.gitlab.com/user/markdown/" target="_blank" rel="noopener" class="text-brand hover:underline">GitLab Flavored Markdown</a></p>
           <p><sup>5</sup> Discord Flavored Markdown</p>
         </div>
       </div>
@@ -951,16 +958,9 @@ MDEx.to_html!(<span class="text-emerald-700">"# Hello"</span>)
         <span class="text-lg font-bold text-brand">MDEx</span>
       </div>
 
-      <p class="text-stone-500 text-sm mb-4">
+      <p class="text-stone-500 text-sm mb-6">
         Built with Elixir and Rust by
         <a href="https://github.com/leandrocp" target="_blank" rel="noopener" class="text-brand hover:underline">Leandro Pereira</a>
-      </p>
-
-      <p class="text-stone-400 text-xs mb-6">
-        Powered by
-        <a href="https://github.com/kivikakk/comrak" target="_blank" rel="noopener" class="hover:text-brand transition">comrak</a> |
-        <a href="https://github.com/rust-ammonia/ammonia" target="_blank" rel="noopener" class="hover:text-brand transition">ammonia</a> |
-        <a href="https://autumnus.dev" target="_blank" rel="noopener" class="hover:text-brand transition">autumnus</a>
       </p>
 
       <pre class="text-stone-300 text-xs" aria-hidden="true">+------------------------------------------------------------------+</pre>
