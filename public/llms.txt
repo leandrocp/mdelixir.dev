@@ -1,6 +1,6 @@
 # MDEx
 
-> The fastest Markdown parser for Elixir. Phoenix LiveView native, AI streaming support. Built on Rust (comrak, ammonia, autumnus).
+> The fastest Markdown parser for Elixir. Phoenix LiveView native, AI streaming support. Built on Rust (comrak, ammonia, lumis).
 
 MDEx transforms markdown into HTML, HEEx, JSON, XML, and more with native Phoenix LiveView integration. Significantly faster and more memory-efficient than pure Elixir alternatives.
 
@@ -32,7 +32,7 @@ MDEx transforms markdown into HTML, HEEx, JSON, XML, and more with native Phoeni
 - [Changelog](https://github.com/leandrocp/mdex/blob/main/CHANGELOG.md): Version history
 
 ## Related Projects
-- [Autumnus](https://autumnus.dev): Syntax highlighting engine
+- [Lumis](https://lumis.sh): Syntax highlighting engine
 - [comrak](https://github.com/kivikakk/comrak): Rust CommonMark parser
 - [ammonia](https://github.com/rust-ammonia/ammonia): HTML sanitization
 
