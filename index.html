@@ -28,6 +28,8 @@
   <link rel="apple-touch-icon" href="/images/mdex_icon.png">
 
   <link rel="canonical" href="https://mdelixir.dev/">
+  <link rel="alternate" type="text/markdown" href="https://mdelixir.dev/index.md" title="MDEx for coding agents">
+  <link rel="alternate" type="text/plain" href="https://mdelixir.dev/llms.txt" title="MDEx llms.txt">
 
   <link rel="preconnect" href="https://fonts.bunny.net">
   <link href="https://fonts.bunny.net/css?family=jetbrains-mono:400,500,600,700&display=swap" rel="stylesheet">
@@ -258,6 +260,7 @@
       </div>
     </section>
 
+
     <section id="see-it-in-action" class="py-20 sm:py-24 px-4 sm:px-6 overflow-hidden">
       <div class="max-w-6xl mx-auto">
         <h2 class="text-2xl sm:text-3xl font-bold mb-4 text-center" data-animate="slide-up">
@@ -481,7 +484,7 @@ MDEx.to_html!(<span class="text-emerald-700">"# Hello"</span>)
               Native rendering to <a href="https://hexdocs.pm/phoenix_live_view/Phoenix.LiveView.Rendered.html" target="_blank" rel="noopener" class="text-brand hover:underline">Phoenix.LiveView.Rendered</a> for LiveView integration.
             </p>
             <code class="text-xs bg-stone-100 px-2 py-1 text-brand border border-stone-200">
-              ~MD[# {@title}]HEEX
+              ~MD[# &#123;@title&#125;]HEEX
             </code>
           </div>
 
@@ -576,7 +579,7 @@ MDEx.to_html!(<span class="text-emerald-700">"# Hello"</span>)
               Output to HTML, HEEx, JSON, XML, Quill Delta, and Markdown. One parser, many outputs.
             </p>
             <code class="text-xs bg-stone-100 px-2 py-1 text-brand border border-stone-200">
-              to_{html,json,xml,delta,markdown}
+              to_&#123;html,json,xml,delta,markdown&#125;
             </code>
           </div>
 
