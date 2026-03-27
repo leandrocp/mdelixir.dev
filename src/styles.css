@@ -1,22 +1,23 @@
 @import "tailwindcss";
 
 @theme {
-  --color-brand: #6E3C88;
-  --color-brand-light: #9F7AEA;
-  --color-brand-dark: #4C2A5E;
+  --color-brand: #6e3c88;
+  --color-brand-light: #9f7aea;
+  --color-brand-dark: #4c2a5e;
 
-  --color-accent-warm: #C4A57B;
-  --color-accent-cool: #7C9A92;
+  --color-accent-warm: #c4a57b;
+  --color-accent-cool: #7c9a92;
 
   /* Stone palette tokens for custom CSS (scrollbars, code blocks, etc.)
      Mirrors Tailwind stone scale — keep in sync if palette changes */
-  --color-surface: #FFFFFF;
-  --color-surface-muted: #F5F5F4;      /* stone-100 */
-  --color-border: #D6D3D1;             /* stone-300 */
-  --color-border-hover: #A8A29E;       /* stone-400 */
-  --color-text-primary: #1C1917;       /* stone-900 */
+  --color-surface: #ffffff;
+  --color-surface-muted: #f5f5f4; /* stone-100 */
+  --color-border: #d6d3d1; /* stone-300 */
+  --color-border-hover: #a8a29e; /* stone-400 */
+  --color-text-primary: #1c1917; /* stone-900 */
 
-  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace;
+  --font-mono:
+    "JetBrains Mono", ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
 
   --animate-blink: blink 1s step-end infinite;
   --animate-fade-in: fade-in 0.5s ease-out forwards;
@@ -24,12 +25,18 @@
   --animate-slide-in-right: slide-in-right 0.5s ease-out forwards;
 
   @keyframes blink {
-    50% { opacity: 0; }
+    50% {
+      opacity: 0;
+    }
   }
 
   @keyframes fade-in {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
   }
 
   @keyframes slide-up {
@@ -85,11 +92,11 @@ pre::-webkit-scrollbar-thumb:hover {
 /* Dark mode token overrides — automatically updates code-block, scrollbars, selection */
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-surface: #1C1917;           /* stone-900 */
-    --color-surface-muted: #292524;     /* stone-800 */
-    --color-border: #57534E;            /* stone-600 */
-    --color-border-hover: #78716C;      /* stone-500 */
-    --color-text-primary: #F5F5F4;      /* stone-100 */
+    --color-surface: #1c1917; /* stone-900 */
+    --color-surface-muted: #292524; /* stone-800 */
+    --color-border: #57534e; /* stone-600 */
+    --color-border-hover: #78716c; /* stone-500 */
+    --color-text-primary: #f5f5f4; /* stone-100 */
   }
 }
 
@@ -106,7 +113,6 @@ pre::-webkit-scrollbar-thumb:hover {
   }
 }
 
-
 .code-block {
   border: 1px solid var(--color-border);
   background: var(--color-surface);
@@ -118,9 +124,10 @@ pre::-webkit-scrollbar-thumb:hover {
   border-color: var(--color-border-hover);
 }
 
-
 .card-corner {
-  transition: transform 0.3s ease-out, color 0.3s ease-out;
+  transition:
+    transform 0.3s ease-out,
+    color 0.3s ease-out;
 }
 
 .group:hover .card-corner {
@@ -128,13 +135,21 @@ pre::-webkit-scrollbar-thumb:hover {
 }
 
 @keyframes marquee {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
 }
 
 @keyframes marquee-reverse {
-  from { transform: translateX(-50%); }
-  to { transform: translateX(0); }
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
 }
 
 .marquee-row {
@@ -172,7 +187,9 @@ pre::-webkit-scrollbar-thumb:hover {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
+  *,
+  *::before,
+  *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
