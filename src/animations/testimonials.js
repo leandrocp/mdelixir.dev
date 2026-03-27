@@ -123,20 +123,20 @@ function createCard(t) {
   card.href = t.url
   card.target = '_blank'
   card.rel = 'noopener'
-  card.className = 'testimonial-card group block p-6 border border-dashed border-stone-300 bg-stone-50 hover:border-brand hover:bg-white transition-all duration-300 relative'
+  card.className = 'testimonial-card group block p-6 border border-dashed border-stone-300 dark:border-stone-700 bg-stone-50 dark:bg-stone-900 hover:border-brand hover:bg-white dark:hover:bg-stone-800 transition-all duration-300 relative'
   card.innerHTML = `
-    <span class="card-corner absolute -top-2 -left-1 text-stone-300 group-hover:text-brand text-sm select-none bg-white">+</span>
-    <span class="card-corner absolute -top-2 -right-1 text-stone-300 group-hover:text-brand text-sm select-none bg-white">+</span>
-    <span class="card-corner absolute -bottom-2 -left-1 text-stone-300 group-hover:text-brand text-sm select-none bg-white">+</span>
-    <span class="card-corner absolute -bottom-2 -right-1 text-stone-300 group-hover:text-brand text-sm select-none bg-white">+</span>
+    <span class="card-corner absolute -top-2 -left-1 text-stone-300 dark:text-stone-600 group-hover:text-brand text-sm select-none bg-white dark:bg-stone-900">+</span>
+    <span class="card-corner absolute -top-2 -right-1 text-stone-300 dark:text-stone-600 group-hover:text-brand text-sm select-none bg-white dark:bg-stone-900">+</span>
+    <span class="card-corner absolute -bottom-2 -left-1 text-stone-300 dark:text-stone-600 group-hover:text-brand text-sm select-none bg-white dark:bg-stone-900">+</span>
+    <span class="card-corner absolute -bottom-2 -right-1 text-stone-300 dark:text-stone-600 group-hover:text-brand text-sm select-none bg-white dark:bg-stone-900">+</span>
     <div class="flex items-start gap-3 mb-3">
-      <span class="text-2xl text-stone-300 select-none">></span>
-      <p class="text-stone-700 text-sm leading-relaxed flex-1">${t.text}</p>
+      <span class="text-2xl text-stone-300 dark:text-stone-600 select-none">></span>
+      <p class="text-stone-700 dark:text-stone-300 text-sm leading-relaxed flex-1">${t.text.replace(/\n/g, '<br>')}</p>
     </div>
     <div class="flex items-center gap-3 pl-7">
-      <img src="/images/avatars/${t.handle}.jpg" alt="${t.author}" class="w-8 h-8 rounded-full border border-stone-200">
+      <img src="/images/avatars/${t.handle}.jpg" alt="${t.author}" class="w-8 h-8 rounded-full border border-stone-200 dark:border-stone-700" loading="lazy">
       <div>
-        <p class="text-sm font-semibold text-stone-900">${t.author}</p>
+        <p class="text-sm font-semibold text-stone-900 dark:text-stone-100">${t.author}</p>
         <p class="text-xs text-brand">@${t.handle}</p>
       </div>
     </div>

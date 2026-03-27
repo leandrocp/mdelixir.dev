@@ -1,6 +1,5 @@
 import './styles.css'
 import { initTypewriter } from './animations/typewriter.js'
-import { initCounter } from './animations/counter.js'
 import { initBenchmark } from './animations/benchmark.js'
 import { initTestimonials } from './animations/testimonials.js'
 import { initScrollAnimations, initNavScroll } from './utils/scroll.js'
@@ -126,7 +125,7 @@ function initStreamingDemo() {
     { text: ' ', delay: 40 },
     { text: 'it', delay: 60 },
     { text: ' ', delay: 40 },
-    { text: '`', delay: 60, render: '<code class="bg-stone-100 px-1 border border-stone-200 text-brand">' },
+    { text: '`', delay: 60, render: '<code class="bg-stone-100 dark:bg-stone-800 px-1 border border-stone-200 dark:border-stone-700 text-brand">' },
     { text: 'flies', delay: 100 },
     { text: '`', delay: 60, render: '</code>' },
   ]
@@ -169,4 +168,4 @@ function initStreamingDemo() {
   if (section) observer.observe(section)
 }
 
-export { initCounter, initBenchmark }
+export { initBenchmark }

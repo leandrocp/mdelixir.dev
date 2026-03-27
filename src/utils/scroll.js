@@ -47,34 +47,13 @@ export function initNavScroll() {
   const nav = document.getElementById('nav')
   if (!nav) return
 
-  let lastScroll = 0
-
   window.addEventListener('scroll', () => {
-    const currentScroll = window.scrollY
-
-    if (currentScroll > 50) {
-      nav.classList.add('bg-stone-50/95', 'backdrop-blur-md', 'shadow-sm')
+    if (window.scrollY > 50) {
+      nav.classList.add('bg-stone-50/95', 'dark:bg-stone-950/95', 'backdrop-blur-md', 'shadow-sm', 'dark:shadow-stone-900/50')
       nav.classList.remove('bg-transparent')
     } else {
-      nav.classList.remove('bg-stone-50/95', 'backdrop-blur-md', 'shadow-sm')
+      nav.classList.remove('bg-stone-50/95', 'dark:bg-stone-950/95', 'backdrop-blur-md', 'shadow-sm', 'dark:shadow-stone-900/50')
       nav.classList.add('bg-transparent')
     }
-
-    lastScroll = currentScroll
   }, { passive: true })
-}
-
-export function initSmoothScroll() {
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-      e.preventDefault()
-      const target = document.querySelector(this.getAttribute('href'))
-      if (target) {
-        target.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start'
-        })
-      }
-    })
-  })
 }

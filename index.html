@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth overflow-x-hidden">
+<html lang="en" class="overflow-x-hidden">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -116,91 +116,96 @@
   }
   </script>
 </head>
-<body class="bg-stone-50 text-stone-900 font-mono antialiased overflow-x-hidden">
+<body class="bg-stone-50 dark:bg-stone-950 text-stone-900 dark:text-stone-100 font-mono antialiased overflow-x-hidden">
 
   <a href="#hero" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[60] focus:px-4 focus:py-2 focus:bg-brand focus:text-white focus:outline-none">Skip to content</a>
 
-  <nav id="nav" class="fixed top-0 inset-x-0 z-50 px-4 sm:px-6 py-4 transition-all duration-300 bg-stone-50/95 backdrop-blur-sm border-b border-dotted border-stone-200">
+  <nav id="nav" class="fixed top-0 inset-x-0 z-50 px-4 sm:px-6 py-4 transition-all duration-300 bg-stone-50/95 dark:bg-stone-950/95 backdrop-blur-sm border-b border-dotted border-stone-200 dark:border-stone-700">
     <div class="max-w-6xl mx-auto flex items-center justify-between">
       <a href="#" class="flex items-center gap-3 group">
-        <img src="/images/mdex.svg" alt="MDEx" class="h-9 w-auto">
+        <img src="/images/mdex.svg" alt="MDEx" class="h-9 w-auto" width="59" height="36">
         <span class="text-xl font-bold text-brand group-hover:text-brand-dark transition">MDEx</span>
       </a>
 
-      <div class="hidden md:flex items-center gap-8">
-        <a href="#features" class="text-stone-600 hover:text-brand transition flex items-center gap-1">
+      <div class="hidden md:flex items-center gap-5 lg:gap-8">
+        <a href="#features" class="text-stone-600 dark:text-stone-400 hover:text-brand transition flex items-center gap-1">
           <span class="text-brand">##</span> Features
         </a>
-        <a href="https://hexdocs.pm/mdex" target="_blank" rel="noopener" class="text-stone-600 hover:text-brand transition flex items-center gap-1">
+        <a href="#blazingly-fast" class="text-stone-600 dark:text-stone-400 hover:text-brand transition flex items-center gap-1">
+          <span class="text-brand">##</span> Performance
+        </a>
+        <a href="#why-mdex" class="text-stone-600 dark:text-stone-400 hover:text-brand transition flex items-center gap-1">
+          <span class="text-brand">##</span> Compare
+        </a>
+        <a href="https://hexdocs.pm/mdex" target="_blank" rel="noopener" class="text-stone-600 dark:text-stone-400 hover:text-brand transition flex items-center gap-1">
           <span class="text-brand">##</span> Docs
         </a>
-        <a href="https://hex.pm/packages/mdex" target="_blank" rel="noopener" class="text-stone-600 hover:text-brand transition flex items-center gap-1">
-          <span class="text-brand">##</span> Hex.pm
-        </a>
-        <a href="https://github.com/leandrocp/mdex" target="_blank" rel="noopener" class="flex items-center gap-2 px-4 py-2 border border-stone-300 hover:border-brand text-stone-700 hover:text-brand transition">
+        <a href="https://github.com/leandrocp/mdex" target="_blank" rel="noopener" class="flex items-center gap-2 px-4 py-2 border border-stone-300 dark:border-stone-700 hover:border-brand text-stone-700 dark:text-stone-300 hover:text-brand transition">
           <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
           GitHub
         </a>
       </div>
 
-      <button id="mobile-menu-btn" class="md:hidden p-2 text-stone-600 hover:text-brand" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">
+      <button id="mobile-menu-btn" class="md:hidden p-2 text-stone-600 dark:text-stone-400 hover:text-brand" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
         </svg>
       </button>
     </div>
 
-    <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 border-t border-dotted border-stone-200">
+    <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 border-t border-dotted border-stone-200 dark:border-stone-700">
       <div class="flex flex-col gap-4 pt-4">
-        <a href="#features" class="text-stone-600 hover:text-brand transition">## Features</a>
-        <a href="https://hexdocs.pm/mdex" target="_blank" rel="noopener" class="text-stone-600 hover:text-brand transition">## Docs</a>
-        <a href="https://hex.pm/packages/mdex" target="_blank" rel="noopener" class="text-stone-600 hover:text-brand transition">## Hex.pm</a>
-        <a href="https://github.com/leandrocp/mdex" target="_blank" rel="noopener" class="text-stone-600 hover:text-brand transition">## GitHub</a>
+        <a href="#features" class="text-stone-600 dark:text-stone-400 hover:text-brand transition">## Features</a>
+        <a href="#blazingly-fast" class="text-stone-600 dark:text-stone-400 hover:text-brand transition">## Speed</a>
+        <a href="#why-mdex" class="text-stone-600 dark:text-stone-400 hover:text-brand transition">## Compare</a>
+        <a href="https://hexdocs.pm/mdex" target="_blank" rel="noopener" class="text-stone-600 dark:text-stone-400 hover:text-brand transition">## Docs</a>
+        <a href="https://hex.pm/packages/mdex" target="_blank" rel="noopener" class="text-stone-600 dark:text-stone-400 hover:text-brand transition">## Hex.pm</a>
+        <a href="https://github.com/leandrocp/mdex" target="_blank" rel="noopener" class="text-stone-600 dark:text-stone-400 hover:text-brand transition">## GitHub</a>
       </div>
     </div>
   </nav>
 
   <main class="overflow-x-hidden">
-    <section id="hero" class="min-h-[75vh] flex flex-col items-center justify-center px-4 sm:px-6 pt-24 pb-16 relative overflow-hidden bg-stone-50">
+    <section id="hero" class="min-h-[75vh] flex flex-col items-center justify-center px-4 sm:px-6 pt-24 pb-16 relative overflow-hidden bg-stone-50 dark:bg-stone-950">
       <div class="absolute inset-0 bg-dots pointer-events-none opacity-60"></div>
 
       <div class="relative z-10 text-center max-w-2xl mx-auto w-full">
-        <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight text-stone-900">
+        <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight text-stone-900 dark:text-stone-100">
           <span class="text-brand">#</span>
           <span id="hero-title"></span>
           <span id="hero-cursor" class="animate-blink text-brand">_</span>
         </h1>
 
-        <p id="hero-subtitle" class="text-lg sm:text-xl md:text-2xl text-stone-600 mb-10 opacity-0">
+        <p id="hero-subtitle" class="text-lg sm:text-xl md:text-2xl text-stone-600 dark:text-stone-400 mb-10 opacity-0">
           <a href="#blazingly-fast" class="hover:text-brand transition">Fast</a>. <a href="#features" class="hover:text-brand transition">Extensible</a>. <a href="#phoenix-liveview-ready" class="hover:text-brand transition">Phoenix-native</a>. <a href="#built-for-ai-applications" class="hover:text-brand transition">AI-ready</a>.
         </p>
 
         <div id="hero-code" class="code-block text-left max-w-2xl mx-auto mb-10 opacity-0">
-          <div class="flex items-center justify-between px-4 py-2 bg-stone-100 border-b border-stone-200">
+          <div class="flex items-center justify-between px-4 py-2 bg-stone-100 dark:bg-stone-800 border-b border-stone-200 dark:border-stone-700">
             <div class="flex items-center gap-3">
               <span class="text-brand text-sm">iex></span>
-              <span class="text-stone-400 text-xs">Interactive Elixir</span>
+              <span class="text-stone-400 dark:text-stone-500 text-xs">Interactive Elixir</span>
             </div>
-            <div class="flex gap-1 text-stone-400 text-xs">
+            <div class="flex gap-1 text-stone-400 dark:text-stone-500 text-xs">
               <span>[-]</span>
               <span>[o]</span>
               <span>[x]</span>
             </div>
           </div>
-          <pre class="p-4 sm:p-6 text-sm sm:text-base overflow-x-auto bg-white"><code id="hero-code-content" class="text-stone-800 min-h-[2.5rem] sm:min-h-[3rem] block"></code><span id="code-cursor" class="animate-blink text-brand">_</span></pre>
+          <pre class="p-4 sm:p-6 text-sm sm:text-base overflow-x-auto bg-white dark:bg-stone-900"><code id="hero-code-content" class="text-stone-800 dark:text-stone-200 min-h-[2.5rem] sm:min-h-[3rem] block"></code><span id="code-cursor" class="animate-blink text-brand">_</span></pre>
         </div>
 
         <div id="hero-cta" class="flex flex-col sm:flex-row justify-center gap-4 opacity-0 max-w-2xl mx-auto">
           <a href="#getting-started" class="px-8 py-3 bg-brand hover:bg-brand-dark text-white font-semibold transition-all hover:scale-105 text-center">
             [ Get Started ]
           </a>
-          <a href="https://github.com/leandrocp/mdex" target="_blank" rel="noopener" class="px-8 py-3 border border-dashed border-stone-400 hover:border-brand text-stone-700 hover:text-brand font-semibold transition-all flex items-center justify-center gap-2">
+          <a href="https://github.com/leandrocp/mdex" target="_blank" rel="noopener" class="px-8 py-3 border border-dashed border-stone-400 dark:border-stone-600 hover:border-brand text-stone-700 dark:text-stone-300 hover:text-brand font-semibold transition-all flex items-center justify-center gap-2">
             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
             View on GitHub
           </a>
         </div>
 
-        <p id="hero-powered" class="mt-8 text-sm text-stone-400 opacity-0">
+        <p id="hero-powered" class="mt-8 text-sm text-stone-400 dark:text-stone-500 opacity-0">
           powered by
           <a href="https://comrak.ee" target="_blank" rel="noopener" class="hover:text-brand transition">comrak</a> |
           <a href="https://crates.io/crates/ammonia" target="_blank" rel="noopener" class="hover:text-brand transition">ammonia</a> |
@@ -208,12 +213,12 @@
         </p>
       </div>
 
-      <div class="absolute bottom-2 sm:bottom-6 left-1/2 -translate-x-1/2 text-stone-400 pointer-events-none">
+      <div class="absolute bottom-2 sm:bottom-6 left-1/2 -translate-x-1/2 text-stone-400 dark:text-stone-500 pointer-events-none">
         <pre class="text-sm sm:text-lg md:text-2xl text-center animate-bounce" aria-hidden="true">↓</pre>
       </div>
     </section>
 
-    <section id="getting-started" class="py-16 sm:py-24 px-4 sm:px-6 bg-stone-100/50 border-y border-dashed border-stone-200 overflow-hidden">
+    <section id="getting-started" class="py-16 sm:py-24 px-4 sm:px-6 bg-stone-100/50 dark:bg-stone-900/50 border-y border-dashed border-stone-200 dark:border-stone-700 overflow-hidden">
       <div class="max-w-2xl mx-auto">
         <div class="text-center mb-8" data-animate="slide-up">
           <h2 class="text-2xl sm:text-3xl font-bold">
@@ -226,42 +231,41 @@
         <div class="space-y-4">
           <div class="group" data-animate="slide-up">
             <div class="code-block hover:border-brand transition-colors">
-              <div class="flex items-center justify-between px-3 sm:px-4 py-2 bg-stone-100 border-b border-stone-200">
-                <span class="text-sm text-stone-500">// mix.exs</span>
+              <div class="flex items-center justify-between px-3 sm:px-4 py-2 bg-stone-100 dark:bg-stone-800 border-b border-stone-200 dark:border-stone-700">
+                <span class="text-sm text-stone-500 dark:text-stone-400">// mix.exs</span>
                 <div class="flex items-center gap-2">
-                  <button data-copy="code-mix" data-copy-text="{:mdex, &quot;~> 0.11&quot;}" class="text-stone-400 hover:text-brand transition text-xs" aria-label="Copy code">
+                  <button data-copy="code-mix" data-copy-text="{:mdex, &quot;~> 0.11&quot;}" class="text-stone-400 dark:text-stone-500 hover:text-brand transition text-xs" aria-label="Copy code">
                     [copy]
                   </button>
-                  <span class="text-stone-300 text-xs hidden sm:inline">[-][o][x]</span>
+                  <span class="text-stone-300 dark:text-stone-600 text-xs hidden sm:inline">[-][o][x]</span>
                 </div>
               </div>
-              <pre class="p-3 sm:p-4 text-sm overflow-x-auto bg-white"><code id="code-mix" class="text-stone-800"><span class="text-brand">def</span> <span class="text-blue-700">deps</span> <span class="text-brand">do</span>
-  [{<span class="text-amber-700">:mdex</span>, <span class="text-emerald-700">"~> 0.11"</span>}]
+              <pre class="p-3 sm:p-4 text-sm overflow-x-auto bg-white dark:bg-stone-900"><code id="code-mix" class="text-stone-800 dark:text-stone-200"><span class="text-brand">def</span> <span class="text-blue-700 dark:text-blue-400">deps</span> <span class="text-brand">do</span>
+  [{<span class="text-amber-700 dark:text-amber-400">:mdex</span>, <span class="text-emerald-700 dark:text-emerald-400">"~> 0.11"</span>}]
 <span class="text-brand">end</span></code></pre>
             </div>
           </div>
 
           <div class="group" data-animate="slide-up">
             <div class="code-block hover:border-brand transition-colors">
-              <div class="flex items-center justify-between px-3 sm:px-4 py-2 bg-stone-100 border-b border-stone-200">
+              <div class="flex items-center justify-between px-3 sm:px-4 py-2 bg-stone-100 dark:bg-stone-800 border-b border-stone-200 dark:border-stone-700">
                 <div class="flex items-center gap-2">
                   <span class="text-brand text-sm">$</span>
-                  <span class="text-stone-400 text-xs">Terminal</span>
+                  <span class="text-stone-400 dark:text-stone-500 text-xs">Terminal</span>
                 </div>
                 <div class="flex items-center gap-2">
-                  <button data-copy="code-igniter" class="text-stone-400 hover:text-brand transition text-xs" aria-label="Copy code">
+                  <button data-copy="code-igniter" class="text-stone-400 dark:text-stone-500 hover:text-brand transition text-xs" aria-label="Copy code">
                     [copy]
                   </button>
-                  <span class="text-stone-300 text-xs hidden sm:inline">[-][o][x]</span>
+                  <span class="text-stone-300 dark:text-stone-600 text-xs hidden sm:inline">[-][o][x]</span>
                 </div>
               </div>
-              <pre class="p-3 sm:p-4 text-sm overflow-x-auto bg-white"><code id="code-igniter" class="text-stone-800"><span class="text-stone-400">$</span> mix igniter.install mdex</code></pre>
+              <pre class="p-3 sm:p-4 text-sm overflow-x-auto bg-white dark:bg-stone-900"><code id="code-igniter" class="text-stone-800 dark:text-stone-200"><span class="text-stone-400 dark:text-stone-500">$</span> mix igniter.install mdex</code></pre>
             </div>
           </div>
         </div>
       </div>
     </section>
-
 
     <section id="see-it-in-action" class="py-20 sm:py-24 px-4 sm:px-6 overflow-hidden">
       <div class="max-w-6xl mx-auto">
@@ -270,134 +274,134 @@
             <span class="text-brand">##</span> See It In Action
           </a>
         </h2>
-        <p class="text-stone-600 text-center mb-12 max-w-2xl mx-auto" data-animate="fade-in">
+        <p class="text-stone-600 dark:text-stone-400 text-center mb-12 max-w-2xl mx-auto" data-animate="fade-in">
           Markdown in. Everything out.
         </p>
 
         <div class="grid lg:grid-cols-2 gap-6 items-stretch" data-animate="slide-up">
           <div class="code-block flex flex-col">
-            <div class="flex items-center justify-between px-4 py-2 bg-stone-100 border-b border-stone-200">
+            <div class="flex items-center justify-between px-4 py-2 bg-stone-100 dark:bg-stone-800 border-b border-stone-200 dark:border-stone-700">
               <div class="flex items-center gap-2">
                 <span class="text-brand">#</span>
-                <span class="text-sm text-stone-500">Markdown Input</span>
+                <span class="text-sm text-stone-500 dark:text-stone-400">Markdown Input</span>
               </div>
-              <span class="text-stone-300 text-xs">[-][o][x]</span>
+              <span class="text-stone-300 dark:text-stone-600 text-xs">[-][o][x]</span>
             </div>
-            <pre class="flex-1 p-4 text-sm overflow-auto min-h-[280px] bg-white"><code class="text-stone-800"><span class="text-brand">#</span> Welcome to <span class="text-brand">**</span>MDEx<span class="text-brand">**</span>
+            <pre class="flex-1 p-4 text-sm overflow-auto min-h-[280px] bg-white dark:bg-stone-900"><code class="text-stone-800 dark:text-stone-200"><span class="text-brand">#</span> Welcome to <span class="text-brand">**</span>MDEx<span class="text-brand">**</span>
 
 Features:
-<span class="text-stone-400">-</span> Fast
-<span class="text-stone-400">-</span> Extensible
-<span class="text-stone-400">-</span> Phoenix-ready
+<span class="text-stone-400 dark:text-stone-500">-</span> Fast
+<span class="text-stone-400 dark:text-stone-500">-</span> Extensible
+<span class="text-stone-400 dark:text-stone-500">-</span> Phoenix-ready
 
-<span class="text-stone-400">```</span>elixir
-MDEx.to_html!(<span class="text-emerald-700">"# Hello"</span>)
-<span class="text-stone-400">```</span></code></pre>
+<span class="text-stone-400 dark:text-stone-500">```</span>elixir
+MDEx.to_html!(<span class="text-emerald-700 dark:text-emerald-400">"# Hello"</span>)
+<span class="text-stone-400 dark:text-stone-500">```</span></code></pre>
           </div>
 
           <div class="code-block flex flex-col">
-            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between px-4 py-2 bg-stone-100 border-b border-stone-200 gap-2">
-              <span class="text-sm text-stone-500">>> Output</span>
+            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between px-4 py-2 bg-stone-100 dark:bg-stone-800 border-b border-stone-200 dark:border-stone-700 gap-2">
+              <span class="text-sm text-stone-500 dark:text-stone-400">>> Output</span>
               <div class="flex gap-1 overflow-x-auto pb-1 sm:pb-0" role="tablist" aria-label="Output format">
                 <button data-tab="html" role="tab" aria-selected="true" aria-controls="panel-html" class="px-2 sm:px-3 py-2 sm:py-1 text-xs border border-brand bg-brand text-white transition whitespace-nowrap">[HTML]</button>
-                <button data-tab="heex" role="tab" aria-selected="false" aria-controls="panel-heex" class="px-2 sm:px-3 py-2 sm:py-1 text-xs border border-stone-300 text-stone-500 hover:text-brand hover:border-brand transition whitespace-nowrap">[HEEx]</button>
-                <button data-tab="json" role="tab" aria-selected="false" aria-controls="panel-json" class="px-2 sm:px-3 py-2 sm:py-1 text-xs border border-stone-300 text-stone-500 hover:text-brand hover:border-brand transition whitespace-nowrap">[JSON]</button>
-                <button data-tab="xml" role="tab" aria-selected="false" aria-controls="panel-xml" class="px-2 sm:px-3 py-2 sm:py-1 text-xs border border-stone-300 text-stone-500 hover:text-brand hover:border-brand transition whitespace-nowrap">[XML]</button>
-                <button data-tab="delta" role="tab" aria-selected="false" aria-controls="panel-delta" class="px-2 sm:px-3 py-2 sm:py-1 text-xs border border-stone-300 text-stone-500 hover:text-brand hover:border-brand transition whitespace-nowrap">[Delta]</button>
-                <button data-tab="ast" role="tab" aria-selected="false" aria-controls="panel-ast" class="px-2 sm:px-3 py-2 sm:py-1 text-xs border border-stone-300 text-stone-500 hover:text-brand hover:border-brand transition whitespace-nowrap">[AST]</button>
+                <button data-tab="heex" role="tab" aria-selected="false" aria-controls="panel-heex" class="px-2 sm:px-3 py-2 sm:py-1 text-xs border border-stone-300 dark:border-stone-700 text-stone-500 dark:text-stone-400 hover:text-brand hover:border-brand transition whitespace-nowrap">[HEEx]</button>
+                <button data-tab="json" role="tab" aria-selected="false" aria-controls="panel-json" class="px-2 sm:px-3 py-2 sm:py-1 text-xs border border-stone-300 dark:border-stone-700 text-stone-500 dark:text-stone-400 hover:text-brand hover:border-brand transition whitespace-nowrap">[JSON]</button>
+                <button data-tab="xml" role="tab" aria-selected="false" aria-controls="panel-xml" class="px-2 sm:px-3 py-2 sm:py-1 text-xs border border-stone-300 dark:border-stone-700 text-stone-500 dark:text-stone-400 hover:text-brand hover:border-brand transition whitespace-nowrap">[XML]</button>
+                <button data-tab="delta" role="tab" aria-selected="false" aria-controls="panel-delta" class="px-2 sm:px-3 py-2 sm:py-1 text-xs border border-stone-300 dark:border-stone-700 text-stone-500 dark:text-stone-400 hover:text-brand hover:border-brand transition whitespace-nowrap">[Delta]</button>
+                <button data-tab="ast" role="tab" aria-selected="false" aria-controls="panel-ast" class="px-2 sm:px-3 py-2 sm:py-1 text-xs border border-stone-300 dark:border-stone-700 text-stone-500 dark:text-stone-400 hover:text-brand hover:border-brand transition whitespace-nowrap">[AST]</button>
               </div>
             </div>
-            <div class="flex-1 p-4 overflow-auto min-h-[280px] bg-white">
-              <pre data-panel="html" id="panel-html" role="tabpanel" aria-label="HTML output" class="text-sm"><code class="text-stone-800"><span class="text-blue-700">&lt;h1&gt;</span>Welcome to <span class="text-blue-700">&lt;strong&gt;</span>MDEx<span class="text-blue-700">&lt;/strong&gt;&lt;/h1&gt;</span>
-<span class="text-blue-700">&lt;p&gt;</span>Features:<span class="text-blue-700">&lt;/p&gt;</span>
-<span class="text-blue-700">&lt;ul&gt;</span>
-  <span class="text-blue-700">&lt;li&gt;</span>Fast<span class="text-blue-700">&lt;/li&gt;</span>
-  <span class="text-blue-700">&lt;li&gt;</span>Extensible<span class="text-blue-700">&lt;/li&gt;</span>
-  <span class="text-blue-700">&lt;li&gt;</span>Phoenix-ready<span class="text-blue-700">&lt;/li&gt;</span>
-<span class="text-blue-700">&lt;/ul&gt;</span>
-<span class="text-blue-700">&lt;pre</span> <span class="text-amber-700">class=</span><span class="text-emerald-700">"athl"</span> <span class="text-amber-700">style=</span><span class="text-emerald-700">"..."</span><span class="text-blue-700">&gt;</span>
-  <span class="text-blue-700">&lt;code</span> <span class="text-amber-700">class=</span><span class="text-emerald-700">"language-elixir"</span><span class="text-blue-700">&gt;</span>
-    <span class="text-blue-700">&lt;div</span> <span class="text-amber-700">class=</span><span class="text-emerald-700">"line"</span> <span class="text-amber-700">data-line=</span><span class="text-emerald-700">"1"</span><span class="text-blue-700">&gt;&lt;span</span> <span class="text-amber-700">style=</span><span class="text-emerald-700">"..."</span><span class="text-blue-700">&gt;</span>
+            <div class="flex-1 p-4 overflow-auto min-h-[280px] bg-white dark:bg-stone-900">
+              <pre data-panel="html" id="panel-html" role="tabpanel" aria-label="HTML output" class="text-sm"><code class="text-stone-800 dark:text-stone-200"><span class="text-blue-700 dark:text-blue-400">&lt;h1&gt;</span>Welcome to <span class="text-blue-700 dark:text-blue-400">&lt;strong&gt;</span>MDEx<span class="text-blue-700 dark:text-blue-400">&lt;/strong&gt;&lt;/h1&gt;</span>
+<span class="text-blue-700 dark:text-blue-400">&lt;p&gt;</span>Features:<span class="text-blue-700 dark:text-blue-400">&lt;/p&gt;</span>
+<span class="text-blue-700 dark:text-blue-400">&lt;ul&gt;</span>
+  <span class="text-blue-700 dark:text-blue-400">&lt;li&gt;</span>Fast<span class="text-blue-700 dark:text-blue-400">&lt;/li&gt;</span>
+  <span class="text-blue-700 dark:text-blue-400">&lt;li&gt;</span>Extensible<span class="text-blue-700 dark:text-blue-400">&lt;/li&gt;</span>
+  <span class="text-blue-700 dark:text-blue-400">&lt;li&gt;</span>Phoenix-ready<span class="text-blue-700 dark:text-blue-400">&lt;/li&gt;</span>
+<span class="text-blue-700 dark:text-blue-400">&lt;/ul&gt;</span>
+<span class="text-blue-700 dark:text-blue-400">&lt;pre</span> <span class="text-amber-700 dark:text-amber-400">class=</span><span class="text-emerald-700 dark:text-emerald-400">"athl"</span> <span class="text-amber-700 dark:text-amber-400">style=</span><span class="text-emerald-700 dark:text-emerald-400">"..."</span><span class="text-blue-700 dark:text-blue-400">&gt;</span>
+  <span class="text-blue-700 dark:text-blue-400">&lt;code</span> <span class="text-amber-700 dark:text-amber-400">class=</span><span class="text-emerald-700 dark:text-emerald-400">"language-elixir"</span><span class="text-blue-700 dark:text-blue-400">&gt;</span>
+    <span class="text-blue-700 dark:text-blue-400">&lt;div</span> <span class="text-amber-700 dark:text-amber-400">class=</span><span class="text-emerald-700 dark:text-emerald-400">"line"</span> <span class="text-amber-700 dark:text-amber-400">data-line=</span><span class="text-emerald-700 dark:text-emerald-400">"1"</span><span class="text-blue-700 dark:text-blue-400">&gt;&lt;span</span> <span class="text-amber-700 dark:text-amber-400">style=</span><span class="text-emerald-700 dark:text-emerald-400">"..."</span><span class="text-blue-700 dark:text-blue-400">&gt;</span>
       MDEx.to_html!("# Hello")
-    <span class="text-blue-700">&lt;/span&gt;&lt;/div&gt;</span>
-  <span class="text-blue-700">&lt;/code&gt;</span>
-<span class="text-blue-700">&lt;/pre&gt;</span></code></pre>
+    <span class="text-blue-700 dark:text-blue-400">&lt;/span&gt;&lt;/div&gt;</span>
+  <span class="text-blue-700 dark:text-blue-400">&lt;/code&gt;</span>
+<span class="text-blue-700 dark:text-blue-400">&lt;/pre&gt;</span></code></pre>
 
-              <pre data-panel="ast" id="panel-ast" role="tabpanel" aria-label="AST output" class="hidden text-sm"><code class="text-stone-800"><span class="text-brand">#MDEx.Document</span><span class="text-stone-400">&lt;</span><span class="text-stone-500">17 nodes</span>
-├── <span class="text-stone-500">1</span> [<span class="text-blue-700">heading</span>] <span class="text-amber-700">level:</span> <span class="text-purple-600">1</span>
-│   ├── <span class="text-stone-500">2</span> [<span class="text-blue-700">text</span>] <span class="text-amber-700">literal:</span> <span class="text-emerald-700">"Welcome to "</span>
-│   └── <span class="text-stone-500">3</span> [<span class="text-blue-700">strong</span>]
-│       └── <span class="text-stone-500">4</span> [<span class="text-blue-700">text</span>] <span class="text-amber-700">literal:</span> <span class="text-emerald-700">"MDEx"</span>
-├── <span class="text-stone-500">5</span> [<span class="text-blue-700">paragraph</span>]
-│   └── <span class="text-stone-500">6</span> [<span class="text-blue-700">text</span>] <span class="text-amber-700">literal:</span> <span class="text-emerald-700">"Features:"</span>
-├── <span class="text-stone-500">7</span> [<span class="text-blue-700">list</span>] <span class="text-amber-700">list_type:</span> <span class="text-brand">:bullet</span>, <span class="text-amber-700">tight:</span> <span class="text-brand">true</span>
-│   ├── <span class="text-stone-500">8</span> [<span class="text-blue-700">list_item</span>]
-│   │   └── <span class="text-stone-500">9</span> [<span class="text-blue-700">paragraph</span>]
-│   │       └── <span class="text-stone-500">10</span> [<span class="text-blue-700">text</span>] <span class="text-amber-700">literal:</span> <span class="text-emerald-700">"Fast"</span>
-│   ├── <span class="text-stone-500">11</span> [<span class="text-blue-700">list_item</span>]
-│   │   └── <span class="text-stone-500">12</span> [<span class="text-blue-700">paragraph</span>]
-│   │       └── <span class="text-stone-500">13</span> [<span class="text-blue-700">text</span>] <span class="text-amber-700">literal:</span> <span class="text-emerald-700">"Extensible"</span>
-│   └── <span class="text-stone-500">14</span> [<span class="text-blue-700">list_item</span>]
-│       └── <span class="text-stone-500">15</span> [<span class="text-blue-700">paragraph</span>]
-│           └── <span class="text-stone-500">16</span> [<span class="text-blue-700">text</span>] <span class="text-amber-700">literal:</span> <span class="text-emerald-700">"Phoenix-ready"</span>
-└── <span class="text-stone-500">17</span> [<span class="text-blue-700">code_block</span>] <span class="text-amber-700">info:</span> <span class="text-emerald-700">"elixir"</span>, <span class="text-amber-700">fenced:</span> <span class="text-brand">true</span>
-<span class="text-stone-400">&gt;</span></code></pre>
+              <pre data-panel="ast" id="panel-ast" role="tabpanel" aria-label="AST output" class="hidden text-sm"><code class="text-stone-800 dark:text-stone-200"><span class="text-brand">#MDEx.Document</span><span class="text-stone-400 dark:text-stone-500">&lt;</span><span class="text-stone-500 dark:text-stone-400">17 nodes</span>
+├── <span class="text-stone-500 dark:text-stone-400">1</span> [<span class="text-blue-700 dark:text-blue-400">heading</span>] <span class="text-amber-700 dark:text-amber-400">level:</span> <span class="text-purple-600 dark:text-purple-400">1</span>
+│   ├── <span class="text-stone-500 dark:text-stone-400">2</span> [<span class="text-blue-700 dark:text-blue-400">text</span>] <span class="text-amber-700 dark:text-amber-400">literal:</span> <span class="text-emerald-700 dark:text-emerald-400">"Welcome to "</span>
+│   └── <span class="text-stone-500 dark:text-stone-400">3</span> [<span class="text-blue-700 dark:text-blue-400">strong</span>]
+│       └── <span class="text-stone-500 dark:text-stone-400">4</span> [<span class="text-blue-700 dark:text-blue-400">text</span>] <span class="text-amber-700 dark:text-amber-400">literal:</span> <span class="text-emerald-700 dark:text-emerald-400">"MDEx"</span>
+├── <span class="text-stone-500 dark:text-stone-400">5</span> [<span class="text-blue-700 dark:text-blue-400">paragraph</span>]
+│   └── <span class="text-stone-500 dark:text-stone-400">6</span> [<span class="text-blue-700 dark:text-blue-400">text</span>] <span class="text-amber-700 dark:text-amber-400">literal:</span> <span class="text-emerald-700 dark:text-emerald-400">"Features:"</span>
+├── <span class="text-stone-500 dark:text-stone-400">7</span> [<span class="text-blue-700 dark:text-blue-400">list</span>] <span class="text-amber-700 dark:text-amber-400">list_type:</span> <span class="text-brand">:bullet</span>, <span class="text-amber-700 dark:text-amber-400">tight:</span> <span class="text-brand">true</span>
+│   ├── <span class="text-stone-500 dark:text-stone-400">8</span> [<span class="text-blue-700 dark:text-blue-400">list_item</span>]
+│   │   └── <span class="text-stone-500 dark:text-stone-400">9</span> [<span class="text-blue-700 dark:text-blue-400">paragraph</span>]
+│   │       └── <span class="text-stone-500 dark:text-stone-400">10</span> [<span class="text-blue-700 dark:text-blue-400">text</span>] <span class="text-amber-700 dark:text-amber-400">literal:</span> <span class="text-emerald-700 dark:text-emerald-400">"Fast"</span>
+│   ├── <span class="text-stone-500 dark:text-stone-400">11</span> [<span class="text-blue-700 dark:text-blue-400">list_item</span>]
+│   │   └── <span class="text-stone-500 dark:text-stone-400">12</span> [<span class="text-blue-700 dark:text-blue-400">paragraph</span>]
+│   │       └── <span class="text-stone-500 dark:text-stone-400">13</span> [<span class="text-blue-700 dark:text-blue-400">text</span>] <span class="text-amber-700 dark:text-amber-400">literal:</span> <span class="text-emerald-700 dark:text-emerald-400">"Extensible"</span>
+│   └── <span class="text-stone-500 dark:text-stone-400">14</span> [<span class="text-blue-700 dark:text-blue-400">list_item</span>]
+│       └── <span class="text-stone-500 dark:text-stone-400">15</span> [<span class="text-blue-700 dark:text-blue-400">paragraph</span>]
+│           └── <span class="text-stone-500 dark:text-stone-400">16</span> [<span class="text-blue-700 dark:text-blue-400">text</span>] <span class="text-amber-700 dark:text-amber-400">literal:</span> <span class="text-emerald-700 dark:text-emerald-400">"Phoenix-ready"</span>
+└── <span class="text-stone-500 dark:text-stone-400">17</span> [<span class="text-blue-700 dark:text-blue-400">code_block</span>] <span class="text-amber-700 dark:text-amber-400">info:</span> <span class="text-emerald-700 dark:text-emerald-400">"elixir"</span>, <span class="text-amber-700 dark:text-amber-400">fenced:</span> <span class="text-brand">true</span>
+<span class="text-stone-400 dark:text-stone-500">&gt;</span></code></pre>
 
-              <pre data-panel="heex" id="panel-heex" role="tabpanel" aria-label="HEEx output" class="hidden text-sm"><code class="text-stone-800"><span class="text-brand">%Phoenix.LiveView.Rendered</span>{
-  <span class="text-amber-700">static:</span> [<span class="text-emerald-700">"&lt;h1&gt;Welcome to &lt;strong&gt;MDEx&lt;/strong&gt;&lt;/h1&gt;\n..."</span>],
-  <span class="text-amber-700">dynamic:</span> <span class="text-stone-500">#Function&lt;42.81571850/1 in :erl_eval.expr/6&gt;</span>,
-  <span class="text-amber-700">fingerprint:</span> <span class="text-purple-600">52776307825337990075203022359966918684</span>,
-  <span class="text-amber-700">root:</span> <span class="text-brand">false</span>,
-  <span class="text-amber-700">caller:</span> <span class="text-brand">:not_available</span>
+              <pre data-panel="heex" id="panel-heex" role="tabpanel" aria-label="HEEx output" class="hidden text-sm"><code class="text-stone-800 dark:text-stone-200"><span class="text-brand">%Phoenix.LiveView.Rendered</span>{
+  <span class="text-amber-700 dark:text-amber-400">static:</span> [<span class="text-emerald-700 dark:text-emerald-400">"&lt;h1&gt;Welcome to &lt;strong&gt;MDEx&lt;/strong&gt;&lt;/h1&gt;\n..."</span>],
+  <span class="text-amber-700 dark:text-amber-400">dynamic:</span> <span class="text-stone-500 dark:text-stone-400">#Function&lt;42.81571850/1 in :erl_eval.expr/6&gt;</span>,
+  <span class="text-amber-700 dark:text-amber-400">fingerprint:</span> <span class="text-purple-600 dark:text-purple-400">52776307825337990075203022359966918684</span>,
+  <span class="text-amber-700 dark:text-amber-400">root:</span> <span class="text-brand">false</span>,
+  <span class="text-amber-700 dark:text-amber-400">caller:</span> <span class="text-brand">:not_available</span>
 }</code></pre>
 
-              <pre data-panel="json" id="panel-json" role="tabpanel" aria-label="JSON output" class="hidden text-sm"><code class="text-stone-800">{
-  <span class="text-blue-700">"type"</span>: <span class="text-emerald-700">"document"</span>,
-  <span class="text-blue-700">"children"</span>: [
+              <pre data-panel="json" id="panel-json" role="tabpanel" aria-label="JSON output" class="hidden text-sm"><code class="text-stone-800 dark:text-stone-200">{
+  <span class="text-blue-700 dark:text-blue-400">"type"</span>: <span class="text-emerald-700 dark:text-emerald-400">"document"</span>,
+  <span class="text-blue-700 dark:text-blue-400">"children"</span>: [
     {
-      <span class="text-blue-700">"type"</span>: <span class="text-emerald-700">"heading"</span>,
-      <span class="text-blue-700">"level"</span>: <span class="text-purple-600">1</span>,
-      <span class="text-blue-700">"children"</span>: [...]
+      <span class="text-blue-700 dark:text-blue-400">"type"</span>: <span class="text-emerald-700 dark:text-emerald-400">"heading"</span>,
+      <span class="text-blue-700 dark:text-blue-400">"level"</span>: <span class="text-purple-600 dark:text-purple-400">1</span>,
+      <span class="text-blue-700 dark:text-blue-400">"children"</span>: [...]
     },
     {
-      <span class="text-blue-700">"type"</span>: <span class="text-emerald-700">"list"</span>,
-      <span class="text-blue-700">"list_type"</span>: <span class="text-emerald-700">"bullet"</span>,
+      <span class="text-blue-700 dark:text-blue-400">"type"</span>: <span class="text-emerald-700 dark:text-emerald-400">"list"</span>,
+      <span class="text-blue-700 dark:text-blue-400">"list_type"</span>: <span class="text-emerald-700 dark:text-emerald-400">"bullet"</span>,
       ...
     }
   ]
 }</code></pre>
 
-              <pre data-panel="xml" id="panel-xml" role="tabpanel" aria-label="XML output" class="hidden text-sm"><code class="text-stone-800"><span class="text-stone-400">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
-<span class="text-stone-400">&lt;!DOCTYPE document SYSTEM "CommonMark.dtd"&gt;</span>
-<span class="text-blue-700">&lt;document</span> <span class="text-amber-700">xmlns=</span><span class="text-emerald-700">"http://commonmark.org/xml/1.0"</span><span class="text-blue-700">&gt;</span>
-  <span class="text-blue-700">&lt;heading</span> <span class="text-amber-700">level=</span><span class="text-emerald-700">"1"</span><span class="text-blue-700">&gt;</span>
-    <span class="text-blue-700">&lt;text</span> <span class="text-amber-700">xml:space=</span><span class="text-emerald-700">"preserve"</span><span class="text-blue-700">&gt;</span>Welcome to <span class="text-blue-700">&lt;/text&gt;</span>
-    <span class="text-blue-700">&lt;strong&gt;</span>
-      <span class="text-blue-700">&lt;text</span> <span class="text-amber-700">xml:space=</span><span class="text-emerald-700">"preserve"</span><span class="text-blue-700">&gt;</span>MDEx<span class="text-blue-700">&lt;/text&gt;</span>
-    <span class="text-blue-700">&lt;/strong&gt;</span>
-  <span class="text-blue-700">&lt;/heading&gt;</span>
-  <span class="text-blue-700">&lt;paragraph&gt;</span>
-    <span class="text-blue-700">&lt;text</span> <span class="text-amber-700">xml:space=</span><span class="text-emerald-700">"preserve"</span><span class="text-blue-700">&gt;</span>Features:<span class="text-blue-700">&lt;/text&gt;</span>
-  <span class="text-blue-700">&lt;/paragraph&gt;</span>
-  <span class="text-blue-700">&lt;list</span> <span class="text-amber-700">type=</span><span class="text-emerald-700">"bullet"</span> <span class="text-amber-700">tight=</span><span class="text-emerald-700">"true"</span><span class="text-blue-700">&gt;</span>
-    <span class="text-blue-700">&lt;item&gt;&lt;paragraph&gt;&lt;text&gt;</span>Fast<span class="text-blue-700">&lt;/text&gt;&lt;/paragraph&gt;&lt;/item&gt;</span>
-    <span class="text-blue-700">&lt;item&gt;&lt;paragraph&gt;&lt;text&gt;</span>Extensible<span class="text-blue-700">&lt;/text&gt;&lt;/paragraph&gt;&lt;/item&gt;</span>
-    <span class="text-blue-700">&lt;item&gt;&lt;paragraph&gt;&lt;text&gt;</span>Phoenix-ready<span class="text-blue-700">&lt;/text&gt;&lt;/paragraph&gt;&lt;/item&gt;</span>
-  <span class="text-blue-700">&lt;/list&gt;</span>
-  <span class="text-blue-700">&lt;code_block</span> <span class="text-amber-700">info=</span><span class="text-emerald-700">"elixir"</span><span class="text-blue-700">&gt;</span>MDEx.to_html!("# Hello")<span class="text-blue-700">&lt;/code_block&gt;</span>
-<span class="text-blue-700">&lt;/document&gt;</span></code></pre>
+              <pre data-panel="xml" id="panel-xml" role="tabpanel" aria-label="XML output" class="hidden text-sm"><code class="text-stone-800 dark:text-stone-200"><span class="text-stone-400 dark:text-stone-500">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<span class="text-stone-400 dark:text-stone-500">&lt;!DOCTYPE document SYSTEM "CommonMark.dtd"&gt;</span>
+<span class="text-blue-700 dark:text-blue-400">&lt;document</span> <span class="text-amber-700 dark:text-amber-400">xmlns=</span><span class="text-emerald-700 dark:text-emerald-400">"http://commonmark.org/xml/1.0"</span><span class="text-blue-700 dark:text-blue-400">&gt;</span>
+  <span class="text-blue-700 dark:text-blue-400">&lt;heading</span> <span class="text-amber-700 dark:text-amber-400">level=</span><span class="text-emerald-700 dark:text-emerald-400">"1"</span><span class="text-blue-700 dark:text-blue-400">&gt;</span>
+    <span class="text-blue-700 dark:text-blue-400">&lt;text</span> <span class="text-amber-700 dark:text-amber-400">xml:space=</span><span class="text-emerald-700 dark:text-emerald-400">"preserve"</span><span class="text-blue-700 dark:text-blue-400">&gt;</span>Welcome to <span class="text-blue-700 dark:text-blue-400">&lt;/text&gt;</span>
+    <span class="text-blue-700 dark:text-blue-400">&lt;strong&gt;</span>
+      <span class="text-blue-700 dark:text-blue-400">&lt;text</span> <span class="text-amber-700 dark:text-amber-400">xml:space=</span><span class="text-emerald-700 dark:text-emerald-400">"preserve"</span><span class="text-blue-700 dark:text-blue-400">&gt;</span>MDEx<span class="text-blue-700 dark:text-blue-400">&lt;/text&gt;</span>
+    <span class="text-blue-700 dark:text-blue-400">&lt;/strong&gt;</span>
+  <span class="text-blue-700 dark:text-blue-400">&lt;/heading&gt;</span>
+  <span class="text-blue-700 dark:text-blue-400">&lt;paragraph&gt;</span>
+    <span class="text-blue-700 dark:text-blue-400">&lt;text</span> <span class="text-amber-700 dark:text-amber-400">xml:space=</span><span class="text-emerald-700 dark:text-emerald-400">"preserve"</span><span class="text-blue-700 dark:text-blue-400">&gt;</span>Features:<span class="text-blue-700 dark:text-blue-400">&lt;/text&gt;</span>
+  <span class="text-blue-700 dark:text-blue-400">&lt;/paragraph&gt;</span>
+  <span class="text-blue-700 dark:text-blue-400">&lt;list</span> <span class="text-amber-700 dark:text-amber-400">type=</span><span class="text-emerald-700 dark:text-emerald-400">"bullet"</span> <span class="text-amber-700 dark:text-amber-400">tight=</span><span class="text-emerald-700 dark:text-emerald-400">"true"</span><span class="text-blue-700 dark:text-blue-400">&gt;</span>
+    <span class="text-blue-700 dark:text-blue-400">&lt;item&gt;&lt;paragraph&gt;&lt;text&gt;</span>Fast<span class="text-blue-700 dark:text-blue-400">&lt;/text&gt;&lt;/paragraph&gt;&lt;/item&gt;</span>
+    <span class="text-blue-700 dark:text-blue-400">&lt;item&gt;&lt;paragraph&gt;&lt;text&gt;</span>Extensible<span class="text-blue-700 dark:text-blue-400">&lt;/text&gt;&lt;/paragraph&gt;&lt;/item&gt;</span>
+    <span class="text-blue-700 dark:text-blue-400">&lt;item&gt;&lt;paragraph&gt;&lt;text&gt;</span>Phoenix-ready<span class="text-blue-700 dark:text-blue-400">&lt;/text&gt;&lt;/paragraph&gt;&lt;/item&gt;</span>
+  <span class="text-blue-700 dark:text-blue-400">&lt;/list&gt;</span>
+  <span class="text-blue-700 dark:text-blue-400">&lt;code_block</span> <span class="text-amber-700 dark:text-amber-400">info=</span><span class="text-emerald-700 dark:text-emerald-400">"elixir"</span><span class="text-blue-700 dark:text-blue-400">&gt;</span>MDEx.to_html!("# Hello")<span class="text-blue-700 dark:text-blue-400">&lt;/code_block&gt;</span>
+<span class="text-blue-700 dark:text-blue-400">&lt;/document&gt;</span></code></pre>
 
-              <pre data-panel="delta" id="panel-delta" role="tabpanel" aria-label="Quill Delta output" class="hidden text-sm"><code class="text-stone-800">[
-  %{<span class="text-emerald-700">"insert"</span> =&gt; <span class="text-emerald-700">"Welcome to "</span>},
-  %{<span class="text-emerald-700">"attributes"</span> =&gt; %{<span class="text-emerald-700">"bold"</span> =&gt; <span class="text-brand">true</span>}, <span class="text-emerald-700">"insert"</span> =&gt; <span class="text-emerald-700">"MDEx"</span>},
-  %{<span class="text-emerald-700">"attributes"</span> =&gt; %{<span class="text-emerald-700">"header"</span> =&gt; <span class="text-purple-600">1</span>}, <span class="text-emerald-700">"insert"</span> =&gt; <span class="text-emerald-700">"\n"</span>},
-  %{<span class="text-emerald-700">"insert"</span> =&gt; <span class="text-emerald-700">"Features:\n"</span>},
-  %{<span class="text-emerald-700">"insert"</span> =&gt; <span class="text-emerald-700">"Fast"</span>},
-  %{<span class="text-emerald-700">"attributes"</span> =&gt; %{<span class="text-emerald-700">"list"</span> =&gt; <span class="text-emerald-700">"bullet"</span>}, <span class="text-emerald-700">"insert"</span> =&gt; <span class="text-emerald-700">"\n"</span>},
-  %{<span class="text-emerald-700">"insert"</span> =&gt; <span class="text-emerald-700">"Extensible"</span>},
-  %{<span class="text-emerald-700">"attributes"</span> =&gt; %{<span class="text-emerald-700">"list"</span> =&gt; <span class="text-emerald-700">"bullet"</span>}, <span class="text-emerald-700">"insert"</span> =&gt; <span class="text-emerald-700">"\n"</span>},
-  %{<span class="text-emerald-700">"insert"</span> =&gt; <span class="text-emerald-700">"Phoenix-ready"</span>},
-  %{<span class="text-emerald-700">"attributes"</span> =&gt; %{<span class="text-emerald-700">"list"</span> =&gt; <span class="text-emerald-700">"bullet"</span>}, <span class="text-emerald-700">"insert"</span> =&gt; <span class="text-emerald-700">"\n"</span>},
+              <pre data-panel="delta" id="panel-delta" role="tabpanel" aria-label="Quill Delta output" class="hidden text-sm"><code class="text-stone-800 dark:text-stone-200">[
+  %{<span class="text-emerald-700 dark:text-emerald-400">"insert"</span> =&gt; <span class="text-emerald-700 dark:text-emerald-400">"Welcome to "</span>},
+  %{<span class="text-emerald-700 dark:text-emerald-400">"attributes"</span> =&gt; %{<span class="text-emerald-700 dark:text-emerald-400">"bold"</span> =&gt; <span class="text-brand">true</span>}, <span class="text-emerald-700 dark:text-emerald-400">"insert"</span> =&gt; <span class="text-emerald-700 dark:text-emerald-400">"MDEx"</span>},
+  %{<span class="text-emerald-700 dark:text-emerald-400">"attributes"</span> =&gt; %{<span class="text-emerald-700 dark:text-emerald-400">"header"</span> =&gt; <span class="text-purple-600 dark:text-purple-400">1</span>}, <span class="text-emerald-700 dark:text-emerald-400">"insert"</span> =&gt; <span class="text-emerald-700 dark:text-emerald-400">"\n"</span>},
+  %{<span class="text-emerald-700 dark:text-emerald-400">"insert"</span> =&gt; <span class="text-emerald-700 dark:text-emerald-400">"Features:\n"</span>},
+  %{<span class="text-emerald-700 dark:text-emerald-400">"insert"</span> =&gt; <span class="text-emerald-700 dark:text-emerald-400">"Fast"</span>},
+  %{<span class="text-emerald-700 dark:text-emerald-400">"attributes"</span> =&gt; %{<span class="text-emerald-700 dark:text-emerald-400">"list"</span> =&gt; <span class="text-emerald-700 dark:text-emerald-400">"bullet"</span>}, <span class="text-emerald-700 dark:text-emerald-400">"insert"</span> =&gt; <span class="text-emerald-700 dark:text-emerald-400">"\n"</span>},
+  %{<span class="text-emerald-700 dark:text-emerald-400">"insert"</span> =&gt; <span class="text-emerald-700 dark:text-emerald-400">"Extensible"</span>},
+  %{<span class="text-emerald-700 dark:text-emerald-400">"attributes"</span> =&gt; %{<span class="text-emerald-700 dark:text-emerald-400">"list"</span> =&gt; <span class="text-emerald-700 dark:text-emerald-400">"bullet"</span>}, <span class="text-emerald-700 dark:text-emerald-400">"insert"</span> =&gt; <span class="text-emerald-700 dark:text-emerald-400">"\n"</span>},
+  %{<span class="text-emerald-700 dark:text-emerald-400">"insert"</span> =&gt; <span class="text-emerald-700 dark:text-emerald-400">"Phoenix-ready"</span>},
+  %{<span class="text-emerald-700 dark:text-emerald-400">"attributes"</span> =&gt; %{<span class="text-emerald-700 dark:text-emerald-400">"list"</span> =&gt; <span class="text-emerald-700 dark:text-emerald-400">"bullet"</span>}, <span class="text-emerald-700 dark:text-emerald-400">"insert"</span> =&gt; <span class="text-emerald-700 dark:text-emerald-400">"\n"</span>},
   ...
 ]</code></pre>
             </div>
@@ -406,7 +410,7 @@ MDEx.to_html!(<span class="text-emerald-700">"# Hello"</span>)
       </div>
     </section>
 
-    <section id="blazingly-fast" class="py-20 sm:py-24 px-4 sm:px-6 bg-stone-100/50 border-y border-dashed border-stone-200 overflow-hidden">
+    <section id="blazingly-fast" class="py-20 sm:py-24 px-4 sm:px-6 bg-stone-100/50 dark:bg-stone-900/50 border-y border-dashed border-stone-200 dark:border-stone-700 overflow-hidden">
       <div class="max-w-4xl mx-auto">
         <div class="text-center mb-12" data-animate="slide-up">
           <h2 class="text-2xl sm:text-3xl font-bold">
@@ -414,50 +418,50 @@ MDEx.to_html!(<span class="text-emerald-700">"# Hello"</span>)
               <span class="text-brand">##</span> Blazingly Fast
             </a>
           </h2>
-          <p class="text-stone-600 mt-4" data-animate="fade-in">
+          <p class="text-stone-600 dark:text-stone-400 mt-4" data-animate="fade-in">
             Light on memory. Heavy on throughput.
           </p>
         </div>
 
-        <div id="benchmark-chart" class="space-y-6 border border-dashed border-stone-300 p-6 bg-white">
+        <div id="benchmark-chart" class="space-y-6 border border-dashed border-stone-300 dark:border-stone-700 p-6 bg-white dark:bg-stone-900">
           <div class="benchmark-row" data-target="8983">
             <div class="flex items-center justify-between mb-2">
               <span class="font-bold text-brand">>> MDEx</span>
-              <span class="text-sm text-stone-600">
+              <span class="text-sm text-stone-600 dark:text-stone-400">
                 <span class="benchmark-counter">0</span> ops/s
               </span>
             </div>
-            <div class="h-6 bg-stone-100 border border-stone-200 overflow-hidden font-mono text-xs flex items-center">
-              <div class="benchmark-bar h-full bg-brand w-0 transition-all duration-[2500ms] ease-out"></div>
+            <div class="h-6 bg-stone-100 dark:bg-stone-800 border border-stone-200 dark:border-stone-700 overflow-hidden font-mono text-xs flex items-center">
+              <div class="benchmark-bar h-full w-full bg-brand origin-left scale-x-0 transition-transform duration-[2500ms] ease-out"></div>
             </div>
-            <div class="text-xs text-stone-400 mt-1"><span class="text-emerald-600">[x] fastest</span></div>
+            <div class="text-xs text-stone-400 dark:text-stone-500 mt-1"><span class="text-emerald-600">[x] fastest</span></div>
           </div>
 
           <div class="benchmark-row" data-target="286">
             <div class="flex items-center justify-between mb-2">
-              <span class="font-semibold text-stone-500">   Alternatives</span>
-              <span class="text-sm text-stone-500">
+              <span class="font-semibold text-stone-500 dark:text-stone-400">   Alternatives</span>
+              <span class="text-sm text-stone-500 dark:text-stone-400">
                 <span class="benchmark-counter">0</span> ops/s
                 <span class="text-red-600 ml-2">31x slower</span>
               </span>
             </div>
-            <div class="h-6 bg-stone-100 border border-stone-200 overflow-hidden">
-              <div class="benchmark-bar h-full bg-stone-400 w-0 transition-all duration-[2500ms] ease-out"></div>
+            <div class="h-6 bg-stone-100 dark:bg-stone-800 border border-stone-200 dark:border-stone-700 overflow-hidden">
+              <div class="benchmark-bar h-full w-full bg-stone-400 origin-left scale-x-0 transition-transform duration-[2500ms] ease-out"></div>
             </div>
-            <div class="text-xs text-stone-400 mt-1">average of Elixir markdown parsers</div>
+            <div class="text-xs text-stone-400 dark:text-stone-500 mt-1">average of Elixir markdown parsers</div>
           </div>
-          <div class="text-xs text-stone-400 mt-4 pt-4 border-t border-dashed border-stone-200 flex justify-between">
+          <div class="text-xs text-stone-400 dark:text-stone-500 mt-4 pt-4 border-t border-dashed border-stone-200 dark:border-stone-700 flex justify-between">
             <span>* Benchmarked on Apple M1 Pro</span>
             <a href="https://github.com/leandrocp/mdex/blob/main/benchmark.exs" target="_blank" rel="noopener" class="hover:text-brand transition">[benchmark.exs]</a>
           </div>
         </div>
 
-        <div id="memory-comparison" class="mt-8 text-center p-6 border border-dashed border-stone-300 bg-white opacity-0">
-          <pre class="text-stone-300 text-xs mb-4" aria-hidden="true">┌─────────────────────────────────────┐</pre>
+        <div id="memory-comparison" class="mt-8 text-center p-6 border border-dashed border-stone-300 dark:border-stone-700 bg-white dark:bg-stone-900 opacity-0">
+          <pre class="text-stone-300 dark:text-stone-600 text-xs mb-4" aria-hidden="true">┌─────────────────────────────────────┐</pre>
           <div class="text-4xl sm:text-5xl font-bold text-brand mb-2">3,506x</div>
-          <div class="text-stone-600">less memory than alternatives</div>
-          <div class="text-sm text-stone-400 mt-2">0.00184 MB vs 6.45 MB</div>
-          <pre class="text-stone-300 text-xs mt-4" aria-hidden="true">└─────────────────────────────────────┘</pre>
+          <div class="text-stone-600 dark:text-stone-400">less memory than alternatives</div>
+          <div class="text-sm text-stone-400 dark:text-stone-500 mt-2">0.00184 MB vs 6.45 MB</div>
+          <pre class="text-stone-300 dark:text-stone-600 text-xs mt-4" aria-hidden="true">└─────────────────────────────────────┘</pre>
         </div>
       </div>
     </section>
@@ -471,37 +475,37 @@ MDEx.to_html!(<span class="text-emerald-700">"# Hello"</span>)
         </h2>
 
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          <div class="feature-card opacity-0 translate-y-4 group p-6 bg-white border border-dashed border-stone-300 hover:border-brand transition-all duration-300 relative">
-            <span class="card-corner absolute -top-2 -left-1 text-stone-300 group-hover:text-brand text-sm select-none bg-stone-50">+</span>
-            <span class="card-corner absolute -top-2 -right-1 text-stone-300 group-hover:text-brand text-sm select-none bg-stone-50">+</span>
-            <span class="card-corner absolute -bottom-2 -left-1 text-stone-300 group-hover:text-brand text-sm select-none bg-stone-50">+</span>
-            <span class="card-corner absolute -bottom-2 -right-1 text-stone-300 group-hover:text-brand text-sm select-none bg-stone-50">+</span>
+          <div class="feature-card opacity-0 translate-y-4 group p-6 bg-white dark:bg-stone-900 border border-dashed border-stone-300 dark:border-stone-700 hover:border-brand transition-all duration-300 relative">
+            <span class="card-corner absolute -top-2 -left-1 text-stone-300 dark:text-stone-600 group-hover:text-brand text-sm select-none bg-stone-50 dark:bg-stone-950">+</span>
+            <span class="card-corner absolute -top-2 -right-1 text-stone-300 dark:text-stone-600 group-hover:text-brand text-sm select-none bg-stone-50 dark:bg-stone-950">+</span>
+            <span class="card-corner absolute -bottom-2 -left-1 text-stone-300 dark:text-stone-600 group-hover:text-brand text-sm select-none bg-stone-50 dark:bg-stone-950">+</span>
+            <span class="card-corner absolute -bottom-2 -right-1 text-stone-300 dark:text-stone-600 group-hover:text-brand text-sm select-none bg-stone-50 dark:bg-stone-950">+</span>
             <h3 class="text-lg font-semibold group-hover:text-brand transition">
               <span class="text-brand">{*}</span> Phoenix HEEx Integration
             </h3>
-            <a href="https://hexdocs.pm/mdex/phoenix_live_view_heex.html" target="_blank" rel="noopener" class="text-xs text-stone-400 hover:text-brand transition mb-3 inline-block">
+            <a href="https://hexdocs.pm/mdex/phoenix_live_view_heex.html" target="_blank" rel="noopener" class="text-xs text-stone-400 dark:text-stone-500 hover:text-brand transition mb-3 inline-block">
               docs →
             </a>
-            <p class="text-stone-600 text-sm mb-4">
+            <p class="text-stone-600 dark:text-stone-400 text-sm mb-4">
               Native rendering to <a href="https://hexdocs.pm/phoenix_live_view/Phoenix.LiveView.Rendered.html" target="_blank" rel="noopener" class="text-brand hover:underline">Phoenix.LiveView.Rendered</a> for LiveView integration.
             </p>
-            <code class="text-xs bg-stone-100 px-2 py-1 text-brand border border-stone-200">
+            <code class="text-xs bg-stone-100 dark:bg-stone-800 px-2 py-1 text-brand border border-stone-200 dark:border-stone-700">
               ~MD[# &#123;@title&#125;]HEEX
             </code>
           </div>
 
-          <div class="feature-card opacity-0 translate-y-4 group p-6 bg-white border border-dashed border-stone-300 hover:border-brand transition-all duration-300 relative">
-            <span class="card-corner absolute -top-2 -left-1 text-stone-300 group-hover:text-brand text-sm select-none bg-stone-50">+</span>
-            <span class="card-corner absolute -top-2 -right-1 text-stone-300 group-hover:text-brand text-sm select-none bg-stone-50">+</span>
-            <span class="card-corner absolute -bottom-2 -left-1 text-stone-300 group-hover:text-brand text-sm select-none bg-stone-50">+</span>
-            <span class="card-corner absolute -bottom-2 -right-1 text-stone-300 group-hover:text-brand text-sm select-none bg-stone-50">+</span>
+          <div class="feature-card opacity-0 translate-y-4 group p-6 bg-white dark:bg-stone-900 border border-dashed border-stone-300 dark:border-stone-700 hover:border-brand transition-all duration-300 relative">
+            <span class="card-corner absolute -top-2 -left-1 text-stone-300 dark:text-stone-600 group-hover:text-brand text-sm select-none bg-stone-50 dark:bg-stone-950">+</span>
+            <span class="card-corner absolute -top-2 -right-1 text-stone-300 dark:text-stone-600 group-hover:text-brand text-sm select-none bg-stone-50 dark:bg-stone-950">+</span>
+            <span class="card-corner absolute -bottom-2 -left-1 text-stone-300 dark:text-stone-600 group-hover:text-brand text-sm select-none bg-stone-50 dark:bg-stone-950">+</span>
+            <span class="card-corner absolute -bottom-2 -right-1 text-stone-300 dark:text-stone-600 group-hover:text-brand text-sm select-none bg-stone-50 dark:bg-stone-950">+</span>
             <h3 class="text-lg font-semibold group-hover:text-brand transition">
               <span class="text-brand">[#]</span> Syntax Highlighting
             </h3>
-            <a href="https://hexdocs.pm/mdex/syntax_highlight.html" target="_blank" rel="noopener" class="text-xs text-stone-400 hover:text-brand transition mb-3 inline-block">
+            <a href="https://hexdocs.pm/mdex/syntax_highlight.html" target="_blank" rel="noopener" class="text-xs text-stone-400 dark:text-stone-500 hover:text-brand transition mb-3 inline-block">
               docs →
             </a>
-            <p class="text-stone-600 text-sm mb-4">
+            <p class="text-stone-600 dark:text-stone-400 text-sm mb-4">
               100+ themes and 70+ languages powered by Tree-sitter and Neovim. Code blocks look beautiful out of the box.
             </p>
             <a href="https://lumis.sh" target="_blank" rel="noopener" class="text-xs text-brand hover:underline">
@@ -509,135 +513,135 @@ MDEx.to_html!(<span class="text-emerald-700">"# Hello"</span>)
             </a>
           </div>
 
-          <div class="feature-card opacity-0 translate-y-4 group p-6 bg-white border border-dashed border-stone-300 hover:border-brand transition-all duration-300 relative">
-            <span class="card-corner absolute -top-2 -left-1 text-stone-300 group-hover:text-brand text-sm select-none bg-stone-50">+</span>
-            <span class="card-corner absolute -top-2 -right-1 text-stone-300 group-hover:text-brand text-sm select-none bg-stone-50">+</span>
-            <span class="card-corner absolute -bottom-2 -left-1 text-stone-300 group-hover:text-brand text-sm select-none bg-stone-50">+</span>
-            <span class="card-corner absolute -bottom-2 -right-1 text-stone-300 group-hover:text-brand text-sm select-none bg-stone-50">+</span>
+          <div class="feature-card opacity-0 translate-y-4 group p-6 bg-white dark:bg-stone-900 border border-dashed border-stone-300 dark:border-stone-700 hover:border-brand transition-all duration-300 relative">
+            <span class="card-corner absolute -top-2 -left-1 text-stone-300 dark:text-stone-600 group-hover:text-brand text-sm select-none bg-stone-50 dark:bg-stone-950">+</span>
+            <span class="card-corner absolute -top-2 -right-1 text-stone-300 dark:text-stone-600 group-hover:text-brand text-sm select-none bg-stone-50 dark:bg-stone-950">+</span>
+            <span class="card-corner absolute -bottom-2 -left-1 text-stone-300 dark:text-stone-600 group-hover:text-brand text-sm select-none bg-stone-50 dark:bg-stone-950">+</span>
+            <span class="card-corner absolute -bottom-2 -right-1 text-stone-300 dark:text-stone-600 group-hover:text-brand text-sm select-none bg-stone-50 dark:bg-stone-950">+</span>
             <h3 class="text-lg font-semibold group-hover:text-brand transition">
               <span class="text-brand">&lt;/&gt;</span> Document Manipulation
             </h3>
-            <a href="https://hexdocs.pm/mdex/MDEx.Document.html" target="_blank" rel="noopener" class="text-xs text-stone-400 hover:text-brand transition mb-3 inline-block">
+            <a href="https://hexdocs.pm/mdex/MDEx.Document.html" target="_blank" rel="noopener" class="text-xs text-stone-400 dark:text-stone-500 hover:text-brand transition mb-3 inline-block">
               docs →
             </a>
-            <p class="text-stone-600 text-sm mb-4">
+            <p class="text-stone-600 dark:text-stone-400 text-sm mb-4">
               Full AST with Enumerable, Collectable, and Access protocols. Parse, traverse, and transform.
             </p>
-            <code class="text-xs bg-stone-100 px-2 py-1 text-brand border border-stone-200">
+            <code class="text-xs bg-stone-100 dark:bg-stone-800 px-2 py-1 text-brand border border-stone-200 dark:border-stone-700">
               MDEx.Document
             </code>
           </div>
 
-          <div class="feature-card opacity-0 translate-y-4 group p-6 bg-white border border-dashed border-stone-300 hover:border-brand transition-all duration-300 relative">
-            <span class="card-corner absolute -top-2 -left-1 text-stone-300 group-hover:text-brand text-sm select-none bg-stone-50">+</span>
-            <span class="card-corner absolute -top-2 -right-1 text-stone-300 group-hover:text-brand text-sm select-none bg-stone-50">+</span>
-            <span class="card-corner absolute -bottom-2 -left-1 text-stone-300 group-hover:text-brand text-sm select-none bg-stone-50">+</span>
-            <span class="card-corner absolute -bottom-2 -right-1 text-stone-300 group-hover:text-brand text-sm select-none bg-stone-50">+</span>
+          <div class="feature-card opacity-0 translate-y-4 group p-6 bg-white dark:bg-stone-900 border border-dashed border-stone-300 dark:border-stone-700 hover:border-brand transition-all duration-300 relative">
+            <span class="card-corner absolute -top-2 -left-1 text-stone-300 dark:text-stone-600 group-hover:text-brand text-sm select-none bg-stone-50 dark:bg-stone-950">+</span>
+            <span class="card-corner absolute -top-2 -right-1 text-stone-300 dark:text-stone-600 group-hover:text-brand text-sm select-none bg-stone-50 dark:bg-stone-950">+</span>
+            <span class="card-corner absolute -bottom-2 -left-1 text-stone-300 dark:text-stone-600 group-hover:text-brand text-sm select-none bg-stone-50 dark:bg-stone-950">+</span>
+            <span class="card-corner absolute -bottom-2 -right-1 text-stone-300 dark:text-stone-600 group-hover:text-brand text-sm select-none bg-stone-50 dark:bg-stone-950">+</span>
             <h3 class="text-lg font-semibold group-hover:text-brand transition">
               <span class="text-brand">[+]</span> Plugin System
             </h3>
-            <a href="https://hexdocs.pm/mdex/plugins.html" target="_blank" rel="noopener" class="text-xs text-stone-400 hover:text-brand transition mb-3 inline-block">
+            <a href="https://hexdocs.pm/mdex/plugins.html" target="_blank" rel="noopener" class="text-xs text-stone-400 dark:text-stone-500 hover:text-brand transition mb-3 inline-block">
               docs →
             </a>
-            <p class="text-stone-600 text-sm mb-4">
+            <p class="text-stone-600 dark:text-stone-400 text-sm mb-4">
               Extend functionality with custom plugins. Process documents at any stage of the pipeline.
             </p>
-            <code class="text-xs bg-stone-100 px-2 py-1 text-brand border border-stone-200">
+            <code class="text-xs bg-stone-100 dark:bg-stone-800 px-2 py-1 text-brand border border-stone-200 dark:border-stone-700">
               GFM, Mermaid, KaTeX
             </code>
           </div>
 
-          <div class="feature-card opacity-0 translate-y-4 group p-6 bg-white border border-dashed border-stone-300 hover:border-brand transition-all duration-300 relative">
-            <span class="card-corner absolute -top-2 -left-1 text-stone-300 group-hover:text-brand text-sm select-none bg-stone-50">+</span>
-            <span class="card-corner absolute -top-2 -right-1 text-stone-300 group-hover:text-brand text-sm select-none bg-stone-50">+</span>
-            <span class="card-corner absolute -bottom-2 -left-1 text-stone-300 group-hover:text-brand text-sm select-none bg-stone-50">+</span>
-            <span class="card-corner absolute -bottom-2 -right-1 text-stone-300 group-hover:text-brand text-sm select-none bg-stone-50">+</span>
+          <div class="feature-card opacity-0 translate-y-4 group p-6 bg-white dark:bg-stone-900 border border-dashed border-stone-300 dark:border-stone-700 hover:border-brand transition-all duration-300 relative">
+            <span class="card-corner absolute -top-2 -left-1 text-stone-300 dark:text-stone-600 group-hover:text-brand text-sm select-none bg-stone-50 dark:bg-stone-950">+</span>
+            <span class="card-corner absolute -top-2 -right-1 text-stone-300 dark:text-stone-600 group-hover:text-brand text-sm select-none bg-stone-50 dark:bg-stone-950">+</span>
+            <span class="card-corner absolute -bottom-2 -left-1 text-stone-300 dark:text-stone-600 group-hover:text-brand text-sm select-none bg-stone-50 dark:bg-stone-950">+</span>
+            <span class="card-corner absolute -bottom-2 -right-1 text-stone-300 dark:text-stone-600 group-hover:text-brand text-sm select-none bg-stone-50 dark:bg-stone-950">+</span>
             <h3 class="text-lg font-semibold group-hover:text-brand transition">
               <span class="text-brand">&gt;&gt;&gt;</span> AI Streaming Support
             </h3>
-            <a href="https://hexdocs.pm/mdex/MDEx.Document.html#module-streaming" target="_blank" rel="noopener" class="text-xs text-stone-400 hover:text-brand transition mb-3 inline-block">
+            <a href="https://hexdocs.pm/mdex/MDEx.Document.html#module-streaming" target="_blank" rel="noopener" class="text-xs text-stone-400 dark:text-stone-500 hover:text-brand transition mb-3 inline-block">
               docs →
             </a>
-            <p class="text-stone-600 text-sm mb-4">
+            <p class="text-stone-600 dark:text-stone-400 text-sm mb-4">
               Process incomplete markdown fragments progressively. Perfect for ChatGPT-style interfaces.
             </p>
-            <code class="text-xs bg-stone-100 px-2 py-1 text-brand border border-stone-200">
+            <code class="text-xs bg-stone-100 dark:bg-stone-800 px-2 py-1 text-brand border border-stone-200 dark:border-stone-700">
               streaming: true
             </code>
           </div>
 
-          <div class="feature-card opacity-0 translate-y-4 group p-6 bg-white border border-dashed border-stone-300 hover:border-brand transition-all duration-300 relative">
-            <span class="card-corner absolute -top-2 -left-1 text-stone-300 group-hover:text-brand text-sm select-none bg-stone-50">+</span>
-            <span class="card-corner absolute -top-2 -right-1 text-stone-300 group-hover:text-brand text-sm select-none bg-stone-50">+</span>
-            <span class="card-corner absolute -bottom-2 -left-1 text-stone-300 group-hover:text-brand text-sm select-none bg-stone-50">+</span>
-            <span class="card-corner absolute -bottom-2 -right-1 text-stone-300 group-hover:text-brand text-sm select-none bg-stone-50">+</span>
+          <div class="feature-card opacity-0 translate-y-4 group p-6 bg-white dark:bg-stone-900 border border-dashed border-stone-300 dark:border-stone-700 hover:border-brand transition-all duration-300 relative">
+            <span class="card-corner absolute -top-2 -left-1 text-stone-300 dark:text-stone-600 group-hover:text-brand text-sm select-none bg-stone-50 dark:bg-stone-950">+</span>
+            <span class="card-corner absolute -top-2 -right-1 text-stone-300 dark:text-stone-600 group-hover:text-brand text-sm select-none bg-stone-50 dark:bg-stone-950">+</span>
+            <span class="card-corner absolute -bottom-2 -left-1 text-stone-300 dark:text-stone-600 group-hover:text-brand text-sm select-none bg-stone-50 dark:bg-stone-950">+</span>
+            <span class="card-corner absolute -bottom-2 -right-1 text-stone-300 dark:text-stone-600 group-hover:text-brand text-sm select-none bg-stone-50 dark:bg-stone-950">+</span>
             <h3 class="text-lg font-semibold group-hover:text-brand transition">
               <span class="text-brand">&lt;-&gt;</span> Multiple Output Formats
             </h3>
-            <a href="https://hexdocs.pm/mdex/MDEx.html" target="_blank" rel="noopener" class="text-xs text-stone-400 hover:text-brand transition mb-3 inline-block">
+            <a href="https://hexdocs.pm/mdex/MDEx.html" target="_blank" rel="noopener" class="text-xs text-stone-400 dark:text-stone-500 hover:text-brand transition mb-3 inline-block">
               docs →
             </a>
-            <p class="text-stone-600 text-sm mb-4">
+            <p class="text-stone-600 dark:text-stone-400 text-sm mb-4">
               Output to HTML, HEEx, JSON, XML, Quill Delta, and Markdown. One parser, many outputs.
             </p>
-            <code class="text-xs bg-stone-100 px-2 py-1 text-brand border border-stone-200">
+            <code class="text-xs bg-stone-100 dark:bg-stone-800 px-2 py-1 text-brand border border-stone-200 dark:border-stone-700">
               to_&#123;html,json,xml,delta,markdown&#125;
             </code>
           </div>
 
-          <div class="feature-card opacity-0 translate-y-4 group p-6 bg-white border border-dashed border-stone-300 hover:border-brand transition-all duration-300 relative">
-            <span class="card-corner absolute -top-2 -left-1 text-stone-300 group-hover:text-brand text-sm select-none bg-stone-50">+</span>
-            <span class="card-corner absolute -top-2 -right-1 text-stone-300 group-hover:text-brand text-sm select-none bg-stone-50">+</span>
-            <span class="card-corner absolute -bottom-2 -left-1 text-stone-300 group-hover:text-brand text-sm select-none bg-stone-50">+</span>
-            <span class="card-corner absolute -bottom-2 -right-1 text-stone-300 group-hover:text-brand text-sm select-none bg-stone-50">+</span>
+          <div class="feature-card opacity-0 translate-y-4 group p-6 bg-white dark:bg-stone-900 border border-dashed border-stone-300 dark:border-stone-700 hover:border-brand transition-all duration-300 relative">
+            <span class="card-corner absolute -top-2 -left-1 text-stone-300 dark:text-stone-600 group-hover:text-brand text-sm select-none bg-stone-50 dark:bg-stone-950">+</span>
+            <span class="card-corner absolute -top-2 -right-1 text-stone-300 dark:text-stone-600 group-hover:text-brand text-sm select-none bg-stone-50 dark:bg-stone-950">+</span>
+            <span class="card-corner absolute -bottom-2 -left-1 text-stone-300 dark:text-stone-600 group-hover:text-brand text-sm select-none bg-stone-50 dark:bg-stone-950">+</span>
+            <span class="card-corner absolute -bottom-2 -right-1 text-stone-300 dark:text-stone-600 group-hover:text-brand text-sm select-none bg-stone-50 dark:bg-stone-950">+</span>
             <h3 class="text-lg font-semibold group-hover:text-brand transition">
               <span class="text-brand">[!]</span> Safety & Sanitization
             </h3>
-            <a href="https://hexdocs.pm/mdex/safety.html" target="_blank" rel="noopener" class="text-xs text-stone-400 hover:text-brand transition mb-3 inline-block">
+            <a href="https://hexdocs.pm/mdex/safety.html" target="_blank" rel="noopener" class="text-xs text-stone-400 dark:text-stone-500 hover:text-brand transition mb-3 inline-block">
               docs →
             </a>
-            <p class="text-stone-600 text-sm mb-4">
+            <p class="text-stone-600 dark:text-stone-400 text-sm mb-4">
               Built-in XSS protection with configurable sanitization. Safely render untrusted markdown content.
             </p>
-            <code class="text-xs bg-stone-100 px-2 py-1 text-brand border border-stone-200">
+            <code class="text-xs bg-stone-100 dark:bg-stone-800 px-2 py-1 text-brand border border-stone-200 dark:border-stone-700">
               MDEx.Document.default_sanitize_options()
             </code>
           </div>
 
-          <div class="feature-card opacity-0 translate-y-4 group p-6 bg-white border border-dashed border-stone-300 hover:border-brand transition-all duration-300 relative">
-            <span class="card-corner absolute -top-2 -left-1 text-stone-300 group-hover:text-brand text-sm select-none bg-stone-50">+</span>
-            <span class="card-corner absolute -top-2 -right-1 text-stone-300 group-hover:text-brand text-sm select-none bg-stone-50">+</span>
-            <span class="card-corner absolute -bottom-2 -left-1 text-stone-300 group-hover:text-brand text-sm select-none bg-stone-50">+</span>
-            <span class="card-corner absolute -bottom-2 -right-1 text-stone-300 group-hover:text-brand text-sm select-none bg-stone-50">+</span>
+          <div class="feature-card opacity-0 translate-y-4 group p-6 bg-white dark:bg-stone-900 border border-dashed border-stone-300 dark:border-stone-700 hover:border-brand transition-all duration-300 relative">
+            <span class="card-corner absolute -top-2 -left-1 text-stone-300 dark:text-stone-600 group-hover:text-brand text-sm select-none bg-stone-50 dark:bg-stone-950">+</span>
+            <span class="card-corner absolute -top-2 -right-1 text-stone-300 dark:text-stone-600 group-hover:text-brand text-sm select-none bg-stone-50 dark:bg-stone-950">+</span>
+            <span class="card-corner absolute -bottom-2 -left-1 text-stone-300 dark:text-stone-600 group-hover:text-brand text-sm select-none bg-stone-50 dark:bg-stone-950">+</span>
+            <span class="card-corner absolute -bottom-2 -right-1 text-stone-300 dark:text-stone-600 group-hover:text-brand text-sm select-none bg-stone-50 dark:bg-stone-950">+</span>
             <h3 class="text-lg font-semibold group-hover:text-brand transition">
               <span class="text-brand">```</span> Code Block Decorators
             </h3>
-            <a href="https://hexdocs.pm/mdex/code_block_decorators-2.html" target="_blank" rel="noopener" class="text-xs text-stone-400 hover:text-brand transition mb-3 inline-block">
+            <a href="https://hexdocs.pm/mdex/code_block_decorators-2.html" target="_blank" rel="noopener" class="text-xs text-stone-400 dark:text-stone-500 hover:text-brand transition mb-3 inline-block">
               docs →
             </a>
-            <p class="text-stone-600 text-sm mb-4">
+            <p class="text-stone-600 dark:text-stone-400 text-sm mb-4">
               Override themes, highlight lines, and add CSS classes to code blocks with inline attributes.
             </p>
-            <code class="text-xs bg-stone-100 px-2 py-1 text-brand border border-stone-200">
+            <code class="text-xs bg-stone-100 dark:bg-stone-800 px-2 py-1 text-brand border border-stone-200 dark:border-stone-700">
               ```js theme=nord highlight_lines="2-3"
             </code>
           </div>
 
-          <div class="feature-card opacity-0 translate-y-4 group p-6 bg-white border border-dashed border-stone-300 hover:border-brand transition-all duration-300 relative">
-            <span class="card-corner absolute -top-2 -left-1 text-stone-300 group-hover:text-brand text-sm select-none bg-stone-50">+</span>
-            <span class="card-corner absolute -top-2 -right-1 text-stone-300 group-hover:text-brand text-sm select-none bg-stone-50">+</span>
-            <span class="card-corner absolute -bottom-2 -left-1 text-stone-300 group-hover:text-brand text-sm select-none bg-stone-50">+</span>
-            <span class="card-corner absolute -bottom-2 -right-1 text-stone-300 group-hover:text-brand text-sm select-none bg-stone-50">+</span>
+          <div class="feature-card opacity-0 translate-y-4 group p-6 bg-white dark:bg-stone-900 border border-dashed border-stone-300 dark:border-stone-700 hover:border-brand transition-all duration-300 relative">
+            <span class="card-corner absolute -top-2 -left-1 text-stone-300 dark:text-stone-600 group-hover:text-brand text-sm select-none bg-stone-50 dark:bg-stone-950">+</span>
+            <span class="card-corner absolute -top-2 -right-1 text-stone-300 dark:text-stone-600 group-hover:text-brand text-sm select-none bg-stone-50 dark:bg-stone-950">+</span>
+            <span class="card-corner absolute -bottom-2 -left-1 text-stone-300 dark:text-stone-600 group-hover:text-brand text-sm select-none bg-stone-50 dark:bg-stone-950">+</span>
+            <span class="card-corner absolute -bottom-2 -right-1 text-stone-300 dark:text-stone-600 group-hover:text-brand text-sm select-none bg-stone-50 dark:bg-stone-950">+</span>
             <h3 class="text-lg font-semibold group-hover:text-brand transition">
               <span class="text-brand">:)</span> Emoji Built-in
             </h3>
-            <a href="https://hexdocs.pm/mdex/MDEx.Document.html#t:options/0-options" target="_blank" rel="noopener" class="text-xs text-stone-400 hover:text-brand transition mb-3 inline-block">
+            <a href="https://hexdocs.pm/mdex/MDEx.Document.html#t:options/0-options" target="_blank" rel="noopener" class="text-xs text-stone-400 dark:text-stone-500 hover:text-brand transition mb-3 inline-block">
               docs →
             </a>
-            <p class="text-stone-600 text-sm mb-4">
+            <p class="text-stone-600 dark:text-stone-400 text-sm mb-4">
               Shortcode support for emoji conversion. Write :rocket: and get the actual 🚀 emoji.
             </p>
-            <code class="text-xs bg-stone-100 px-2 py-1 text-brand border border-stone-200">
+            <code class="text-xs bg-stone-100 dark:bg-stone-800 px-2 py-1 text-brand border border-stone-200 dark:border-stone-700">
               shortcodes: true
             </code>
           </div>
@@ -645,25 +649,25 @@ MDEx.to_html!(<span class="text-emerald-700">"# Hello"</span>)
       </div>
     </section>
 
-    <section id="phoenix-liveview-ready" class="py-20 sm:py-24 px-4 sm:px-6 bg-stone-100/50 border-y border-dashed border-stone-200 overflow-hidden">
+    <section id="phoenix-liveview-ready" class="py-20 sm:py-24 px-4 sm:px-6 bg-stone-100/50 dark:bg-stone-900/50 border-y border-dashed border-stone-200 dark:border-stone-700 overflow-hidden">
       <div class="max-w-6xl mx-auto">
         <h2 class="text-2xl sm:text-3xl font-bold mb-4 text-center" data-animate="slide-up">
           <a href="#phoenix-liveview-ready" class="hover:underline hover:decoration-brand hover:decoration-2 transition-all">
             <span class="text-brand">##</span> Phoenix LiveView Ready
           </a>
         </h2>
-        <p class="text-stone-600 text-center mb-12 max-w-2xl mx-auto" data-animate="fade-in">
+        <p class="text-stone-600 dark:text-stone-400 text-center mb-12 max-w-2xl mx-auto" data-animate="fade-in">
           Write markdown with HEEx components. Render directly to LiveView.
         </p>
 
         <div class="grid lg:grid-cols-2 gap-8 items-center" data-animate="slide-up">
           <div class="code-block">
-            <div class="flex items-center justify-between px-4 py-2 bg-stone-100 border-b border-stone-200">
-              <span class="text-sm text-stone-500">// page_live.ex</span>
-              <span class="text-stone-300 text-xs">[-][o][x]</span>
+            <div class="flex items-center justify-between px-4 py-2 bg-stone-100 dark:bg-stone-800 border-b border-stone-200 dark:border-stone-700">
+              <span class="text-sm text-stone-500 dark:text-stone-400">// page_live.ex</span>
+              <span class="text-stone-300 dark:text-stone-600 text-xs">[-][o][x]</span>
             </div>
-            <pre class="p-4 text-sm overflow-x-auto bg-white"><code class="text-stone-800"><span class="text-brand">def</span> <span class="text-blue-700">render</span>(assigns) <span class="text-brand">do</span>
-  <span class="text-brand">~MD</span><span class="text-emerald-700">"""
+            <pre class="p-4 text-sm overflow-x-auto bg-white dark:bg-stone-900"><code class="text-stone-800 dark:text-stone-200"><span class="text-brand">def</span> <span class="text-blue-700 dark:text-blue-400">render</span>(assigns) <span class="text-brand">do</span>
+  <span class="text-brand">~MD</span><span class="text-emerald-700 dark:text-emerald-400">"""
   # Welcome, {@user.name}!
 
   &lt;.button phx-click="upgrade"&gt;
@@ -675,13 +679,13 @@ MDEx.to_html!(<span class="text-emerald-700">"# Hello"</span>)
 <span class="text-brand">end</span></code></pre>
           </div>
 
-          <div class="border border-dashed border-stone-300 p-8 bg-white">
-            <pre class="text-stone-300 text-xs mb-4" aria-hidden="true">>> Rendered Output</pre>
-            <h1 class="text-2xl font-bold mb-4 text-stone-900">Welcome, John!</h1>
+          <div class="border border-dashed border-stone-300 dark:border-stone-700 p-8 bg-white dark:bg-stone-900">
+            <pre class="text-stone-300 dark:text-stone-600 text-xs mb-4" aria-hidden="true">>> Rendered Output</pre>
+            <h1 class="text-2xl font-bold mb-4 text-stone-900 dark:text-stone-100">Welcome, John!</h1>
             <button class="px-5 py-2.5 bg-brand text-white mb-4 hover:bg-brand-dark transition font-medium">
               Upgrade to Pro
             </button>
-            <p class="text-stone-600">Your plan: <strong class="text-stone-900">Free</strong></p>
+            <p class="text-stone-600 dark:text-stone-400">Your plan: <strong class="text-stone-900 dark:text-stone-100">Free</strong></p>
           </div>
         </div>
       </div>
@@ -694,42 +698,42 @@ MDEx.to_html!(<span class="text-emerald-700">"# Hello"</span>)
             <span class="text-brand">##</span> Built for AI Applications
           </a>
         </h2>
-        <p class="text-stone-600 text-center mb-12" data-animate="fade-in">
-          Stream incomplete markdown fragments as they arrive.
-          Perfect for ChatGPT-style interfaces.
+        <p class="text-stone-600 dark:text-stone-400 text-center mb-12" data-animate="fade-in">
+          Stream incomplete token fragments as they arrive.
+          Made for AI-style interfaces.
         </p>
 
         <div class="code-block max-w-2xl mx-auto" data-animate="slide-up">
-          <div class="px-4 py-2 bg-stone-100 border-b border-stone-200 flex items-center gap-2">
+          <div class="px-4 py-2 bg-stone-100 dark:bg-stone-800 border-b border-stone-200 dark:border-stone-700 flex items-center gap-2">
             <span class="text-emerald-600">[*]</span>
-            <span class="text-sm text-stone-500">AI Assistant</span>
-            <span class="text-stone-300 ml-auto text-xs">[-][o][x]</span>
+            <span class="text-sm text-stone-500 dark:text-stone-400">AI Assistant</span>
+            <span class="text-stone-300 dark:text-stone-600 ml-auto text-xs">[-][o][x]</span>
           </div>
 
-          <div class="p-6 bg-white">
-            <div class="mb-6 p-3 border border-dashed border-brand/30 inline-block">
-              <p class="text-sm text-stone-700">>> Write a poem about Elixir</p>
+          <div class="p-6 bg-white dark:bg-stone-900">
+            <div class="mb-6 p-3 border border-dashed border-brand/30 dark:border-brand/40 inline-block">
+              <p class="text-sm text-stone-700 dark:text-stone-300">>> Write a poem about Elixir</p>
             </div>
 
-            <div id="streaming-content" class="text-stone-800 leading-relaxed min-h-[100px]">
+            <div id="streaming-content" class="text-stone-800 dark:text-stone-200 leading-relaxed min-h-[100px]">
               <span class="animate-blink text-brand">_</span>
             </div>
           </div>
         </div>
 
         <div class="mt-8 code-block max-w-2xl mx-auto" data-animate="slide-up">
-          <div class="px-4 py-2 bg-stone-100 border-b border-stone-200">
-            <span class="text-sm text-stone-500">// How it works</span>
+          <div class="px-4 py-2 bg-stone-100 dark:bg-stone-800 border-b border-stone-200 dark:border-stone-700">
+            <span class="text-sm text-stone-500 dark:text-stone-400">// How it works</span>
           </div>
-          <pre class="p-4 text-sm overflow-x-auto bg-white"><code class="text-stone-800">MDEx.<span class="text-blue-700">new</span>(<span class="text-amber-700">streaming:</span> <span class="text-brand">true</span>)
-|> MDEx.Document.<span class="text-blue-700">put_markdown</span>(<span class="text-emerald-700">"**The Rust"</span>)
-|> MDEx.<span class="text-blue-700">to_html!</span>()
-<span class="text-stone-400"># => "&lt;p&gt;&lt;strong&gt;The Rust&lt;/strong&gt;&lt;/p&gt;"</span></code></pre>
+          <pre class="p-4 text-sm overflow-x-auto bg-white dark:bg-stone-900"><code class="text-stone-800 dark:text-stone-200">MDEx.<span class="text-blue-700 dark:text-blue-400">new</span>(<span class="text-amber-700 dark:text-amber-400">streaming:</span> <span class="text-brand">true</span>)
+|> MDEx.Document.<span class="text-blue-700 dark:text-blue-400">put_markdown</span>(<span class="text-emerald-700 dark:text-emerald-400">"**The Rust"</span>)
+|> MDEx.<span class="text-blue-700 dark:text-blue-400">to_html!</span>()
+<span class="text-stone-400 dark:text-stone-500"># => "&lt;p&gt;&lt;strong&gt;The Rust&lt;/strong&gt;&lt;/p&gt;"</span></code></pre>
         </div>
       </div>
     </section>
 
-    <section id="why-mdex" class="py-20 sm:py-24 px-4 sm:px-6 bg-stone-100/50 border-y border-dashed border-stone-200 overflow-hidden">
+    <section id="why-mdex" class="py-20 sm:py-24 px-4 sm:px-6 bg-stone-100/50 dark:bg-stone-900/50 border-y border-dashed border-stone-200 dark:border-stone-700 overflow-hidden">
       <div class="max-w-4xl mx-auto">
         <div class="text-center mb-12" data-animate="slide-up">
           <h2 class="text-2xl sm:text-3xl font-bold">
@@ -739,147 +743,147 @@ MDEx.to_html!(<span class="text-emerald-700">"# Hello"</span>)
           </h2>
         </div>
 
-        <div class="overflow-x-auto border border-dashed border-stone-300 bg-white" data-animate="fade-in">
+        <div class="overflow-x-auto border border-dashed border-stone-300 dark:border-stone-700 bg-white dark:bg-stone-900" data-animate="fade-in">
           <table class="w-full text-sm font-mono">
             <thead>
-              <tr class="border-b border-stone-200">
-                <th class="text-left py-4 px-4 text-stone-500 font-medium">Feature</th>
-                <th class="py-4 px-4 bg-brand/10 text-brand font-bold border-x border-stone-200">MDEx</th>
-                <th class="py-4 px-4 text-stone-500 font-medium">Earmark</th>
-                <th class="py-4 px-4 text-stone-500 font-medium">md</th>
-                <th class="py-4 px-4 text-stone-500 font-medium">cmark</th>
+              <tr class="border-b border-stone-200 dark:border-stone-700">
+                <th class="text-left py-4 px-4 text-stone-500 dark:text-stone-400 font-medium">Feature</th>
+                <th class="py-4 px-4 bg-brand/10 dark:bg-brand/20 text-brand font-bold border-x border-stone-200 dark:border-stone-700">MDEx</th>
+                <th class="py-4 px-4 text-stone-500 dark:text-stone-400 font-medium">Earmark</th>
+                <th class="py-4 px-4 text-stone-500 dark:text-stone-400 font-medium">md</th>
+                <th class="py-4 px-4 text-stone-500 dark:text-stone-400 font-medium">cmark</th>
               </tr>
             </thead>
             <tbody>
-              <tr class="border-b border-stone-100">
-                <td class="py-3 px-4 text-stone-700">Active</td>
-                <td class="py-3 px-4 bg-brand/5 text-center border-x border-stone-200"><span class="text-emerald-600">[x]</span></td>
+              <tr class="border-b border-stone-100 dark:border-stone-800">
+                <td class="py-3 px-4 text-stone-700 dark:text-stone-300">Active</td>
+                <td class="py-3 px-4 bg-brand/5 dark:bg-brand/10 text-center border-x border-stone-200 dark:border-stone-700"><span class="text-emerald-600">[x]</span></td>
                 <td class="py-3 px-4 text-center"><span class="text-emerald-600">[x]</span></td>
                 <td class="py-3 px-4 text-center"><span class="text-emerald-600">[x]</span></td>
                 <td class="py-3 px-4 text-center"><span class="text-red-600">[ ]</span></td>
               </tr>
-              <tr class="border-b border-stone-100">
-                <td class="py-3 px-4 text-stone-700">Pure Elixir</td>
-                <td class="py-3 px-4 bg-brand/5 text-center border-x border-stone-200"><span class="text-red-600">[ ]</span></td>
+              <tr class="border-b border-stone-100 dark:border-stone-800">
+                <td class="py-3 px-4 text-stone-700 dark:text-stone-300">Pure Elixir</td>
+                <td class="py-3 px-4 bg-brand/5 dark:bg-brand/10 text-center border-x border-stone-200 dark:border-stone-700"><span class="text-red-600">[ ]</span></td>
                 <td class="py-3 px-4 text-center"><span class="text-emerald-600">[x]</span></td>
                 <td class="py-3 px-4 text-center"><span class="text-emerald-600">[x]</span></td>
                 <td class="py-3 px-4 text-center"><span class="text-red-600">[ ]</span></td>
               </tr>
-              <tr class="border-b border-stone-100">
-                <td class="py-3 px-4 text-stone-700">Extensible</td>
-                <td class="py-3 px-4 bg-brand/5 text-center border-x border-stone-200"><span class="text-emerald-600">[x]</span></td>
+              <tr class="border-b border-stone-100 dark:border-stone-800">
+                <td class="py-3 px-4 text-stone-700 dark:text-stone-300">Extensible</td>
+                <td class="py-3 px-4 bg-brand/5 dark:bg-brand/10 text-center border-x border-stone-200 dark:border-stone-700"><span class="text-emerald-600">[x]</span></td>
                 <td class="py-3 px-4 text-center"><span class="text-emerald-600">[x]</span></td>
                 <td class="py-3 px-4 text-center"><span class="text-emerald-600">[x]</span></td>
                 <td class="py-3 px-4 text-center"><span class="text-red-600">[ ]</span></td>
               </tr>
-              <tr class="border-b border-stone-100">
-                <td class="py-3 px-4 text-stone-700">Syntax Highlighting</td>
-                <td class="py-3 px-4 bg-brand/5 text-center border-x border-stone-200"><span class="text-emerald-600">[x]</span></td>
+              <tr class="border-b border-stone-100 dark:border-stone-800">
+                <td class="py-3 px-4 text-stone-700 dark:text-stone-300">Syntax Highlighting</td>
+                <td class="py-3 px-4 bg-brand/5 dark:bg-brand/10 text-center border-x border-stone-200 dark:border-stone-700"><span class="text-emerald-600">[x]</span></td>
                 <td class="py-3 px-4 text-center"><span class="text-red-600">[ ]</span></td>
                 <td class="py-3 px-4 text-center"><span class="text-red-600">[ ]</span></td>
                 <td class="py-3 px-4 text-center"><span class="text-red-600">[ ]</span></td>
               </tr>
-              <tr class="border-b border-stone-100">
-                <td class="py-3 px-4 text-stone-700">Code Block Decorators</td>
-                <td class="py-3 px-4 bg-brand/5 text-center border-x border-stone-200"><span class="text-emerald-600">[x]</span></td>
+              <tr class="border-b border-stone-100 dark:border-stone-800">
+                <td class="py-3 px-4 text-stone-700 dark:text-stone-300">Code Block Decorators</td>
+                <td class="py-3 px-4 bg-brand/5 dark:bg-brand/10 text-center border-x border-stone-200 dark:border-stone-700"><span class="text-emerald-600">[x]</span></td>
                 <td class="py-3 px-4 text-center"><span class="text-red-600">[ ]</span></td>
                 <td class="py-3 px-4 text-center"><span class="text-red-600">[ ]</span></td>
                 <td class="py-3 px-4 text-center"><span class="text-red-600">[ ]</span></td>
               </tr>
-              <tr class="border-b border-stone-100">
-                <td class="py-3 px-4 text-stone-700">Streaming (fragments)</td>
-                <td class="py-3 px-4 bg-brand/5 text-center border-x border-stone-200"><span class="text-emerald-600">[x]</span></td>
+              <tr class="border-b border-stone-100 dark:border-stone-800">
+                <td class="py-3 px-4 text-stone-700 dark:text-stone-300">Streaming (fragments)</td>
+                <td class="py-3 px-4 bg-brand/5 dark:bg-brand/10 text-center border-x border-stone-200 dark:border-stone-700"><span class="text-emerald-600">[x]</span></td>
                 <td class="py-3 px-4 text-center"><span class="text-red-600">[ ]</span></td>
                 <td class="py-3 px-4 text-center"><span class="text-red-600">[ ]</span></td>
                 <td class="py-3 px-4 text-center"><span class="text-red-600">[ ]</span></td>
               </tr>
-              <tr class="border-b border-stone-100">
-                <td class="py-3 px-4 text-stone-700">Phoenix HEEx components</td>
-                <td class="py-3 px-4 bg-brand/5 text-center border-x border-stone-200"><span class="text-emerald-600">[x]</span></td>
+              <tr class="border-b border-stone-100 dark:border-stone-800">
+                <td class="py-3 px-4 text-stone-700 dark:text-stone-300">Phoenix HEEx components</td>
+                <td class="py-3 px-4 bg-brand/5 dark:bg-brand/10 text-center border-x border-stone-200 dark:border-stone-700"><span class="text-emerald-600">[x]</span></td>
                 <td class="py-3 px-4 text-center"><span class="text-red-600">[ ]</span></td>
                 <td class="py-3 px-4 text-center"><span class="text-red-600">[ ]</span></td>
                 <td class="py-3 px-4 text-center"><span class="text-red-600">[ ]</span></td>
               </tr>
-              <tr class="border-b border-stone-100">
-                <td class="py-3 px-4 text-stone-700">AST</td>
-                <td class="py-3 px-4 bg-brand/5 text-center border-x border-stone-200"><span class="text-emerald-600">[x]</span></td>
+              <tr class="border-b border-stone-100 dark:border-stone-800">
+                <td class="py-3 px-4 text-stone-700 dark:text-stone-300">AST</td>
+                <td class="py-3 px-4 bg-brand/5 dark:bg-brand/10 text-center border-x border-stone-200 dark:border-stone-700"><span class="text-emerald-600">[x]</span></td>
                 <td class="py-3 px-4 text-center"><span class="text-emerald-600">[x]</span></td>
                 <td class="py-3 px-4 text-center"><span class="text-emerald-600">[x]</span></td>
                 <td class="py-3 px-4 text-center"><span class="text-red-600">[ ]</span></td>
               </tr>
-              <tr class="border-b border-stone-100">
-                <td class="py-3 px-4 text-stone-700">AST to Markdown</td>
-                <td class="py-3 px-4 bg-brand/5 text-center border-x border-stone-200"><span class="text-emerald-600">[x]</span></td>
-                <td class="py-3 px-4 text-center"><span class="relative"><span class="text-amber-600">[~]</span><sup class="absolute -right-3 -top-1 text-xs text-stone-400">2</sup></span></td>
+              <tr class="border-b border-stone-100 dark:border-stone-800">
+                <td class="py-3 px-4 text-stone-700 dark:text-stone-300">AST to Markdown</td>
+                <td class="py-3 px-4 bg-brand/5 dark:bg-brand/10 text-center border-x border-stone-200 dark:border-stone-700"><span class="text-emerald-600">[x]</span></td>
+                <td class="py-3 px-4 text-center"><span class="relative"><span class="text-amber-600">[~]</span><sup class="absolute -right-3 -top-1 text-xs text-stone-400 dark:text-stone-500">2</sup></span></td>
                 <td class="py-3 px-4 text-center"><span class="text-red-600">[ ]</span></td>
                 <td class="py-3 px-4 text-center"><span class="text-red-600">[ ]</span></td>
               </tr>
-              <tr class="border-b border-stone-100">
-                <td class="py-3 px-4 text-stone-700">To HTML</td>
-                <td class="py-3 px-4 bg-brand/5 text-center border-x border-stone-200"><span class="text-emerald-600">[x]</span></td>
+              <tr class="border-b border-stone-100 dark:border-stone-800">
+                <td class="py-3 px-4 text-stone-700 dark:text-stone-300">To HTML</td>
+                <td class="py-3 px-4 bg-brand/5 dark:bg-brand/10 text-center border-x border-stone-200 dark:border-stone-700"><span class="text-emerald-600">[x]</span></td>
                 <td class="py-3 px-4 text-center"><span class="text-emerald-600">[x]</span></td>
                 <td class="py-3 px-4 text-center"><span class="text-emerald-600">[x]</span></td>
                 <td class="py-3 px-4 text-center"><span class="text-emerald-600">[x]</span></td>
               </tr>
-              <tr class="border-b border-stone-100">
-                <td class="py-3 px-4 text-stone-700">To JSON</td>
-                <td class="py-3 px-4 bg-brand/5 text-center border-x border-stone-200"><span class="text-emerald-600">[x]</span></td>
+              <tr class="border-b border-stone-100 dark:border-stone-800">
+                <td class="py-3 px-4 text-stone-700 dark:text-stone-300">To JSON</td>
+                <td class="py-3 px-4 bg-brand/5 dark:bg-brand/10 text-center border-x border-stone-200 dark:border-stone-700"><span class="text-emerald-600">[x]</span></td>
                 <td class="py-3 px-4 text-center"><span class="text-red-600">[ ]</span></td>
                 <td class="py-3 px-4 text-center"><span class="text-red-600">[ ]</span></td>
                 <td class="py-3 px-4 text-center"><span class="text-red-600">[ ]</span></td>
               </tr>
-              <tr class="border-b border-stone-100">
-                <td class="py-3 px-4 text-stone-700">To XML</td>
-                <td class="py-3 px-4 bg-brand/5 text-center border-x border-stone-200"><span class="text-emerald-600">[x]</span></td>
+              <tr class="border-b border-stone-100 dark:border-stone-800">
+                <td class="py-3 px-4 text-stone-700 dark:text-stone-300">To XML</td>
+                <td class="py-3 px-4 bg-brand/5 dark:bg-brand/10 text-center border-x border-stone-200 dark:border-stone-700"><span class="text-emerald-600">[x]</span></td>
                 <td class="py-3 px-4 text-center"><span class="text-red-600">[ ]</span></td>
                 <td class="py-3 px-4 text-center"><span class="text-red-600">[ ]</span></td>
                 <td class="py-3 px-4 text-center"><span class="text-emerald-600">[x]</span></td>
               </tr>
-              <tr class="border-b border-stone-100">
-                <td class="py-3 px-4 text-stone-700">To Manpage</td>
-                <td class="py-3 px-4 bg-brand/5 text-center border-x border-stone-200"><span class="text-red-600">[ ]</span></td>
+              <tr class="border-b border-stone-100 dark:border-stone-800">
+                <td class="py-3 px-4 text-stone-700 dark:text-stone-300">To Manpage</td>
+                <td class="py-3 px-4 bg-brand/5 dark:bg-brand/10 text-center border-x border-stone-200 dark:border-stone-700"><span class="text-red-600">[ ]</span></td>
                 <td class="py-3 px-4 text-center"><span class="text-red-600">[ ]</span></td>
                 <td class="py-3 px-4 text-center"><span class="text-red-600">[ ]</span></td>
                 <td class="py-3 px-4 text-center"><span class="text-emerald-600">[x]</span></td>
               </tr>
-              <tr class="border-b border-stone-100">
-                <td class="py-3 px-4 text-stone-700">To LaTeX</td>
-                <td class="py-3 px-4 bg-brand/5 text-center border-x border-stone-200"><span class="text-red-600">[ ]</span></td>
+              <tr class="border-b border-stone-100 dark:border-stone-800">
+                <td class="py-3 px-4 text-stone-700 dark:text-stone-300">To LaTeX</td>
+                <td class="py-3 px-4 bg-brand/5 dark:bg-brand/10 text-center border-x border-stone-200 dark:border-stone-700"><span class="text-red-600">[ ]</span></td>
                 <td class="py-3 px-4 text-center"><span class="text-red-600">[ ]</span></td>
                 <td class="py-3 px-4 text-center"><span class="text-red-600">[ ]</span></td>
                 <td class="py-3 px-4 text-center"><span class="text-emerald-600">[x]</span></td>
               </tr>
-              <tr class="border-b border-stone-100">
-                <td class="py-3 px-4 text-stone-700">To Quill Delta</td>
-                <td class="py-3 px-4 bg-brand/5 text-center border-x border-stone-200"><span class="text-emerald-600">[x]</span></td>
+              <tr class="border-b border-stone-100 dark:border-stone-800">
+                <td class="py-3 px-4 text-stone-700 dark:text-stone-300">To Quill Delta</td>
+                <td class="py-3 px-4 bg-brand/5 dark:bg-brand/10 text-center border-x border-stone-200 dark:border-stone-700"><span class="text-emerald-600">[x]</span></td>
                 <td class="py-3 px-4 text-center"><span class="text-red-600">[ ]</span></td>
                 <td class="py-3 px-4 text-center"><span class="text-red-600">[ ]</span></td>
                 <td class="py-3 px-4 text-center"><span class="text-red-600">[ ]</span></td>
               </tr>
-              <tr class="border-b border-stone-100">
-                <td class="py-3 px-4 text-stone-700">Emoji</td>
-                <td class="py-3 px-4 bg-brand/5 text-center border-x border-stone-200"><span class="text-emerald-600">[x]</span></td>
+              <tr class="border-b border-stone-100 dark:border-stone-800">
+                <td class="py-3 px-4 text-stone-700 dark:text-stone-300">Emoji</td>
+                <td class="py-3 px-4 bg-brand/5 dark:bg-brand/10 text-center border-x border-stone-200 dark:border-stone-700"><span class="text-emerald-600">[x]</span></td>
                 <td class="py-3 px-4 text-center"><span class="text-red-600">[ ]</span></td>
                 <td class="py-3 px-4 text-center"><span class="text-red-600">[ ]</span></td>
                 <td class="py-3 px-4 text-center"><span class="text-red-600">[ ]</span></td>
               </tr>
-              <tr class="border-b border-stone-100">
-                <td class="py-3 px-4 text-stone-700">GFM<sup class="text-xs text-stone-400 ml-0.5">3</sup></td>
-                <td class="py-3 px-4 bg-brand/5 text-center border-x border-stone-200"><span class="text-emerald-600">[x]</span></td>
+              <tr class="border-b border-stone-100 dark:border-stone-800">
+                <td class="py-3 px-4 text-stone-700 dark:text-stone-300">GFM<sup class="text-xs text-stone-400 dark:text-stone-500 ml-0.5">3</sup></td>
+                <td class="py-3 px-4 bg-brand/5 dark:bg-brand/10 text-center border-x border-stone-200 dark:border-stone-700"><span class="text-emerald-600">[x]</span></td>
                 <td class="py-3 px-4 text-center"><span class="text-emerald-600">[x]</span></td>
                 <td class="py-3 px-4 text-center"><span class="text-red-600">[ ]</span></td>
                 <td class="py-3 px-4 text-center"><span class="text-red-600">[ ]</span></td>
               </tr>
-              <tr class="border-b border-stone-100">
-                <td class="py-3 px-4 text-stone-700">GLFM<sup class="text-xs text-stone-400 ml-0.5">4</sup></td>
-                <td class="py-3 px-4 bg-brand/5 text-center border-x border-stone-200"><span class="text-emerald-600">[x]</span></td>
+              <tr class="border-b border-stone-100 dark:border-stone-800">
+                <td class="py-3 px-4 text-stone-700 dark:text-stone-300">GLFM<sup class="text-xs text-stone-400 dark:text-stone-500 ml-0.5">4</sup></td>
+                <td class="py-3 px-4 bg-brand/5 dark:bg-brand/10 text-center border-x border-stone-200 dark:border-stone-700"><span class="text-emerald-600">[x]</span></td>
                 <td class="py-3 px-4 text-center"><span class="text-red-600">[ ]</span></td>
                 <td class="py-3 px-4 text-center"><span class="text-red-600">[ ]</span></td>
                 <td class="py-3 px-4 text-center"><span class="text-red-600">[ ]</span></td>
               </tr>
               <tr>
-                <td class="py-3 px-4 text-stone-700">Discord<sup class="text-xs text-stone-400 ml-0.5">5</sup></td>
-                <td class="py-3 px-4 bg-brand/5 text-center border-x border-stone-200"><span class="relative"><span class="text-amber-600">[~]</span><sup class="absolute -right-3 -top-1 text-xs text-stone-400">1</sup></span></td>
+                <td class="py-3 px-4 text-stone-700 dark:text-stone-300">Discord<sup class="text-xs text-stone-400 dark:text-stone-500 ml-0.5">5</sup></td>
+                <td class="py-3 px-4 bg-brand/5 dark:bg-brand/10 text-center border-x border-stone-200 dark:border-stone-700"><span class="relative"><span class="text-amber-600">[~]</span><sup class="absolute -right-3 -top-1 text-xs text-stone-400 dark:text-stone-500">1</sup></span></td>
                 <td class="py-3 px-4 text-center"><span class="text-red-600">[ ]</span></td>
                 <td class="py-3 px-4 text-center"><span class="text-red-600">[ ]</span></td>
                 <td class="py-3 px-4 text-center"><span class="text-red-600">[ ]</span></td>
@@ -888,7 +892,7 @@ MDEx.to_html!(<span class="text-emerald-700">"# Hello"</span>)
           </table>
         </div>
 
-        <div class="mt-6 text-xs font-mono text-stone-500 space-y-1" data-animate="fade-in">
+        <div class="mt-6 text-xs font-mono text-stone-500 dark:text-stone-400 space-y-1" data-animate="fade-in">
           <p><sup>1</sup> Partial support</p>
           <p><sup>2</sup> Possible with <a href="https://hex.pm/packages/earmark_reversal" class="text-brand hover:underline">earmark_reversal</a></p>
           <p><sup>3</sup> <a href="https://github.github.com/gfm/" target="_blank" rel="noopener" class="text-brand hover:underline">GitHub Flavored Markdown</a></p>
@@ -898,7 +902,7 @@ MDEx.to_html!(<span class="text-emerald-700">"# Hello"</span>)
       </div>
     </section>
 
-    <section id="what-people-say" class="py-20 sm:py-24 bg-white overflow-hidden">
+    <section id="what-people-say" class="py-20 sm:py-24 bg-white dark:bg-stone-900 overflow-hidden">
       <div class="max-w-5xl mx-auto px-4 sm:px-6">
         <div class="text-center mb-12" data-animate="slide-up">
           <h2 class="text-2xl sm:text-3xl font-bold">
@@ -914,7 +918,7 @@ MDEx.to_html!(<span class="text-emerald-700">"# Hello"</span>)
       </div>
     </section>
 
-    <section id="ready-to-transform-your-markdown" class="py-20 sm:py-32 px-4 sm:px-6 relative overflow-hidden bg-stone-50">
+    <section id="ready-to-transform-your-markdown" class="py-20 sm:py-32 px-4 sm:px-6 relative overflow-hidden bg-stone-50 dark:bg-stone-950">
       <div class="absolute inset-0 bg-dots pointer-events-none opacity-40"></div>
 
       <div class="relative z-10 max-w-3xl mx-auto text-center">
@@ -923,16 +927,16 @@ MDEx.to_html!(<span class="text-emerald-700">"# Hello"</span>)
             <span class="text-brand">#</span> Ready?
           </a>
         </h2>
-        <p class="text-stone-600 text-lg mb-10" data-animate="fade-in">
+        <p class="text-stone-600 dark:text-stone-400 text-lg mb-10" data-animate="fade-in">
           Get started with MDEx in under a minute.
         </p>
 
         <div class="code-block p-4 max-w-md mx-auto mb-10" data-animate="slide-up">
           <div class="flex items-center justify-between">
-            <code id="code-cta" class="text-sm sm:text-base text-stone-800">
-              <span class="text-stone-400">$</span> mix igniter.install mdex
+            <code id="code-cta" class="text-sm sm:text-base text-stone-800 dark:text-stone-200">
+              <span class="text-stone-400 dark:text-stone-500">$</span> mix igniter.install mdex
             </code>
-            <button data-copy="code-cta" class="text-stone-400 hover:text-brand transition text-xs" aria-label="Copy code">
+            <button data-copy="code-cta" class="text-stone-400 dark:text-stone-500 hover:text-brand transition text-xs" aria-label="Copy code">
               [copy]
             </button>
           </div>
@@ -942,11 +946,11 @@ MDEx.to_html!(<span class="text-emerald-700">"# Hello"</span>)
           <a href="https://hexdocs.pm/mdex" target="_blank" rel="noopener" class="px-8 py-3 bg-brand hover:bg-brand-dark text-white font-semibold transition-all hover:scale-105">
             [ Read the Docs ]
           </a>
-          <a href="https://github.com/leandrocp/mdex" target="_blank" rel="noopener" class="px-8 py-3 border border-dashed border-stone-400 hover:border-brand text-stone-700 hover:text-brand font-semibold transition-all flex items-center justify-center gap-2">
+          <a href="https://github.com/leandrocp/mdex" target="_blank" rel="noopener" class="px-8 py-3 border border-dashed border-stone-400 dark:border-stone-600 hover:border-brand text-stone-700 dark:text-stone-300 hover:text-brand font-semibold transition-all flex items-center justify-center gap-2">
             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
             View on GitHub
           </a>
-          <a href="https://hex.pm/packages/mdex" target="_blank" rel="noopener" class="px-8 py-3 border border-dashed border-stone-400 hover:border-brand text-stone-700 hover:text-brand font-semibold transition-all">
+          <a href="https://hex.pm/packages/mdex" target="_blank" rel="noopener" class="px-8 py-3 border border-dashed border-stone-400 dark:border-stone-600 hover:border-brand text-stone-700 dark:text-stone-300 hover:text-brand font-semibold transition-all">
             Hex.pm
           </a>
         </div>
@@ -954,21 +958,21 @@ MDEx.to_html!(<span class="text-emerald-700">"# Hello"</span>)
     </section>
   </main>
 
-  <footer class="py-12 px-4 sm:px-6 border-t border-dashed border-stone-300 bg-white">
+  <footer class="py-12 px-4 sm:px-6 border-t border-dashed border-stone-300 dark:border-stone-700 bg-white dark:bg-stone-900">
     <div class="max-w-6xl mx-auto text-center">
-      <pre class="text-stone-300 text-xs mb-6" aria-hidden="true">+------------------------------------------------------------------+</pre>
+      <pre class="text-stone-300 dark:text-stone-600 text-xs mb-6" aria-hidden="true">+------------------------------------------------------------------+</pre>
 
       <div class="flex items-center justify-center gap-3 mb-6">
-        <img src="/images/mdex.svg" alt="MDEx" class="h-8 w-auto">
+        <img src="/images/mdex.svg" alt="MDEx" class="h-8 w-auto" width="52" height="32">
         <span class="text-lg font-bold text-brand">MDEx</span>
       </div>
 
-      <p class="text-stone-500 text-sm mb-6">
+      <p class="text-stone-500 dark:text-stone-400 text-sm mb-6">
         Built with Elixir and Rust by
         <a href="https://github.com/leandrocp" target="_blank" rel="noopener" class="text-brand hover:underline">Leandro Pereira</a>
       </p>
 
-      <pre class="text-stone-300 text-xs" aria-hidden="true">+------------------------------------------------------------------+</pre>
+      <pre class="text-stone-300 dark:text-stone-600 text-xs" aria-hidden="true">+------------------------------------------------------------------+</pre>
     </div>
   </footer>
 

@@ -8,6 +8,14 @@
   --color-accent-warm: #C4A57B;
   --color-accent-cool: #7C9A92;
 
+  /* Stone palette tokens for custom CSS (scrollbars, code blocks, etc.)
+     Mirrors Tailwind stone scale — keep in sync if palette changes */
+  --color-surface: #FFFFFF;
+  --color-surface-muted: #F5F5F4;      /* stone-100 */
+  --color-border: #D6D3D1;             /* stone-300 */
+  --color-border-hover: #A8A29E;       /* stone-400 */
+  --color-text-primary: #1C1917;       /* stone-900 */
+
   --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace;
 
   --animate-blink: blink 1s step-end infinite;
@@ -52,8 +60,8 @@ html {
 }
 
 ::selection {
-  background-color: rgba(110, 60, 136, 0.2);
-  color: #1C1917;
+  background-color: color-mix(in srgb, var(--color-brand) 20%, transparent);
+  color: var(--color-text-primary);
 }
 
 pre::-webkit-scrollbar {
@@ -62,66 +70,54 @@ pre::-webkit-scrollbar {
 }
 
 pre::-webkit-scrollbar-track {
-  background: #F5F5F4;
+  background: var(--color-surface-muted);
 }
 
 pre::-webkit-scrollbar-thumb {
-  background: #D6D3D1;
+  background: var(--color-border);
   border-radius: 3px;
 }
 
 pre::-webkit-scrollbar-thumb:hover {
-  background: #A8A29E;
+  background: var(--color-border-hover);
 }
 
+/* Dark mode token overrides — automatically updates code-block, scrollbars, selection */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-surface: #1C1917;           /* stone-900 */
+    --color-surface-muted: #292524;     /* stone-800 */
+    --color-border: #57534E;            /* stone-600 */
+    --color-border-hover: #78716C;      /* stone-500 */
+    --color-text-primary: #F5F5F4;      /* stone-100 */
+  }
+}
+
+/* SVG data URI uses inline hex — keep in sync with tokens */
 .bg-dots {
   background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='2' cy='2' r='1' fill='%23D6D3D1' fill-opacity='0.5'/%3E%3C/svg%3E");
   background-repeat: repeat;
 }
 
-.bg-ascii-grid {
-  background-image:
-    linear-gradient(rgba(110, 60, 136, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(110, 60, 136, 0.04) 1px, transparent 1px);
-  background-size: 24px 24px;
+@media (prefers-color-scheme: dark) {
+  /* %2344403C = stone-700 */
+  .bg-dots {
+    background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='2' cy='2' r='1' fill='%2344403C' fill-opacity='0.5'/%3E%3C/svg%3E");
+  }
 }
 
-.bg-blocks {
-  background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='0' y='0' width='6' height='6' fill='%23E7E5E3' fill-opacity='0.4'/%3E%3Crect x='20' y='20' width='6' height='6' fill='%23E7E5E3' fill-opacity='0.3'/%3E%3C/svg%3E");
-  background-repeat: repeat;
-}
 
 .code-block {
-  border: 1px solid #D6D3D1;
-  background: #FFFFFF;
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
   overflow: hidden;
   position: relative;
 }
 
 .code-block:hover {
-  border-color: #A8A29E;
+  border-color: var(--color-border-hover);
 }
 
-.code-block-scanlines::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: repeating-linear-gradient(
-    transparent 0px,
-    transparent 2px,
-    rgba(0, 0, 0, 0.015) 2px,
-    rgba(0, 0, 0, 0.015) 4px
-  );
-  pointer-events: none;
-}
-
-@keyframes progress-fill {
-  from { width: 0; }
-}
-
-.ascii-progress {
-  animation: progress-fill 2s ease-out forwards;
-}
 
 .card-corner {
   transition: transform 0.3s ease-out, color 0.3s ease-out;

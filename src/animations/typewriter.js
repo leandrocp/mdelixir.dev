@@ -1,3 +1,5 @@
+import { animateCounterById } from './counter.js'
+
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
 
 export function initTypewriter() {
@@ -49,8 +51,8 @@ export function initTypewriter() {
     if (statsEl) {
       statsEl.classList.remove('opacity-0')
       statsEl.classList.add('animate-slide-up')
-      animateCounter('stat-speed', 8983, 2000)
-      animateCounter('stat-memory', 0.00184, 2000, 5)
+      animateCounterById('stat-speed', 8983, 2000)
+      animateCounterById('stat-memory', 0.00184, 2000, 5)
     }
     setTimeout(showCode, 600)
   }
@@ -85,10 +87,10 @@ export function initTypewriter() {
     if (!codeContent) return
 
     const lines = [
-      { text: 'iex> ', class: 'text-stone-500' },
-      { text: 'MDEx.to_html!(', class: 'text-stone-800' },
-      { text: '"# Hello **MDEx**"', class: 'text-green-600' },
-      { text: ')', class: 'text-stone-800' },
+      { text: 'iex> ', class: 'text-stone-500 dark:text-stone-400' },
+      { text: 'MDEx.to_html!(', class: 'text-stone-800 dark:text-stone-200' },
+      { text: '"# Hello **MDEx**"', class: 'text-emerald-700 dark:text-emerald-400' },
+      { text: ')', class: 'text-stone-800 dark:text-stone-200' },
       { text: '\n', class: '' },
       { text: '"<h1>Hello <strong>MDEx</strong></h1>"', class: 'text-brand-light' },
     ]
@@ -145,31 +147,4 @@ export function initTypewriter() {
   }
 
   setTimeout(typeChar, 600)
-}
-
-function animateCounter(id, target, duration, decimals = 0) {
-  const el = document.getElementById(id)
-  if (!el) return
-
-  const start = 0
-  const startTime = performance.now()
-
-  function update(currentTime) {
-    const elapsed = currentTime - startTime
-    const progress = Math.min(elapsed / duration, 1)
-    const eased = 1 - Math.pow(1 - progress, 3)
-    const current = start + (target - start) * eased
-
-    if (decimals > 0) {
-      el.textContent = current.toFixed(decimals)
-    } else {
-      el.textContent = Math.floor(current).toLocaleString()
-    }
-
-    if (progress < 1) {
-      requestAnimationFrame(update)
-    }
-  }
-
-  requestAnimationFrame(update)
 }

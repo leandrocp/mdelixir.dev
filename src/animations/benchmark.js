@@ -1,3 +1,5 @@
+import { animateCounter } from './counter.js'
+
 let hasAnimated = false
 
 export function initBenchmark() {
@@ -27,11 +29,11 @@ function startBenchmarkRace() {
 
     setTimeout(() => {
       if (bar) {
-        bar.style.width = `${percentage}%`
+        bar.style.transform = `scaleX(${percentage / 100})`
       }
 
       if (counter) {
-        animateBenchmarkCounter(counter, target)
+        animateCounter(counter, target, 2500)
       }
     }, index * 200)
   })
@@ -43,27 +45,6 @@ function startBenchmarkRace() {
       memoryEl.classList.add('animate-slide-up')
     }
   }, 800)
-}
-
-function animateBenchmarkCounter(element, target) {
-  const duration = 2500
-  const start = 0
-  const startTime = performance.now()
-
-  function update(currentTime) {
-    const elapsed = currentTime - startTime
-    const progress = Math.min(elapsed / duration, 1)
-    const eased = 1 - Math.pow(1 - progress, 3)
-    const current = Math.floor(start + (target - start) * eased)
-
-    element.textContent = current.toLocaleString()
-
-    if (progress < 1) {
-      requestAnimationFrame(update)
-    }
-  }
-
-  requestAnimationFrame(update)
 }
 
 export { startBenchmarkRace }
