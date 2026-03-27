@@ -47,7 +47,7 @@ export function initTypewriter() {
       subtitleEl.classList.remove("opacity-0");
       subtitleEl.classList.add("animate-fade-in");
     }
-    setTimeout(showStats, 400);
+    setTimeout(showStats, 200);
   }
 
   function showStats() {
@@ -57,7 +57,7 @@ export function initTypewriter() {
       animateCounterById("stat-speed", 8983, 2000);
       animateCounterById("stat-memory", 0.00184, 2000, 5);
     }
-    setTimeout(showCode, 600);
+    setTimeout(showCode, 300);
   }
 
   function showCode() {
@@ -66,7 +66,7 @@ export function initTypewriter() {
       codeEl.classList.add("animate-slide-up");
       typeCode();
     }
-    setTimeout(showCTA, 1500);
+    setTimeout(showCTA, 1000);
   }
 
   function showCTA() {
