@@ -1,3 +1,5 @@
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+
 export function initTypewriter() {
   const titleEl = document.getElementById('hero-title')
   const cursorEl = document.getElementById('hero-cursor')
@@ -10,6 +12,17 @@ export function initTypewriter() {
   if (!titleEl) return
 
   const text = 'Markdown for Elixir'
+
+  if (prefersReducedMotion) {
+    titleEl.textContent = text
+    if (cursorEl) cursorEl.classList.add('opacity-0')
+    ;[subtitleEl, statsEl, codeEl, ctaEl, poweredEl].forEach(el => {
+      if (el) { el.classList.remove('opacity-0'); el.classList.add('animate-fade-in') }
+    })
+    typeCode(true)
+    return
+  }
+
   let charIndex = 0
 
   function typeChar() {
@@ -66,19 +79,34 @@ export function initTypewriter() {
     }
   }
 
-  function typeCode() {
+  function typeCode(instant) {
     const codeContent = document.getElementById('hero-code-content')
     const codeCursor = document.getElementById('code-cursor')
     if (!codeContent) return
 
     const lines = [
-      { text: 'iex> ', class: 'text-gray-500' },
+      { text: 'iex> ', class: 'text-stone-500' },
       { text: 'MDEx.to_html!(', class: 'text-stone-800' },
       { text: '"# Hello **MDEx**"', class: 'text-green-600' },
       { text: ')', class: 'text-stone-800' },
       { text: '\n', class: '' },
       { text: '"<h1>Hello <strong>MDEx</strong></h1>"', class: 'text-brand-light' },
     ]
+
+    if (instant) {
+      let html = ''
+      lines.forEach(line => {
+        for (const char of line.text) {
+          if (char === '\n') html += '<br>'
+          else if (char === '<') html += '&lt;'
+          else if (char === '>') html += '&gt;'
+          else html += line.class ? `<span class="${line.class}">${char}</span>` : char
+        }
+      })
+      codeContent.innerHTML = html
+      if (codeCursor) codeCursor.classList.add('opacity-0')
+      return
+    }
 
     let lineIndex = 0
     let charIndex = 0

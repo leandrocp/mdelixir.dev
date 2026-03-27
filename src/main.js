@@ -50,28 +50,46 @@ function initCopyButtons() {
 }
 
 function initTabs() {
-  const tabs = document.querySelectorAll('[data-tab]')
+  const tabs = Array.from(document.querySelectorAll('[data-tab]'))
   const panels = document.querySelectorAll('[data-panel]')
 
-  tabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-      const target = tab.dataset.tab
+  function activateTab(tab) {
+    const target = tab.dataset.tab
 
-      tabs.forEach(t => {
-        t.classList.remove('bg-brand', 'text-white', 'border-brand')
-        t.classList.add('text-stone-500', 'hover:text-brand', 'hover:border-brand', 'border-stone-300')
-      })
-      tab.classList.add('bg-brand', 'text-white', 'border-brand')
-      tab.classList.remove('text-stone-500', 'hover:text-brand', 'hover:border-brand', 'border-stone-300')
+    tabs.forEach(t => {
+      t.classList.remove('bg-brand', 'text-white', 'border-brand')
+      t.classList.add('text-stone-500', 'hover:text-brand', 'hover:border-brand', 'border-stone-300')
+      t.setAttribute('aria-selected', 'false')
+      t.setAttribute('tabindex', '-1')
+    })
+    tab.classList.add('bg-brand', 'text-white', 'border-brand')
+    tab.classList.remove('text-stone-500', 'hover:text-brand', 'hover:border-brand', 'border-stone-300')
+    tab.setAttribute('aria-selected', 'true')
+    tab.setAttribute('tabindex', '0')
+    tab.focus()
 
-      panels.forEach(panel => {
-        if (panel.dataset.panel === target) {
-          panel.classList.remove('hidden')
-          panel.classList.add('animate-fade-in')
-        } else {
-          panel.classList.add('hidden')
-        }
-      })
+    panels.forEach(panel => {
+      if (panel.dataset.panel === target) {
+        panel.classList.remove('hidden')
+        panel.classList.add('animate-fade-in')
+      } else {
+        panel.classList.add('hidden')
+      }
+    })
+  }
+
+  tabs.forEach((tab, index) => {
+    tab.setAttribute('tabindex', index === 0 ? '0' : '-1')
+    tab.addEventListener('click', () => activateTab(tab))
+    tab.addEventListener('keydown', (e) => {
+      let newIndex
+      if (e.key === 'ArrowRight') newIndex = (index + 1) % tabs.length
+      else if (e.key === 'ArrowLeft') newIndex = (index - 1 + tabs.length) % tabs.length
+      else if (e.key === 'Home') newIndex = 0
+      else if (e.key === 'End') newIndex = tabs.length - 1
+      else return
+      e.preventDefault()
+      activateTab(tabs[newIndex])
     })
   })
 }
@@ -79,6 +97,8 @@ function initTabs() {
 function initStreamingDemo() {
   const container = document.getElementById('streaming-content')
   if (!container) return
+
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
 
   const poem = [
     { text: '## ', delay: 100, render: '<span class="text-brand">##</span> ' },
@@ -129,6 +149,13 @@ function initStreamingDemo() {
         setTimeout(streamNext, 1000)
       }, 4000)
     }
+  }
+
+  if (prefersReducedMotion) {
+    let fullHtml = ''
+    poem.forEach(item => { fullHtml += item.render || item.text })
+    container.innerHTML = fullHtml
+    return
   }
 
   const observer = new IntersectionObserver((entries) => {

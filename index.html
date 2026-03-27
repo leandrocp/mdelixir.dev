@@ -118,6 +118,8 @@
 </head>
 <body class="bg-stone-50 text-stone-900 font-mono antialiased overflow-x-hidden">
 
+  <a href="#hero" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[60] focus:px-4 focus:py-2 focus:bg-brand focus:text-white focus:outline-none">Skip to content</a>
+
   <nav id="nav" class="fixed top-0 inset-x-0 z-50 px-4 sm:px-6 py-4 transition-all duration-300 bg-stone-50/95 backdrop-blur-sm border-b border-dotted border-stone-200">
     <div class="max-w-6xl mx-auto flex items-center justify-between">
       <a href="#" class="flex items-center gap-3 group">
@@ -141,7 +143,7 @@
         </a>
       </div>
 
-      <button id="mobile-menu-btn" class="md:hidden p-2 text-stone-600 hover:text-brand" aria-label="Toggle menu">
+      <button id="mobile-menu-btn" class="md:hidden p-2 text-stone-600 hover:text-brand" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
         </svg>
@@ -296,17 +298,17 @@ MDEx.to_html!(<span class="text-emerald-700">"# Hello"</span>)
           <div class="code-block flex flex-col">
             <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between px-4 py-2 bg-stone-100 border-b border-stone-200 gap-2">
               <span class="text-sm text-stone-500">>> Output</span>
-              <div class="flex gap-1 overflow-x-auto pb-1 sm:pb-0">
-                <button data-tab="html" class="px-2 sm:px-3 py-1 text-xs border border-brand bg-brand text-white transition whitespace-nowrap">[HTML]</button>
-                <button data-tab="heex" class="px-2 sm:px-3 py-1 text-xs border border-stone-300 text-stone-500 hover:text-brand hover:border-brand transition whitespace-nowrap">[HEEx]</button>
-                <button data-tab="json" class="px-2 sm:px-3 py-1 text-xs border border-stone-300 text-stone-500 hover:text-brand hover:border-brand transition whitespace-nowrap">[JSON]</button>
-                <button data-tab="xml" class="px-2 sm:px-3 py-1 text-xs border border-stone-300 text-stone-500 hover:text-brand hover:border-brand transition whitespace-nowrap">[XML]</button>
-                <button data-tab="delta" class="px-2 sm:px-3 py-1 text-xs border border-stone-300 text-stone-500 hover:text-brand hover:border-brand transition whitespace-nowrap">[Delta]</button>
-                <button data-tab="ast" class="px-2 sm:px-3 py-1 text-xs border border-stone-300 text-stone-500 hover:text-brand hover:border-brand transition whitespace-nowrap">[AST]</button>
+              <div class="flex gap-1 overflow-x-auto pb-1 sm:pb-0" role="tablist" aria-label="Output format">
+                <button data-tab="html" role="tab" aria-selected="true" aria-controls="panel-html" class="px-2 sm:px-3 py-2 sm:py-1 text-xs border border-brand bg-brand text-white transition whitespace-nowrap">[HTML]</button>
+                <button data-tab="heex" role="tab" aria-selected="false" aria-controls="panel-heex" class="px-2 sm:px-3 py-2 sm:py-1 text-xs border border-stone-300 text-stone-500 hover:text-brand hover:border-brand transition whitespace-nowrap">[HEEx]</button>
+                <button data-tab="json" role="tab" aria-selected="false" aria-controls="panel-json" class="px-2 sm:px-3 py-2 sm:py-1 text-xs border border-stone-300 text-stone-500 hover:text-brand hover:border-brand transition whitespace-nowrap">[JSON]</button>
+                <button data-tab="xml" role="tab" aria-selected="false" aria-controls="panel-xml" class="px-2 sm:px-3 py-2 sm:py-1 text-xs border border-stone-300 text-stone-500 hover:text-brand hover:border-brand transition whitespace-nowrap">[XML]</button>
+                <button data-tab="delta" role="tab" aria-selected="false" aria-controls="panel-delta" class="px-2 sm:px-3 py-2 sm:py-1 text-xs border border-stone-300 text-stone-500 hover:text-brand hover:border-brand transition whitespace-nowrap">[Delta]</button>
+                <button data-tab="ast" role="tab" aria-selected="false" aria-controls="panel-ast" class="px-2 sm:px-3 py-2 sm:py-1 text-xs border border-stone-300 text-stone-500 hover:text-brand hover:border-brand transition whitespace-nowrap">[AST]</button>
               </div>
             </div>
             <div class="flex-1 p-4 overflow-auto min-h-[280px] bg-white">
-              <pre data-panel="html" class="text-sm"><code class="text-stone-800"><span class="text-blue-700">&lt;h1&gt;</span>Welcome to <span class="text-blue-700">&lt;strong&gt;</span>MDEx<span class="text-blue-700">&lt;/strong&gt;&lt;/h1&gt;</span>
+              <pre data-panel="html" id="panel-html" role="tabpanel" aria-label="HTML output" class="text-sm"><code class="text-stone-800"><span class="text-blue-700">&lt;h1&gt;</span>Welcome to <span class="text-blue-700">&lt;strong&gt;</span>MDEx<span class="text-blue-700">&lt;/strong&gt;&lt;/h1&gt;</span>
 <span class="text-blue-700">&lt;p&gt;</span>Features:<span class="text-blue-700">&lt;/p&gt;</span>
 <span class="text-blue-700">&lt;ul&gt;</span>
   <span class="text-blue-700">&lt;li&gt;</span>Fast<span class="text-blue-700">&lt;/li&gt;</span>
@@ -321,7 +323,7 @@ MDEx.to_html!(<span class="text-emerald-700">"# Hello"</span>)
   <span class="text-blue-700">&lt;/code&gt;</span>
 <span class="text-blue-700">&lt;/pre&gt;</span></code></pre>
 
-              <pre data-panel="ast" class="hidden text-sm"><code class="text-stone-800"><span class="text-brand">#MDEx.Document</span><span class="text-stone-400">&lt;</span><span class="text-stone-500">17 nodes</span>
+              <pre data-panel="ast" id="panel-ast" role="tabpanel" aria-label="AST output" class="hidden text-sm"><code class="text-stone-800"><span class="text-brand">#MDEx.Document</span><span class="text-stone-400">&lt;</span><span class="text-stone-500">17 nodes</span>
 ├── <span class="text-stone-500">1</span> [<span class="text-blue-700">heading</span>] <span class="text-amber-700">level:</span> <span class="text-purple-600">1</span>
 │   ├── <span class="text-stone-500">2</span> [<span class="text-blue-700">text</span>] <span class="text-amber-700">literal:</span> <span class="text-emerald-700">"Welcome to "</span>
 │   └── <span class="text-stone-500">3</span> [<span class="text-blue-700">strong</span>]
@@ -341,7 +343,7 @@ MDEx.to_html!(<span class="text-emerald-700">"# Hello"</span>)
 └── <span class="text-stone-500">17</span> [<span class="text-blue-700">code_block</span>] <span class="text-amber-700">info:</span> <span class="text-emerald-700">"elixir"</span>, <span class="text-amber-700">fenced:</span> <span class="text-brand">true</span>
 <span class="text-stone-400">&gt;</span></code></pre>
 
-              <pre data-panel="heex" class="hidden text-sm"><code class="text-stone-800"><span class="text-brand">%Phoenix.LiveView.Rendered</span>{
+              <pre data-panel="heex" id="panel-heex" role="tabpanel" aria-label="HEEx output" class="hidden text-sm"><code class="text-stone-800"><span class="text-brand">%Phoenix.LiveView.Rendered</span>{
   <span class="text-amber-700">static:</span> [<span class="text-emerald-700">"&lt;h1&gt;Welcome to &lt;strong&gt;MDEx&lt;/strong&gt;&lt;/h1&gt;\n..."</span>],
   <span class="text-amber-700">dynamic:</span> <span class="text-stone-500">#Function&lt;42.81571850/1 in :erl_eval.expr/6&gt;</span>,
   <span class="text-amber-700">fingerprint:</span> <span class="text-purple-600">52776307825337990075203022359966918684</span>,
@@ -349,7 +351,7 @@ MDEx.to_html!(<span class="text-emerald-700">"# Hello"</span>)
   <span class="text-amber-700">caller:</span> <span class="text-brand">:not_available</span>
 }</code></pre>
 
-              <pre data-panel="json" class="hidden text-sm"><code class="text-stone-800">{
+              <pre data-panel="json" id="panel-json" role="tabpanel" aria-label="JSON output" class="hidden text-sm"><code class="text-stone-800">{
   <span class="text-blue-700">"type"</span>: <span class="text-emerald-700">"document"</span>,
   <span class="text-blue-700">"children"</span>: [
     {
@@ -365,7 +367,7 @@ MDEx.to_html!(<span class="text-emerald-700">"# Hello"</span>)
   ]
 }</code></pre>
 
-              <pre data-panel="xml" class="hidden text-sm"><code class="text-stone-800"><span class="text-stone-400">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+              <pre data-panel="xml" id="panel-xml" role="tabpanel" aria-label="XML output" class="hidden text-sm"><code class="text-stone-800"><span class="text-stone-400">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
 <span class="text-stone-400">&lt;!DOCTYPE document SYSTEM "CommonMark.dtd"&gt;</span>
 <span class="text-blue-700">&lt;document</span> <span class="text-amber-700">xmlns=</span><span class="text-emerald-700">"http://commonmark.org/xml/1.0"</span><span class="text-blue-700">&gt;</span>
   <span class="text-blue-700">&lt;heading</span> <span class="text-amber-700">level=</span><span class="text-emerald-700">"1"</span><span class="text-blue-700">&gt;</span>
@@ -385,7 +387,7 @@ MDEx.to_html!(<span class="text-emerald-700">"# Hello"</span>)
   <span class="text-blue-700">&lt;code_block</span> <span class="text-amber-700">info=</span><span class="text-emerald-700">"elixir"</span><span class="text-blue-700">&gt;</span>MDEx.to_html!("# Hello")<span class="text-blue-700">&lt;/code_block&gt;</span>
 <span class="text-blue-700">&lt;/document&gt;</span></code></pre>
 
-              <pre data-panel="delta" class="hidden text-sm"><code class="text-stone-800">[
+              <pre data-panel="delta" id="panel-delta" role="tabpanel" aria-label="Quill Delta output" class="hidden text-sm"><code class="text-stone-800">[
   %{<span class="text-emerald-700">"insert"</span> =&gt; <span class="text-emerald-700">"Welcome to "</span>},
   %{<span class="text-emerald-700">"attributes"</span> =&gt; %{<span class="text-emerald-700">"bold"</span> =&gt; <span class="text-brand">true</span>}, <span class="text-emerald-700">"insert"</span> =&gt; <span class="text-emerald-700">"MDEx"</span>},
   %{<span class="text-emerald-700">"attributes"</span> =&gt; %{<span class="text-emerald-700">"header"</span> =&gt; <span class="text-purple-600">1</span>}, <span class="text-emerald-700">"insert"</span> =&gt; <span class="text-emerald-700">"\n"</span>},
@@ -971,8 +973,17 @@ MDEx.to_html!(<span class="text-emerald-700">"# Hello"</span>)
   </footer>
 
   <script>
-    document.getElementById('mobile-menu-btn').addEventListener('click', () => {
-      document.getElementById('mobile-menu').classList.toggle('hidden');
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    menuBtn.addEventListener('click', () => {
+      const isHidden = mobileMenu.classList.toggle('hidden');
+      menuBtn.setAttribute('aria-expanded', !isHidden);
+    });
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        menuBtn.setAttribute('aria-expanded', 'false');
+      });
     });
   </script>
 
