@@ -15,7 +15,7 @@
   },
   "devDependencies": {
     "@tailwindcss/vite": "^4.0",
-    "oxfmt": "^0.42",
+    "oxfmt": "^0.53",
     "oxlint": "^1.0",
     "tailwindcss": "^4.0",
     "tidewave": "^0.6",
