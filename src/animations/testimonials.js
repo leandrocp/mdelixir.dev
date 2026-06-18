@@ -6,6 +6,12 @@ const testimonials = [
     url: "https://x.com/exbradleygolden/status/2010801212715909350",
   },
   {
+    author: "Dave Lucia",
+    handle: "davydog187",
+    text: "MDEx fucking rips",
+    url: "https://x.com/davydog187/status/2067680324994334737",
+  },
+  {
     author: "Aníbal Rojas",
     handle: "anibal",
     text: "En un mundo Markdowncéntrico esta librería que a partir de texto en Markdow hace lo que le da la gana está súper cool.",
