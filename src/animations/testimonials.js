@@ -12,6 +12,20 @@ const testimonials = [
     url: "https://x.com/davydog187/status/2067680324994334737",
   },
   {
+    author: "Johanna Larsson",
+    handle: "joladev",
+    text: "When I first posted jola.dev/posts/building... I got a lot of questions about whether I had tried mdex. Happy to say I've now switched over and it simplified my setup a bit! #ElixirLang #MyElixirStatus",
+    url: "https://x.com/joladev/status/2061036003796615185",
+    avatar: "https://unavatar.io/x/joladev",
+  },
+  {
+    author: "Eric Meadows-Jönsson",
+    handle: "emjii",
+    text: "hex.pm also switched markdown rendering to mdex. @maennchen_'s PR: github.com/hexpm/hexpm/pu...",
+    url: "https://x.com/emjii/status/2061523298169581829",
+    avatar: "https://unavatar.io/x/emjii",
+  },
+  {
     author: "Aníbal Rojas",
     handle: "anibal",
     text: "En un mundo Markdowncéntrico esta librería que a partir de texto en Markdow hace lo que le da la gana está súper cool.",
@@ -126,6 +140,7 @@ function shuffle(array) {
 
 function createCard(t) {
   const card = document.createElement("a");
+  const avatar = t.avatar || `/images/avatars/${t.handle}.jpg`;
   card.href = t.url;
   card.target = "_blank";
   card.rel = "noopener";
@@ -141,7 +156,7 @@ function createCard(t) {
       <p class="text-stone-700 dark:text-stone-300 text-sm leading-relaxed flex-1">${t.text.replace(/\n/g, "<br>")}</p>
     </div>
     <div class="flex items-center gap-3 pl-7">
-      <img src="/images/avatars/${t.handle}.jpg" alt="${t.author}" class="w-8 h-8 rounded-full border border-stone-200 dark:border-stone-700" loading="lazy">
+      <img src="${avatar}" alt="${t.author}" class="w-8 h-8 rounded-full border border-stone-200 dark:border-stone-700" loading="lazy">
       <div>
         <p class="text-sm font-semibold text-stone-900 dark:text-stone-100">${t.author}</p>
         <p class="text-xs text-brand">@${t.handle}</p>
