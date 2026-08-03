@@ -1,5 +1,12 @@
 const testimonials = [
   {
+    author: "Pedro Piñera",
+    handle: "pepicrft",
+    text: "@leandrocesquini Thank you for building it. I use it in every Elixir project of mine.",
+    url: "https://x.com/pepicrft/status/2084343772800819640",
+    avatar: "https://unavatar.io/x/pepicrft",
+  },
+  {
     author: "Bradley Golden",
     handle: "exbradleygolden",
     text: "Congrats on big milestone! I absolutely loove MDEx ❤️",
