@@ -21,16 +21,23 @@ export function initBenchmark() {
 }
 
 function startBenchmarkRace() {
-  const rows = document.querySelectorAll(".benchmark-row");
+  const rows = [...document.querySelectorAll(".benchmark-row")];
+  const targets = rows.map((row) => parseInt(row.dataset.target, 10));
+  const maxValue = Math.max(...targets);
 
   rows.forEach((row, index) => {
-    const target = parseFloat(row.dataset.target);
-    const decimals = parseInt(row.dataset.decimals ?? "0", 10);
+    const target = targets[index];
+    const bar = row.querySelector(".benchmark-bar");
     const counter = row.querySelector(".benchmark-counter");
 
     setTimeout(() => {
+      if (bar) {
+        // keep the smallest bars visible rather than collapsing to a hairline
+        bar.style.transform = `scaleX(${Math.max(target / maxValue, 0.015)})`;
+      }
+
       if (counter) {
-        animateCounter(counter, target, 2000, decimals);
+        animateCounter(counter, target, 2500);
       }
     }, index * 200);
   });
