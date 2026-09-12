@@ -22,30 +22,24 @@ export function initBenchmark() {
 
 function startBenchmarkRace() {
   const rows = document.querySelectorAll(".benchmark-row");
-  const maxValue = 8983;
 
   rows.forEach((row, index) => {
-    const target = parseInt(row.dataset.target, 10);
-    const bar = row.querySelector(".benchmark-bar");
+    const target = parseFloat(row.dataset.target);
+    const decimals = parseInt(row.dataset.decimals ?? "0", 10);
     const counter = row.querySelector(".benchmark-counter");
-    const percentage = (target / maxValue) * 100;
 
     setTimeout(() => {
-      if (bar) {
-        bar.style.transform = `scaleX(${percentage / 100})`;
-      }
-
       if (counter) {
-        animateCounter(counter, target, 2500);
+        animateCounter(counter, target, 2000, decimals);
       }
     }, index * 200);
   });
 
   setTimeout(() => {
-    const memoryEl = document.getElementById("memory-comparison");
-    if (memoryEl) {
-      memoryEl.classList.remove("opacity-0");
-      memoryEl.classList.add("animate-slide-up");
+    const foundationEl = document.getElementById("perf-foundation");
+    if (foundationEl) {
+      foundationEl.classList.remove("opacity-0");
+      foundationEl.classList.add("animate-slide-up");
     }
   }, 800);
 }
