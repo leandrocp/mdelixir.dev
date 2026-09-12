@@ -54,8 +54,8 @@ export function initTypewriter() {
     if (statsEl) {
       statsEl.classList.remove("opacity-0");
       statsEl.classList.add("animate-slide-up");
-      animateCounterById("stat-speed", 8983, 2000);
-      animateCounterById("stat-memory", 0.00184, 2000, 5);
+      animateCounterById("stat-speed", 395.26, 2000, 2);
+      animateCounterById("stat-memory", 2.36, 2000, 2);
     }
     setTimeout(showCode, 300);
   }
@@ -91,11 +91,12 @@ export function initTypewriter() {
 
     const lines = [
       { text: "iex> ", class: "text-stone-500 dark:text-stone-400" },
-      { text: "MDEx.to_html!(", class: "text-stone-800 dark:text-stone-200" },
+      { text: "MDEx.new(", class: "text-stone-800 dark:text-stone-200" },
+      { text: "markdown: ", class: "text-amber-700 dark:text-amber-400" },
       { text: '"# Hello **MDEx**"', class: "text-emerald-700 dark:text-emerald-400" },
       { text: ")", class: "text-stone-800 dark:text-stone-200" },
       { text: "\n", class: "" },
-      { text: '"<h1>Hello <strong>MDEx</strong></h1>"', class: "text-brand-light" },
+      { text: "#MDEx.Document(4 nodes)<...>", class: "text-brand-light" },
     ];
 
     if (instant) {

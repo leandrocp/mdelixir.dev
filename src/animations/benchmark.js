@@ -22,10 +22,11 @@ export function initBenchmark() {
 
 function startBenchmarkRace() {
   const rows = document.querySelectorAll(".benchmark-row");
-  const maxValue = 8983;
+  const maxValue = 8681.81;
 
   rows.forEach((row, index) => {
-    const target = parseInt(row.dataset.target, 10);
+    const target = Number.parseFloat(row.dataset.target);
+    const decimals = Number.parseInt(row.dataset.decimals || "0", 10);
     const bar = row.querySelector(".benchmark-bar");
     const counter = row.querySelector(".benchmark-counter");
     const percentage = (target / maxValue) * 100;
@@ -36,7 +37,7 @@ function startBenchmarkRace() {
       }
 
       if (counter) {
-        animateCounter(counter, target, 2500);
+        animateCounter(counter, target, 2500, decimals);
       }
     }, index * 200);
   });
