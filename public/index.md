@@ -44,8 +44,7 @@ mix igniter.install mdex
 ## Quick Example
 
 ```elixir
-document = MDEx.new(markdown: "# Hello from **MDEx**")
-slack = MDEx.to_slack!("**Hello** from MDEx")
+html = MDEx.to_html!("# Hello from MDEx")
 
 rendered = ~MD"""
 # Welcome, {@user.name}
