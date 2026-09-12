@@ -193,6 +193,10 @@
             </div>
           </div>
           <pre class="p-4 sm:p-6 text-sm sm:text-base overflow-x-auto bg-white dark:bg-stone-900"><code id="hero-code-content" class="text-stone-800 dark:text-stone-200 min-h-[2.5rem] sm:min-h-[3rem] block"></code><span id="code-cursor" class="animate-blink text-brand">_</span></pre>
+
+          <!-- Highlighted at build time; the typewriter types its tokens into #hero-code-content -->
+          <template id="hero-code-source"><pre data-lumis="elixir">MDEx.new(markdown: "# Hello **MDEx**")
+#MDEx.Document(4 nodes)&lt;...&gt;</pre></template>
         </div>
 
         <div id="hero-cta" class="flex flex-col sm:flex-row justify-center gap-4 opacity-0 max-w-2xl mx-auto">
@@ -240,9 +244,9 @@
                   <span class="text-stone-300 dark:text-stone-600 text-xs hidden sm:inline">[-][o][x]</span>
                 </div>
               </div>
-              <pre class="p-3 sm:p-4 text-sm overflow-x-auto bg-white dark:bg-stone-900"><code id="code-mix" class="text-stone-800 dark:text-stone-200"><span class="text-brand">def</span> <span class="text-blue-700 dark:text-blue-400">deps</span> <span class="text-brand">do</span>
-  [{<span class="text-amber-700 dark:text-amber-400">:mdex</span>, <span class="text-emerald-700 dark:text-emerald-400">"~> 0.12"</span>}]
-<span class="text-brand">end</span></code></pre>
+              <pre class="p-3 sm:p-4 text-sm overflow-x-auto bg-white dark:bg-stone-900" data-lumis="elixir" data-lumis-code-id="code-mix">def deps do
+  [{:mdex, "~> 0.12"}]
+end</pre>
             </div>
           </div>
 
@@ -260,7 +264,7 @@
                   <span class="text-stone-300 dark:text-stone-600 text-xs hidden sm:inline">[-][o][x]</span>
                 </div>
               </div>
-              <pre class="p-3 sm:p-4 text-sm overflow-x-auto bg-white dark:bg-stone-900"><code id="code-igniter" class="text-stone-800 dark:text-stone-200"><span class="text-stone-400 dark:text-stone-500">$</span> mix igniter.install mdex</code></pre>
+              <pre class="p-3 sm:p-4 text-sm overflow-x-auto bg-white dark:bg-stone-900"><span class="text-stone-400 dark:text-stone-500 select-none" aria-hidden="true">$ </span><code id="code-igniter" data-lumis="bash">mix igniter.install mdex</code></pre>
             </div>
           </div>
         </div>
@@ -287,16 +291,16 @@
               </div>
               <span class="text-stone-300 dark:text-stone-600 text-xs">[-][o][x]</span>
             </div>
-            <pre class="flex-1 p-4 text-sm overflow-auto min-h-[280px] bg-white dark:bg-stone-900"><code class="text-stone-800 dark:text-stone-200"><span class="text-brand">#</span> Welcome to <span class="text-brand">**</span>MDEx<span class="text-brand">**</span>
+            <pre class="flex-1 p-4 text-sm overflow-auto min-h-[280px] bg-white dark:bg-stone-900" data-lumis="markdown"># Welcome to **MDEx**
 
 Features:
-<span class="text-stone-400 dark:text-stone-500">-</span> Fast
-<span class="text-stone-400 dark:text-stone-500">-</span> Extensible
-<span class="text-stone-400 dark:text-stone-500">-</span> Phoenix-ready
+- Fast
+- Extensible
+- Phoenix-ready
 
-<span class="text-stone-400 dark:text-stone-500">```</span>elixir
-Enum.map(<span class="text-purple-600 dark:text-purple-400">1</span>..<span class="text-purple-600 dark:text-purple-400">3</span>, &amp;(&amp;1 * <span class="text-purple-600 dark:text-purple-400">2</span>))
-<span class="text-stone-400 dark:text-stone-500">```</span></code></pre>
+```elixir
+Enum.map(1..3, &amp;(&amp;1 * 2))
+```</pre>
           </div>
 
           <div class="code-block flex flex-col">
@@ -313,107 +317,107 @@ Enum.map(<span class="text-purple-600 dark:text-purple-400">1</span>..<span clas
               </div>
             </div>
             <div class="flex-1 p-4 overflow-auto min-h-[280px] bg-white dark:bg-stone-900">
-              <pre data-panel="ast" id="panel-ast" role="tabpanel" aria-label="AST output" class="text-sm"><code class="text-stone-800 dark:text-stone-200"><span class="text-brand">#MDEx.Document</span><span class="text-stone-400 dark:text-stone-500">(</span><span class="text-stone-500 dark:text-stone-400">17 nodes</span><span class="text-stone-400 dark:text-stone-500">)&lt;</span>
-├── <span class="text-stone-500 dark:text-stone-400">1</span> [<span class="text-blue-700 dark:text-blue-400">heading</span>] <span class="text-amber-700 dark:text-amber-400">level:</span> <span class="text-purple-600 dark:text-purple-400">1</span>
-│   ├── <span class="text-stone-500 dark:text-stone-400">2</span> [<span class="text-blue-700 dark:text-blue-400">text</span>] <span class="text-amber-700 dark:text-amber-400">literal:</span> <span class="text-emerald-700 dark:text-emerald-400">"Welcome to "</span>
-│   └── <span class="text-stone-500 dark:text-stone-400">3</span> [<span class="text-blue-700 dark:text-blue-400">strong</span>]
-│       └── <span class="text-stone-500 dark:text-stone-400">4</span> [<span class="text-blue-700 dark:text-blue-400">text</span>] <span class="text-amber-700 dark:text-amber-400">literal:</span> <span class="text-emerald-700 dark:text-emerald-400">"MDEx"</span>
-├── <span class="text-stone-500 dark:text-stone-400">5</span> [<span class="text-blue-700 dark:text-blue-400">paragraph</span>]
-│   └── <span class="text-stone-500 dark:text-stone-400">6</span> [<span class="text-blue-700 dark:text-blue-400">text</span>] <span class="text-amber-700 dark:text-amber-400">literal:</span> <span class="text-emerald-700 dark:text-emerald-400">"Features:"</span>
-├── <span class="text-stone-500 dark:text-stone-400">7</span> [<span class="text-blue-700 dark:text-blue-400">list</span>] <span class="text-amber-700 dark:text-amber-400">list_type:</span> <span class="text-brand">:bullet</span>, <span class="text-amber-700 dark:text-amber-400">tight:</span> <span class="text-brand">true</span>
-│   ├── <span class="text-stone-500 dark:text-stone-400">8</span> [<span class="text-blue-700 dark:text-blue-400">list_item</span>]
-│   │   └── <span class="text-stone-500 dark:text-stone-400">9</span> [<span class="text-blue-700 dark:text-blue-400">paragraph</span>]
-│   │       └── <span class="text-stone-500 dark:text-stone-400">10</span> [<span class="text-blue-700 dark:text-blue-400">text</span>] <span class="text-amber-700 dark:text-amber-400">literal:</span> <span class="text-emerald-700 dark:text-emerald-400">"Fast"</span>
-│   ├── <span class="text-stone-500 dark:text-stone-400">11</span> [<span class="text-blue-700 dark:text-blue-400">list_item</span>]
-│   │   └── <span class="text-stone-500 dark:text-stone-400">12</span> [<span class="text-blue-700 dark:text-blue-400">paragraph</span>]
-│   │       └── <span class="text-stone-500 dark:text-stone-400">13</span> [<span class="text-blue-700 dark:text-blue-400">text</span>] <span class="text-amber-700 dark:text-amber-400">literal:</span> <span class="text-emerald-700 dark:text-emerald-400">"Extensible"</span>
-│   └── <span class="text-stone-500 dark:text-stone-400">14</span> [<span class="text-blue-700 dark:text-blue-400">list_item</span>]
-│       └── <span class="text-stone-500 dark:text-stone-400">15</span> [<span class="text-blue-700 dark:text-blue-400">paragraph</span>]
-│           └── <span class="text-stone-500 dark:text-stone-400">16</span> [<span class="text-blue-700 dark:text-blue-400">text</span>] <span class="text-amber-700 dark:text-amber-400">literal:</span> <span class="text-emerald-700 dark:text-emerald-400">"Phoenix-ready"</span>
-└── <span class="text-stone-500 dark:text-stone-400">17</span> [<span class="text-blue-700 dark:text-blue-400">code_block</span>] <span class="text-amber-700 dark:text-amber-400">info:</span> <span class="text-emerald-700 dark:text-emerald-400">"elixir"</span>, <span class="text-amber-700 dark:text-amber-400">fenced:</span> <span class="text-brand">true</span>
-<span class="text-stone-400 dark:text-stone-500">&gt;</span></code></pre>
+              <pre data-panel="ast" id="panel-ast" role="tabpanel" aria-label="AST output" class="text-sm" data-lumis="elixir">#MDEx.Document(17 nodes)&lt;
+├── 1 [heading] level: 1
+│   ├── 2 [text] literal: "Welcome to "
+│   └── 3 [strong]
+│       └── 4 [text] literal: "MDEx"
+├── 5 [paragraph]
+│   └── 6 [text] literal: "Features:"
+├── 7 [list] list_type: :bullet, tight: true
+│   ├── 8 [list_item]
+│   │   └── 9 [paragraph]
+│   │       └── 10 [text] literal: "Fast"
+│   ├── 11 [list_item]
+│   │   └── 12 [paragraph]
+│   │       └── 13 [text] literal: "Extensible"
+│   └── 14 [list_item]
+│       └── 15 [paragraph]
+│           └── 16 [text] literal: "Phoenix-ready"
+└── 17 [code_block] info: "elixir", fenced: true
+&gt;</pre>
 
-              <pre data-panel="html" id="panel-html" role="tabpanel" aria-label="HTML output" class="hidden text-sm"><code class="text-stone-800 dark:text-stone-200"><span class="text-blue-700 dark:text-blue-400">&lt;h1&gt;</span>Welcome to <span class="text-blue-700 dark:text-blue-400">&lt;strong&gt;</span>MDEx<span class="text-blue-700 dark:text-blue-400">&lt;/strong&gt;&lt;/h1&gt;</span>
-<span class="text-blue-700 dark:text-blue-400">&lt;p&gt;</span>Features:<span class="text-blue-700 dark:text-blue-400">&lt;/p&gt;</span>
-<span class="text-blue-700 dark:text-blue-400">&lt;ul&gt;</span>
-  <span class="text-blue-700 dark:text-blue-400">&lt;li&gt;</span>Fast<span class="text-blue-700 dark:text-blue-400">&lt;/li&gt;</span>
-  <span class="text-blue-700 dark:text-blue-400">&lt;li&gt;</span>Extensible<span class="text-blue-700 dark:text-blue-400">&lt;/li&gt;</span>
-  <span class="text-blue-700 dark:text-blue-400">&lt;li&gt;</span>Phoenix-ready<span class="text-blue-700 dark:text-blue-400">&lt;/li&gt;</span>
-<span class="text-blue-700 dark:text-blue-400">&lt;/ul&gt;</span>
-<span class="text-blue-700 dark:text-blue-400">&lt;pre</span> <span class="text-amber-700 dark:text-amber-400">class=</span><span class="text-emerald-700 dark:text-emerald-400">"athl"</span> <span class="text-amber-700 dark:text-amber-400">style=</span><span class="text-emerald-700 dark:text-emerald-400">"..."</span><span class="text-blue-700 dark:text-blue-400">&gt;</span>
-  <span class="text-blue-700 dark:text-blue-400">&lt;code</span> <span class="text-amber-700 dark:text-amber-400">class=</span><span class="text-emerald-700 dark:text-emerald-400">"language-elixir"</span><span class="text-blue-700 dark:text-blue-400">&gt;</span>
-    <span class="text-blue-700 dark:text-blue-400">&lt;div</span> <span class="text-amber-700 dark:text-amber-400">class=</span><span class="text-emerald-700 dark:text-emerald-400">"line"</span> <span class="text-amber-700 dark:text-amber-400">data-line=</span><span class="text-emerald-700 dark:text-emerald-400">"1"</span><span class="text-blue-700 dark:text-blue-400">&gt;&lt;span</span> <span class="text-amber-700 dark:text-amber-400">style=</span><span class="text-emerald-700 dark:text-emerald-400">"..."</span><span class="text-blue-700 dark:text-blue-400">&gt;</span>
+              <pre data-panel="html" id="panel-html" role="tabpanel" aria-label="HTML output" class="hidden text-sm" data-lumis="html">&lt;h1&gt;Welcome to &lt;strong&gt;MDEx&lt;/strong&gt;&lt;/h1&gt;
+&lt;p&gt;Features:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Fast&lt;/li&gt;
+  &lt;li&gt;Extensible&lt;/li&gt;
+  &lt;li&gt;Phoenix-ready&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre class="lumis" style="..."&gt;
+  &lt;code class="language-elixir"&gt;
+    &lt;div class="l-line" data-line="1"&gt;&lt;span style="..."&gt;
       Enum.map(1..3, &amp;(&amp;1 * 2))
-    <span class="text-blue-700 dark:text-blue-400">&lt;/span&gt;&lt;/div&gt;</span>
-  <span class="text-blue-700 dark:text-blue-400">&lt;/code&gt;</span>
-<span class="text-blue-700 dark:text-blue-400">&lt;/pre&gt;</span></code></pre>
+    &lt;/span&gt;&lt;/div&gt;
+  &lt;/code&gt;
+&lt;/pre&gt;</pre>
 
-              <pre data-panel="heex" id="panel-heex" role="tabpanel" aria-label="HEEx output" class="hidden text-sm"><code class="text-stone-800 dark:text-stone-200"><span class="text-brand">%Phoenix.LiveView.Rendered</span>{
-  <span class="text-amber-700 dark:text-amber-400">static:</span> [<span class="text-emerald-700 dark:text-emerald-400">"&lt;h1&gt;Welcome to &lt;strong&gt;MDEx&lt;/strong&gt;&lt;/h1&gt;\n..."</span>],
-  <span class="text-amber-700 dark:text-amber-400">dynamic:</span> <span class="text-stone-500 dark:text-stone-400">#Function&lt;42.81571850/1 in :erl_eval.expr/6&gt;</span>,
-  <span class="text-amber-700 dark:text-amber-400">fingerprint:</span> <span class="text-purple-600 dark:text-purple-400">52776307825337990075203022359966918684</span>,
-  <span class="text-amber-700 dark:text-amber-400">root:</span> <span class="text-brand">false</span>,
-  <span class="text-amber-700 dark:text-amber-400">caller:</span> <span class="text-brand">:not_available</span>
-}</code></pre>
+              <pre data-panel="heex" id="panel-heex" role="tabpanel" aria-label="HEEx output" class="hidden text-sm" data-lumis="elixir">%Phoenix.LiveView.Rendered{
+  static: ["&lt;h1&gt;Welcome to &lt;strong&gt;MDEx&lt;/strong&gt;&lt;/h1&gt;\n..."],
+  dynamic: #Function&lt;42.81571850/1 in :erl_eval.expr/6&gt;,
+  fingerprint: 52776307825337990075203022359966918684,
+  root: false,
+  caller: :not_available
+}</pre>
 
-              <pre data-panel="json" id="panel-json" role="tabpanel" aria-label="JSON output" class="hidden text-sm"><code class="text-stone-800 dark:text-stone-200">{
-  <span class="text-blue-700 dark:text-blue-400">"type"</span>: <span class="text-emerald-700 dark:text-emerald-400">"document"</span>,
-  <span class="text-blue-700 dark:text-blue-400">"children"</span>: [
+              <pre data-panel="json" id="panel-json" role="tabpanel" aria-label="JSON output" class="hidden text-sm" data-lumis="json">{
+  "type": "document",
+  "children": [
     {
-      <span class="text-blue-700 dark:text-blue-400">"type"</span>: <span class="text-emerald-700 dark:text-emerald-400">"heading"</span>,
-      <span class="text-blue-700 dark:text-blue-400">"level"</span>: <span class="text-purple-600 dark:text-purple-400">1</span>,
-      <span class="text-blue-700 dark:text-blue-400">"children"</span>: [...]
+      "type": "heading",
+      "level": 1,
+      "children": [...]
     },
     {
-      <span class="text-blue-700 dark:text-blue-400">"type"</span>: <span class="text-emerald-700 dark:text-emerald-400">"list"</span>,
-      <span class="text-blue-700 dark:text-blue-400">"list_type"</span>: <span class="text-emerald-700 dark:text-emerald-400">"bullet"</span>,
+      "type": "list",
+      "list_type": "bullet",
       ...
     }
   ]
-}</code></pre>
+}</pre>
 
-              <pre data-panel="xml" id="panel-xml" role="tabpanel" aria-label="XML output" class="hidden text-sm"><code class="text-stone-800 dark:text-stone-200"><span class="text-stone-400 dark:text-stone-500">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
-<span class="text-stone-400 dark:text-stone-500">&lt;!DOCTYPE document SYSTEM "CommonMark.dtd"&gt;</span>
-<span class="text-blue-700 dark:text-blue-400">&lt;document</span> <span class="text-amber-700 dark:text-amber-400">xmlns=</span><span class="text-emerald-700 dark:text-emerald-400">"http://commonmark.org/xml/1.0"</span><span class="text-blue-700 dark:text-blue-400">&gt;</span>
-  <span class="text-blue-700 dark:text-blue-400">&lt;heading</span> <span class="text-amber-700 dark:text-amber-400">level=</span><span class="text-emerald-700 dark:text-emerald-400">"1"</span><span class="text-blue-700 dark:text-blue-400">&gt;</span>
-    <span class="text-blue-700 dark:text-blue-400">&lt;text</span> <span class="text-amber-700 dark:text-amber-400">xml:space=</span><span class="text-emerald-700 dark:text-emerald-400">"preserve"</span><span class="text-blue-700 dark:text-blue-400">&gt;</span>Welcome to <span class="text-blue-700 dark:text-blue-400">&lt;/text&gt;</span>
-    <span class="text-blue-700 dark:text-blue-400">&lt;strong&gt;</span>
-      <span class="text-blue-700 dark:text-blue-400">&lt;text</span> <span class="text-amber-700 dark:text-amber-400">xml:space=</span><span class="text-emerald-700 dark:text-emerald-400">"preserve"</span><span class="text-blue-700 dark:text-blue-400">&gt;</span>MDEx<span class="text-blue-700 dark:text-blue-400">&lt;/text&gt;</span>
-    <span class="text-blue-700 dark:text-blue-400">&lt;/strong&gt;</span>
-  <span class="text-blue-700 dark:text-blue-400">&lt;/heading&gt;</span>
-  <span class="text-blue-700 dark:text-blue-400">&lt;paragraph&gt;</span>
-    <span class="text-blue-700 dark:text-blue-400">&lt;text</span> <span class="text-amber-700 dark:text-amber-400">xml:space=</span><span class="text-emerald-700 dark:text-emerald-400">"preserve"</span><span class="text-blue-700 dark:text-blue-400">&gt;</span>Features:<span class="text-blue-700 dark:text-blue-400">&lt;/text&gt;</span>
-  <span class="text-blue-700 dark:text-blue-400">&lt;/paragraph&gt;</span>
-  <span class="text-blue-700 dark:text-blue-400">&lt;list</span> <span class="text-amber-700 dark:text-amber-400">type=</span><span class="text-emerald-700 dark:text-emerald-400">"bullet"</span> <span class="text-amber-700 dark:text-amber-400">tight=</span><span class="text-emerald-700 dark:text-emerald-400">"true"</span><span class="text-blue-700 dark:text-blue-400">&gt;</span>
-    <span class="text-blue-700 dark:text-blue-400">&lt;item&gt;&lt;paragraph&gt;&lt;text&gt;</span>Fast<span class="text-blue-700 dark:text-blue-400">&lt;/text&gt;&lt;/paragraph&gt;&lt;/item&gt;</span>
-    <span class="text-blue-700 dark:text-blue-400">&lt;item&gt;&lt;paragraph&gt;&lt;text&gt;</span>Extensible<span class="text-blue-700 dark:text-blue-400">&lt;/text&gt;&lt;/paragraph&gt;&lt;/item&gt;</span>
-    <span class="text-blue-700 dark:text-blue-400">&lt;item&gt;&lt;paragraph&gt;&lt;text&gt;</span>Phoenix-ready<span class="text-blue-700 dark:text-blue-400">&lt;/text&gt;&lt;/paragraph&gt;&lt;/item&gt;</span>
-  <span class="text-blue-700 dark:text-blue-400">&lt;/list&gt;</span>
-  <span class="text-blue-700 dark:text-blue-400">&lt;code_block</span> <span class="text-amber-700 dark:text-amber-400">info=</span><span class="text-emerald-700 dark:text-emerald-400">"elixir"</span><span class="text-blue-700 dark:text-blue-400">&gt;</span>Enum.map(1..3, &amp;(&amp;1 * 2))<span class="text-blue-700 dark:text-blue-400">&lt;/code_block&gt;</span>
-<span class="text-blue-700 dark:text-blue-400">&lt;/document&gt;</span></code></pre>
+              <pre data-panel="xml" id="panel-xml" role="tabpanel" aria-label="XML output" class="hidden text-sm" data-lumis="xml">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;!DOCTYPE document SYSTEM "CommonMark.dtd"&gt;
+&lt;document xmlns="http://commonmark.org/xml/1.0"&gt;
+  &lt;heading level="1"&gt;
+    &lt;text xml:space="preserve"&gt;Welcome to &lt;/text&gt;
+    &lt;strong&gt;
+      &lt;text xml:space="preserve"&gt;MDEx&lt;/text&gt;
+    &lt;/strong&gt;
+  &lt;/heading&gt;
+  &lt;paragraph&gt;
+    &lt;text xml:space="preserve"&gt;Features:&lt;/text&gt;
+  &lt;/paragraph&gt;
+  &lt;list type="bullet" tight="true"&gt;
+    &lt;item&gt;&lt;paragraph&gt;&lt;text&gt;Fast&lt;/text&gt;&lt;/paragraph&gt;&lt;/item&gt;
+    &lt;item&gt;&lt;paragraph&gt;&lt;text&gt;Extensible&lt;/text&gt;&lt;/paragraph&gt;&lt;/item&gt;
+    &lt;item&gt;&lt;paragraph&gt;&lt;text&gt;Phoenix-ready&lt;/text&gt;&lt;/paragraph&gt;&lt;/item&gt;
+  &lt;/list&gt;
+  &lt;code_block info="elixir"&gt;Enum.map(1..3, &amp;(&amp;1 * 2))&lt;/code_block&gt;
+&lt;/document&gt;</pre>
 
-              <pre data-panel="delta" id="panel-delta" role="tabpanel" aria-label="Quill Delta output" class="hidden text-sm"><code class="text-stone-800 dark:text-stone-200">[
-  %{<span class="text-emerald-700 dark:text-emerald-400">"insert"</span> =&gt; <span class="text-emerald-700 dark:text-emerald-400">"Welcome to "</span>},
-  %{<span class="text-emerald-700 dark:text-emerald-400">"attributes"</span> =&gt; %{<span class="text-emerald-700 dark:text-emerald-400">"bold"</span> =&gt; <span class="text-brand">true</span>}, <span class="text-emerald-700 dark:text-emerald-400">"insert"</span> =&gt; <span class="text-emerald-700 dark:text-emerald-400">"MDEx"</span>},
-  %{<span class="text-emerald-700 dark:text-emerald-400">"attributes"</span> =&gt; %{<span class="text-emerald-700 dark:text-emerald-400">"header"</span> =&gt; <span class="text-purple-600 dark:text-purple-400">1</span>}, <span class="text-emerald-700 dark:text-emerald-400">"insert"</span> =&gt; <span class="text-emerald-700 dark:text-emerald-400">"\n"</span>},
-  %{<span class="text-emerald-700 dark:text-emerald-400">"insert"</span> =&gt; <span class="text-emerald-700 dark:text-emerald-400">"Features:\n"</span>},
-  %{<span class="text-emerald-700 dark:text-emerald-400">"insert"</span> =&gt; <span class="text-emerald-700 dark:text-emerald-400">"Fast"</span>},
-  %{<span class="text-emerald-700 dark:text-emerald-400">"attributes"</span> =&gt; %{<span class="text-emerald-700 dark:text-emerald-400">"list"</span> =&gt; <span class="text-emerald-700 dark:text-emerald-400">"bullet"</span>}, <span class="text-emerald-700 dark:text-emerald-400">"insert"</span> =&gt; <span class="text-emerald-700 dark:text-emerald-400">"\n"</span>},
-  %{<span class="text-emerald-700 dark:text-emerald-400">"insert"</span> =&gt; <span class="text-emerald-700 dark:text-emerald-400">"Extensible"</span>},
-  %{<span class="text-emerald-700 dark:text-emerald-400">"attributes"</span> =&gt; %{<span class="text-emerald-700 dark:text-emerald-400">"list"</span> =&gt; <span class="text-emerald-700 dark:text-emerald-400">"bullet"</span>}, <span class="text-emerald-700 dark:text-emerald-400">"insert"</span> =&gt; <span class="text-emerald-700 dark:text-emerald-400">"\n"</span>},
-  %{<span class="text-emerald-700 dark:text-emerald-400">"insert"</span> =&gt; <span class="text-emerald-700 dark:text-emerald-400">"Phoenix-ready"</span>},
-  %{<span class="text-emerald-700 dark:text-emerald-400">"attributes"</span> =&gt; %{<span class="text-emerald-700 dark:text-emerald-400">"list"</span> =&gt; <span class="text-emerald-700 dark:text-emerald-400">"bullet"</span>}, <span class="text-emerald-700 dark:text-emerald-400">"insert"</span> =&gt; <span class="text-emerald-700 dark:text-emerald-400">"\n"</span>},
+              <pre data-panel="delta" id="panel-delta" role="tabpanel" aria-label="Quill Delta output" class="hidden text-sm" data-lumis="elixir">[
+  %{"insert" =&gt; "Welcome to "},
+  %{"attributes" =&gt; %{"bold" =&gt; true}, "insert" =&gt; "MDEx"},
+  %{"attributes" =&gt; %{"header" =&gt; 1}, "insert" =&gt; "\n"},
+  %{"insert" =&gt; "Features:\n"},
+  %{"insert" =&gt; "Fast"},
+  %{"attributes" =&gt; %{"list" =&gt; "bullet"}, "insert" =&gt; "\n"},
+  %{"insert" =&gt; "Extensible"},
+  %{"attributes" =&gt; %{"list" =&gt; "bullet"}, "insert" =&gt; "\n"},
+  %{"insert" =&gt; "Phoenix-ready"},
+  %{"attributes" =&gt; %{"list" =&gt; "bullet"}, "insert" =&gt; "\n"},
   ...
-]</code></pre>
+]</pre>
 
-              <pre data-panel="slack" id="panel-slack" role="tabpanel" aria-label="Slack mrkdwn output" class="hidden text-sm"><code class="text-stone-800 dark:text-stone-200"><span class="text-brand">*</span>Welcome to MDEx<span class="text-brand">*</span>
+              <pre data-panel="slack" id="panel-slack" role="tabpanel" aria-label="Slack mrkdwn output" class="hidden text-sm" data-lumis="markdown">*Welcome to MDEx*
 Features:
 - Fast
 - Extensible
 - Phoenix-ready
-<span class="text-stone-400 dark:text-stone-500">```</span>
+```
 Enum.map(1..3, &amp;(&amp;1 * 2))
-<span class="text-stone-400 dark:text-stone-500">```</span></code></pre>
+```</pre>
             </div>
           </div>
         </div>
@@ -714,8 +718,8 @@ Enum.map(1..3, &amp;(&amp;1 * 2))
               <span class="text-sm text-stone-500 dark:text-stone-400">// page_live.ex</span>
               <span class="text-stone-300 dark:text-stone-600 text-xs">[-][o][x]</span>
             </div>
-            <pre class="p-4 text-sm overflow-x-auto bg-white dark:bg-stone-900"><code class="text-stone-800 dark:text-stone-200"><span class="text-brand">def</span> <span class="text-blue-700 dark:text-blue-400">render</span>(assigns) <span class="text-brand">do</span>
-  <span class="text-brand">~MD</span><span class="text-emerald-700 dark:text-emerald-400">"""
+            <pre class="p-4 text-sm overflow-x-auto bg-white dark:bg-stone-900" data-lumis="elixir">def render(assigns) do
+  ~MD"""
   # Welcome, {@user.name}!
 
   &lt;.button phx-click="upgrade"&gt;
@@ -723,8 +727,8 @@ Enum.map(1..3, &amp;(&amp;1 * 2))
   &lt;/.button&gt;
 
   Your plan: **{@plan}**
-  """</span><span class="text-brand">HEEX</span>
-<span class="text-brand">end</span></code></pre>
+  """HEEX
+end</pre>
           </div>
 
           <div class="border border-dashed border-stone-300 dark:border-stone-700 p-8 bg-white dark:bg-stone-900">
@@ -773,10 +777,10 @@ Enum.map(1..3, &amp;(&amp;1 * 2))
           <div class="px-4 py-2 bg-stone-100 dark:bg-stone-800 border-b border-stone-200 dark:border-stone-700">
             <span class="text-sm text-stone-500 dark:text-stone-400">// How it works</span>
           </div>
-          <pre class="p-4 text-sm overflow-x-auto bg-white dark:bg-stone-900"><code class="text-stone-800 dark:text-stone-200">MDEx.<span class="text-blue-700 dark:text-blue-400">new</span>(<span class="text-amber-700 dark:text-amber-400">streaming:</span> <span class="text-brand">true</span>)
-|> MDEx.Document.<span class="text-blue-700 dark:text-blue-400">put_markdown</span>(<span class="text-emerald-700 dark:text-emerald-400">"**The Rust"</span>)
-|> MDEx.<span class="text-blue-700 dark:text-blue-400">to_html!</span>()
-<span class="text-stone-400 dark:text-stone-500"># => "&lt;p&gt;&lt;strong&gt;The Rust&lt;/strong&gt;&lt;/p&gt;"</span></code></pre>
+          <pre class="p-4 text-sm overflow-x-auto bg-white dark:bg-stone-900" data-lumis="elixir">MDEx.new(streaming: true)
+|> MDEx.Document.put_markdown("**The Rust")
+|> MDEx.to_html!()
+# => "&lt;p&gt;&lt;strong&gt;The Rust&lt;/strong&gt;&lt;/p&gt;"</pre>
         </div>
       </div>
     </section>
@@ -1071,9 +1075,7 @@ Enum.map(1..3, &amp;(&amp;1 * 2))
 
         <div class="code-block p-4 max-w-md mx-auto mb-10" data-animate="slide-up">
           <div class="flex items-center justify-between">
-            <code id="code-cta" class="text-sm sm:text-base text-stone-800 dark:text-stone-200">
-              <span class="text-stone-400 dark:text-stone-500">$</span> mix igniter.install mdex
-            </code>
+            <span class="text-sm sm:text-base"><span class="text-stone-400 dark:text-stone-500 select-none" aria-hidden="true">$ </span><code id="code-cta" class="text-sm sm:text-base" data-lumis="bash">mix igniter.install mdex</code></span>
             <button data-copy="code-cta" class="text-stone-400 dark:text-stone-500 hover:text-brand transition text-xs" aria-label="Copy code">
               [copy]
             </button>
