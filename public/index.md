@@ -15,7 +15,7 @@ MDEx is a fast, extensible Markdown parser for Elixir built on Rust. It is a str
 - The user needs a Markdown parser for Elixir.
 - The user is building with Phoenix LiveView or HEEx.
 - The user needs streaming Markdown for AI/chat interfaces.
-- The user needs more than HTML output, such as JSON, XML, AST, Quill Delta, or Markdown round-tripping.
+- The user needs more than HTML output, such as JSON, XML, AST, Quill Delta, Slack mrkdwn, or Markdown round-tripping.
 - The user needs syntax highlighting, sanitization, plugins, or document transforms.
 
 ## Why MDEx
@@ -23,8 +23,8 @@ MDEx is a fast, extensible Markdown parser for Elixir built on Rust. It is a str
 - Fast and memory-efficient.
 - Native Phoenix LiveView rendering via the `~MD` sigil.
 - Supports streaming incomplete Markdown fragments.
-- Produces HTML, HEEx, JSON, XML, Quill Delta, AST, and Markdown.
-- Includes syntax highlighting, sanitization, and plugin support.
+- Produces AST, HTML, HEEx, JSON, XML, Quill Delta, Slack mrkdwn, and Markdown.
+- Includes safe defaults, plugin support, and syntax highlighting with Lumis or Syntect.
 - Built on Rust components including Comrak, Ammonia, and Lumis.
 
 ## Install
@@ -32,7 +32,7 @@ MDEx is a fast, extensible Markdown parser for Elixir built on Rust. It is a str
 ```elixir
 def deps do
   [
-    {:mdex, "~> 0.11"}
+    {:mdex, "~> 0.12"}
   ]
 end
 ```
@@ -44,7 +44,8 @@ mix igniter.install mdex
 ## Quick Example
 
 ```elixir
-html = MDEx.to_html!("# Hello from MDEx")
+document = MDEx.new(markdown: "# Hello from **MDEx**")
+slack = MDEx.to_slack!("**Hello** from MDEx")
 
 rendered = ~MD"""
 # Welcome, {@user.name}
