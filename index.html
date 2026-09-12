@@ -57,7 +57,6 @@
         },
         "programmingLanguage": ["Elixir", "Rust"],
         "codeRepository": "https://github.com/leandrocp/mdex",
-        "softwareVersion": "0.13.5",
         "keywords": ["markdown", "elixir", "phoenix", "liveview", "parser", "heex", "streaming", "syntax highlighting"],
         "license": "https://opensource.org/licenses/MIT",
         "downloadUrl": "https://hex.pm/packages/mdex",
@@ -91,7 +90,7 @@
             "name": "How do I install MDEx?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Add {:mdex, \"~> 0.12\"} to your mix.exs dependencies, or run: mix igniter.install mdex"
+              "text": "Add MDEx to your mix.exs dependencies, or run: mix igniter.install mdex"
             }
           },
           {
@@ -464,20 +463,9 @@ Enum.map(1..3, &amp;(&amp;1 * 2))
             <div class="text-xs text-stone-400 dark:text-stone-500 mt-1">full MDEx document pipeline &middot; 2.36 MB</div>
           </div>
 
-          <div class="benchmark-row" data-target="278.94" data-decimals="2">
-            <div class="flex items-center justify-between mb-2">
-              <span class="font-semibold text-stone-500 dark:text-stone-400">md</span>
-              <span class="text-sm text-stone-500 dark:text-stone-400"><span class="benchmark-counter">0</span> ops/s</span>
-            </div>
-            <div class="h-4 bg-stone-100 dark:bg-stone-800 border border-stone-200 dark:border-stone-700 overflow-hidden">
-              <div class="benchmark-bar h-full w-full bg-stone-400 origin-left scale-x-0 transition-transform duration-[2500ms] ease-out"></div>
-            </div>
-            <div class="text-xs text-stone-400 dark:text-stone-500 mt-1">pure Elixir &middot; no native dependency &middot; 11.77 MB</div>
-          </div>
-
           <div class="text-xs text-stone-400 dark:text-stone-500 mt-4 pt-4 border-t border-dashed border-stone-200 dark:border-stone-700 flex flex-col sm:flex-row gap-2 sm:gap-4 sm:justify-between">
-            <span>* Actively maintained Elixir Markdown libraries, from the MDEx v0.13.5 README. cmark, Earmark and erlang-markdown are in the full run.</span>
-            <a href="https://github.com/leandrocp/mdex/blob/v0.13.5/benchmark.exs" target="_blank" rel="noopener" class="hover:text-brand transition whitespace-nowrap">[benchmark.exs]</a>
+            <span>MDEx benchmark</span>
+            <a href="https://github.com/leandrocp/mdex/blob/a6099c4a917b296c1d4c7f876064074d30184c2b/benchmark.exs" target="_blank" rel="noopener" class="hover:text-brand transition whitespace-nowrap">[benchmark.exs]</a>
           </div>
         </div>
 
@@ -485,7 +473,7 @@ Enum.map(1..3, &amp;(&amp;1 * 2))
           <pre class="text-stone-300 dark:text-stone-600 text-xs mb-4" aria-hidden="true">┌─────────────────────────────────────┐</pre>
           <div class="text-4xl sm:text-5xl font-bold text-brand mb-2">0 ms</div>
           <div class="text-stone-600 dark:text-stone-400">with the <code class="text-brand">~MD</code> sigil</div>
-          <div class="text-sm text-stone-400 dark:text-stone-500 mt-2">static Markdown is rendered at compile time, so the request pays nothing at all</div>
+          <div class="text-sm text-stone-400 dark:text-stone-500 mt-2">rendered at compile time</div>
           <pre class="text-stone-300 dark:text-stone-600 text-xs mt-4" aria-hidden="true">└─────────────────────────────────────┘</pre>
         </div>
       </div>
@@ -572,7 +560,7 @@ Enum.map(1..3, &amp;(&amp;1 * 2))
             <p class="text-stone-600 dark:text-stone-400 text-sm mb-4">
               Extend functionality with custom plugins. Process documents at any stage of the pipeline.
             </p>
-            <span class="text-xs text-brand">>> </span><a href="https://mdex.hexdocs.pm/plugins.html" target="_blank" rel="noopener" class="text-xs text-brand hover:underline">Plugins — MDEx v0.13.5</a>
+            <span class="text-xs text-brand">>> </span><a href="https://mdex.hexdocs.pm/plugins.html" target="_blank" rel="noopener" class="text-xs text-brand hover:underline">Plugins</a>
           </div>
 
           <div class="feature-card opacity-0 translate-y-4 group p-6 bg-white dark:bg-stone-900 border border-dashed border-stone-300 dark:border-stone-700 hover:border-brand transition-all duration-300 relative">
@@ -627,7 +615,7 @@ Enum.map(1..3, &amp;(&amp;1 * 2))
             <p class="text-stone-600 dark:text-stone-400 text-sm mb-4">
               Raw HTML is omitted by default. Opt into escaping, sanitization, or unsafe rendering when your content requires it.
             </p>
-            <span class="text-xs text-brand">>> </span><a href="https://mdex.hexdocs.pm/safety.html" target="_blank" rel="noopener" class="text-xs text-brand hover:underline">Safety — MDEx v0.13.5</a>
+            <span class="text-xs text-brand">>> </span><a href="https://mdex.hexdocs.pm/safety.html" target="_blank" rel="noopener" class="text-xs text-brand hover:underline">Safety</a>
           </div>
 
           <div class="feature-card opacity-0 translate-y-4 group p-6 bg-white dark:bg-stone-900 border border-dashed border-stone-300 dark:border-stone-700 hover:border-brand transition-all duration-300 relative">
@@ -767,7 +755,7 @@ end</pre>
 
         <div class="overflow-x-auto border border-dashed border-stone-300 dark:border-stone-700 bg-white dark:bg-stone-900" data-animate="fade-in">
           <table class="w-full min-w-[960px] text-sm font-mono">
-            <caption class="sr-only">MDEx v0.13.5 feature comparison with other Elixir and Erlang Markdown libraries</caption>
+            <caption class="sr-only">MDEx feature comparison with other Elixir and Erlang Markdown libraries</caption>
             <thead>
               <tr class="border-b border-stone-200 dark:border-stone-700">
                 <th class="text-left py-4 px-4 text-stone-500 dark:text-stone-400 font-medium">Feature</th>
