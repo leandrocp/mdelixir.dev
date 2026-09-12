@@ -8,6 +8,7 @@ import html from "@lumis-sh/lumis/langs/html";
 import json from "@lumis-sh/lumis/langs/json";
 import markdown from "@lumis-sh/lumis/langs/markdown";
 import markdownInline from "@lumis-sh/lumis/langs/markdown_inline";
+import plaintext from "@lumis-sh/lumis/langs/plaintext";
 import xml from "@lumis-sh/lumis/langs/xml";
 import latte from "@lumis-sh/themes/catppuccin_latte";
 import macchiato from "@lumis-sh/themes/catppuccin_macchiato";
@@ -29,13 +30,25 @@ const THEMES = { light: latte, dark: macchiato };
 /**
  * Every language the page needs, loaded before the first highlight.
  *
- * Four of these are never named by a `data-lumis` attribute — they are injected
- * inside another grammar: `markdown_inline` and `elixir` inside the markdown
- * sample, `comment` inside Elixir comments, `css` inside HTML. Each language
- * here has a matching `@lumis-sh/wasm-*` devDependency, so a build resolves
- * every parser from `node_modules` and never reaches for the CDN.
+ * Three are never named by a `data-lumis` attribute and are only ever reached as
+ * an injected grammar: `markdown_inline` inside the markdown sample, `comment`
+ * inside Elixir comments, and `css` inside HTML. Each language here except
+ * `plaintext`, which needs no parser, has a matching `@lumis-sh/wasm-*`
+ * devDependency, so a build resolves every parser from `node_modules` and never
+ * reaches for the CDN.
  */
-const LANGUAGES = [bash, comment, css, elixir, html, json, markdown, markdownInline, xml];
+const LANGUAGES = [
+  bash,
+  comment,
+  css,
+  elixir,
+  html,
+  json,
+  markdown,
+  markdownInline,
+  plaintext,
+  xml,
+];
 
 /** Marks a snippet that stays on one line, so the line wrapper must not be a block. */
 const INLINE_CLASS = "lumis-inline";
