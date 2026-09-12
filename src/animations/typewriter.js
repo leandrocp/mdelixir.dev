@@ -2,6 +2,55 @@ import { animateCounterById } from "./counter.js";
 
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+/** The iex prompt is chrome, not Elixir, so it is styled here rather than highlighted. */
+const PROMPT = { text: "iex> ", className: "text-stone-500 dark:text-stone-400" };
+
+/**
+ * Flatten the build-time highlighted snippet into typeable runs.
+ *
+ * Lumis wraps each line in a `div.l-line` and each token in a styled `span`, so
+ * the nearest styled ancestor of a text node carries that run's colors.
+ */
+function highlightedTokens(templateId) {
+  const template = document.getElementById(templateId);
+  if (!template) return [];
+
+  const tokens = [];
+
+  function walk(node, style) {
+    for (const child of node.childNodes) {
+      if (child.nodeType === Node.TEXT_NODE) {
+        if (child.data) tokens.push({ text: child.data, style });
+      } else {
+        walk(child, child.getAttribute("style") || style);
+      }
+    }
+  }
+
+  walk(template.content, "");
+
+  // Lumis ends every line with a newline; the last one would type a trailing blank line.
+  const last = tokens.at(-1);
+  if (last) last.text = last.text.replace(/\n$/, "");
+
+  return tokens.filter((token) => token.text);
+}
+
+function renderToken({ text, style, className }) {
+  const escaped = text
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll("\n", "<br>");
+
+  if (!style && !className) return escaped;
+
+  const attributes = [className && `class="${className}"`, style && `style="${style}"`]
+    .filter(Boolean)
+    .join(" ");
+  return `<span ${attributes}>${escaped}</span>`;
+}
+
 export function initTypewriter() {
   const titleEl = document.getElementById("hero-title");
   const cursorEl = document.getElementById("hero-cursor");
@@ -89,62 +138,38 @@ export function initTypewriter() {
     const codeCursor = document.getElementById("code-cursor");
     if (!codeContent) return;
 
-    const lines = [
-      { text: "iex> ", class: "text-stone-500 dark:text-stone-400" },
-      { text: "MDEx.new(", class: "text-stone-800 dark:text-stone-200" },
-      { text: "markdown: ", class: "text-amber-700 dark:text-amber-400" },
-      { text: '"# Hello **MDEx**"', class: "text-emerald-700 dark:text-emerald-400" },
-      { text: ")", class: "text-stone-800 dark:text-stone-200" },
-      { text: "\n", class: "" },
-      { text: "#MDEx.Document(4 nodes)<...>", class: "text-brand-light" },
-    ];
+    const tokens = [PROMPT, ...highlightedTokens("hero-code-source")];
+    if (tokens.length === 1) return;
 
     if (instant) {
-      let html = "";
-      lines.forEach((line) => {
-        for (const char of line.text) {
-          if (char === "\n") html += "<br>";
-          else if (char === "<") html += "&lt;";
-          else if (char === ">") html += "&gt;";
-          else html += line.class ? `<span class="${line.class}">${char}</span>` : char;
-        }
-      });
-      codeContent.innerHTML = html;
+      codeContent.innerHTML = tokens.map(renderToken).join("");
       if (codeCursor) codeCursor.classList.add("opacity-0");
       return;
     }
 
-    let lineIndex = 0;
+    let tokenIndex = 0;
     let charIndex = 0;
-    let html = "";
+    let typed = "";
 
     function typeNext() {
-      if (lineIndex < lines.length) {
-        const line = lines[lineIndex];
-        if (charIndex < line.text.length) {
-          const char = line.text.charAt(charIndex);
-          if (char === "\n") {
-            html += "<br>";
-          } else if (char === "<") {
-            html += "&lt;";
-          } else if (char === ">") {
-            html += "&gt;";
-          } else {
-            html += line.class ? `<span class="${line.class}">${char}</span>` : char;
-          }
-          codeContent.innerHTML = html;
-          charIndex++;
-          setTimeout(typeNext, 25 + Math.random() * 20);
-        } else {
-          lineIndex++;
-          charIndex = 0;
-          if (lineIndex < lines.length) {
-            setTimeout(typeNext, lineIndex === 4 ? 300 : 50);
-          } else if (codeCursor) {
-            codeCursor.classList.add("opacity-0");
-          }
-        }
+      const token = tokens[tokenIndex];
+
+      if (charIndex < token.text.length) {
+        charIndex++;
+        codeContent.innerHTML =
+          typed + renderToken({ ...token, text: token.text.slice(0, charIndex) });
+        // A newline lands as a whole run, so pause on it the way a person would.
+        const pause = token.text[charIndex - 1] === "\n" ? 300 : 25 + Math.random() * 20;
+        setTimeout(typeNext, pause);
+        return;
       }
+
+      typed += renderToken(token);
+      tokenIndex++;
+      charIndex = 0;
+
+      if (tokenIndex < tokens.length) setTimeout(typeNext, 0);
+      else if (codeCursor) codeCursor.classList.add("opacity-0");
     }
 
     setTimeout(typeNext, 300);
