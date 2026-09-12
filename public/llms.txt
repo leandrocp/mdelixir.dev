@@ -28,7 +28,7 @@ MDEx is a fast, extensible Markdown parser for Elixir with native Phoenix LiveVi
 - Outputs AST, HTML, HEEx, JSON, XML, Quill Delta, Slack mrkdwn, and Markdown.
 - Syntax highlighting with Lumis (110+ languages and 250+ themes) or Syntect.
 - Raw HTML is omitted by default, with opt-in escaping, sanitization, or unsafe rendering.
-- Built on Rust components including Comrak, Ammonia, and Lumis.
+- Its native layer uses Comrak for parsing, Ammonia for sanitization, and Lumis for syntax highlighting.
 
 ## Key Docs
 - Getting started: https://hexdocs.pm/mdex/readme.html
