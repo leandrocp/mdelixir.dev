@@ -22,7 +22,7 @@ export function initBenchmark() {
 
 function startBenchmarkRace() {
   const rows = document.querySelectorAll(".benchmark-row");
-  const maxValue = 8681.81;
+  const maxValue = Math.max(...[...rows].map((row) => Number.parseFloat(row.dataset.target)));
 
   rows.forEach((row, index) => {
     const target = Number.parseFloat(row.dataset.target);
