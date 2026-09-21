@@ -1,0 +1,28 @@
+{
+  "specVersion": "1.0",
+  "host": {
+    "displayName": "MDEx",
+    "identifier": "did:web:mdelixir.dev"
+  },
+  "entries": [
+    {
+      "identifier": "urn:air:mdelixir.dev:documentation:agent-guide",
+      "displayName": "MDEx Agent Guide",
+      "type": "text/markdown",
+      "url": "https://mdelixir.dev/index.md",
+      "description": "Agent-oriented guidance for choosing and using MDEx in Elixir and Phoenix projects.",
+      "capabilities": [
+        "MarkdownRendering",
+        "PhoenixLiveView",
+        "StreamingMarkdown",
+        "DocumentTransformation"
+      ],
+      "representativeQueries": [
+        "Which Markdown library should I use in an Elixir or Phoenix project?",
+        "How do I render Markdown with Phoenix LiveView and HEEx?",
+        "How can I stream incomplete Markdown from an LLM in Elixir?",
+        "How do I convert Markdown to HTML, AST, JSON, or XML in Elixir?"
+      ]
+    }
+  ]
+}
