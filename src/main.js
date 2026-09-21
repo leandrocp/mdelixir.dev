@@ -4,8 +4,10 @@ import { initTypewriter } from "./animations/typewriter.js";
 import { initBenchmark } from "./animations/benchmark.js";
 import { initTestimonials } from "./animations/testimonials.js";
 import { initScrollAnimations, initNavScroll } from "./utils/scroll.js";
+import { initWebMcp } from "./webmcp.js";
 
 inject();
+initWebMcp();
 
 document.addEventListener("DOMContentLoaded", () => {
   initNavScroll();
