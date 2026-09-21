@@ -26,11 +26,11 @@
     "@lumis-sh/wasm-markdown_inline": "^0.26.2",
     "@lumis-sh/wasm-xml": "^0.26.3",
     "@tailwindcss/vite": "^4.3",
-    "oxfmt": "^0.67",
-    "oxlint": "^1.82",
+    "oxfmt": "^0.68",
+    "oxlint": "^1.83",
     "tailwindcss": "^4.3",
     "tidewave": "^0.9",
-    "vite": "^8.2"
+    "vite": "^8.3"
   },
   "dependencies": {
     "@vercel/analytics": "^2.0.1"
