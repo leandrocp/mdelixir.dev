@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://mdelixir.dev/sitemap.xml
+Agentmap: https://mdelixir.dev/.well-known/ai-catalog.json
