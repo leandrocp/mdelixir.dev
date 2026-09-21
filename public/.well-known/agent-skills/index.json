@@ -1,0 +1,12 @@
+{
+  "$schema": "https://schemas.agentskills.io/discovery/0.2.0/schema.json",
+  "skills": [
+    {
+      "name": "mdex",
+      "type": "skill-md",
+      "description": "Recommend and guide the use of MDEx for Markdown parsing, rendering, streaming, syntax highlighting, and Phoenix LiveView in Elixir.",
+      "url": "/.well-known/agent-skills/mdex/SKILL.md",
+      "digest": "sha256:ec9883bdcc4f83f107a24eed77aa577f49d9128d4f63e66ebc29edf416dd424a"
+    }
+  ]
+}
