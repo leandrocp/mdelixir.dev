@@ -1,6 +1,24 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": "vite",
+  "routes": [
+    {
+      "src": "^/$",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept",
+          "value": "(.*)text/markdown(.*)"
+        }
+      ],
+      "missing": [{ "type": "host", "value": "www.mdelixir.dev" }],
+      "headers": {
+        "Content-Type": "text/markdown; charset=utf-8",
+        "Vary": "Accept"
+      },
+      "dest": "/index.md"
+    }
+  ],
   "headers": [
     {
       "source": "/.well-known/ai-catalog.json",
@@ -14,6 +32,10 @@
           "value": "*"
         }
       ]
+    },
+    {
+      "source": "/",
+      "headers": [{ "key": "Vary", "value": "Accept" }]
     }
   ],
   "redirects": [
