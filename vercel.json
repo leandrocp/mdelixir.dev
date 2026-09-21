@@ -19,6 +19,12 @@
       "dest": "/index.md"
     }
   ],
+  "rewrites": [
+    {
+      "source": "/.well-known/api-catalog",
+      "destination": "/api/api-catalog"
+    }
+  ],
   "headers": [
     {
       "source": "/.well-known/ai-catalog.json",
@@ -39,7 +45,7 @@
         { "key": "Vary", "value": "Accept" },
         {
           "key": "Link",
-          "value": "</index.md>; rel=\"describedby\"; type=\"text/markdown\", </llms.txt>; rel=\"service-doc\"; type=\"text/plain\""
+          "value": "</index.md>; rel=\"describedby\"; type=\"text/markdown\", </llms.txt>; rel=\"service-doc\"; type=\"text/plain\", </.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\""
         }
       ]
     }

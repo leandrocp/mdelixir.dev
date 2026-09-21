@@ -1,0 +1,219 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "MDEx Discovery API",
+    "version": "1.0.0",
+    "description": "Read-only discovery resources published by the MDEx website. This API does not render Markdown or execute the MDEx library."
+  },
+  "servers": [
+    {
+      "url": "https://mdelixir.dev"
+    }
+  ],
+  "paths": {
+    "/.well-known/api-catalog": {
+      "get": {
+        "summary": "Get the API catalog",
+        "operationId": "getApiCatalog",
+        "responses": {
+          "200": {
+            "description": "RFC 9727 API catalog",
+            "content": {
+              "application/linkset+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LinksetDocument"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/.well-known/agent-skills/index.json": {
+      "get": {
+        "summary": "Get the agent skills index",
+        "operationId": "getAgentSkillsIndex",
+        "responses": {
+          "200": {
+            "description": "Agent skills discovery document",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/.well-known/ai-catalog.json": {
+      "get": {
+        "summary": "Get the agentic resource discovery manifest",
+        "operationId": "getAgenticResourceManifest",
+        "responses": {
+          "200": {
+            "description": "Agentic resource discovery manifest",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/index.md": {
+      "get": {
+        "summary": "Get the agent-oriented MDEx guide",
+        "operationId": "getAgentGuide",
+        "responses": {
+          "200": {
+            "description": "Agent-oriented MDEx guide",
+            "content": {
+              "text/markdown": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/llms.txt": {
+      "get": {
+        "summary": "Get the concise project index",
+        "operationId": "getLlmsText",
+        "responses": {
+          "200": {
+            "description": "Plain-text project index",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/auth.md": {
+      "get": {
+        "summary": "Get agent access and registration guidance",
+        "operationId": "getAgentAuthGuidance",
+        "responses": {
+          "200": {
+            "description": "Public-access and agent-registration guidance",
+            "content": {
+              "text/markdown": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/health": {
+      "get": {
+        "summary": "Get discovery API health",
+        "operationId": "getDiscoveryApiHealth",
+        "responses": {
+          "200": {
+            "description": "Discovery API is available",
+            "content": {
+              "application/health+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Health"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Link": {
+        "type": "object",
+        "required": ["href"],
+        "properties": {
+          "href": {
+            "type": "string",
+            "format": "uri"
+          },
+          "type": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
+      },
+      "Linkset": {
+        "type": "object",
+        "required": ["anchor"],
+        "properties": {
+          "anchor": {
+            "type": "string",
+            "format": "uri"
+          },
+          "service-desc": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Link"
+            }
+          },
+          "service-doc": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Link"
+            }
+          },
+          "status": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Link"
+            }
+          }
+        },
+        "additionalProperties": true
+      },
+      "LinksetDocument": {
+        "type": "object",
+        "required": ["linkset"],
+        "properties": {
+          "linkset": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Linkset"
+            }
+          }
+        },
+        "additionalProperties": false
+      },
+      "Health": {
+        "type": "object",
+        "required": ["status", "serviceId"],
+        "properties": {
+          "status": {
+            "type": "string",
+            "enum": ["pass"]
+          },
+          "serviceId": {
+            "type": "string",
+            "format": "uri"
+          },
+          "description": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}
