@@ -6,6 +6,18 @@
   },
   "entries": [
     {
+      "identifier": "urn:air:mdelixir.dev:mcp:mdex",
+      "displayName": "MDEx MCP Server",
+      "type": "application/json",
+      "url": "https://mdelixir.dev/.well-known/mcp/server-card.json",
+      "description": "Server Card for the public, read-only MDEx MCP server.",
+      "capabilities": ["MCPTools", "MCPResources", "MCPPrompts"],
+      "representativeQueries": [
+        "Where are the authoritative MDEx resources?",
+        "How do I install MDEx in an Elixir project?"
+      ]
+    },
+    {
       "identifier": "urn:air:mdelixir.dev:documentation:agent-guide",
       "displayName": "MDEx Agent Guide",
       "type": "text/markdown",

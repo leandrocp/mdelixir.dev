@@ -20,6 +20,16 @@ const catalog = {
           type: "application/health+json",
         },
       ],
+      "service-meta": [
+        {
+          href: "https://mdelixir.dev/.well-known/mcp/server-card.json",
+          type: "application/json",
+        },
+        {
+          href: "https://mdelixir.dev/.well-known/oauth-protected-resource",
+          type: "application/json",
+        },
+      ],
     },
   ],
 };
@@ -29,6 +39,8 @@ const linkHeader = [
   '<https://mdelixir.dev/openapi.json>; rel="service-desc"; type="application/json"',
   '<https://mdelixir.dev/api.md>; rel="service-doc"; type="text/markdown"',
   '<https://mdelixir.dev/api/health>; rel="status"; type="application/health+json"',
+  '<https://mdelixir.dev/.well-known/mcp/server-card.json>; rel="service-meta"; type="application/json"',
+  '<https://mdelixir.dev/.well-known/oauth-protected-resource>; rel="service-meta"; type="application/json"',
 ].join(", ");
 
 export default function handler(request, response) {

@@ -1,0 +1,34 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/v1/server-card.schema.json",
+  "name": "dev.mdelixir/mdex",
+  "title": "MDEx",
+  "description": "Read-only MDEx documentation, installation guidance, and project resources.",
+  "version": "1.0.0",
+  "websiteUrl": "https://mdelixir.dev/",
+  "icons": [
+    {
+      "src": "https://mdelixir.dev/images/mdex_icon.png",
+      "mimeType": "image/png"
+    }
+  ],
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://mdelixir.dev/mcp",
+      "supportedProtocolVersions": ["2025-06-18", "2025-03-26"]
+    }
+  ],
+  "serverInfo": {
+    "name": "mdelixir.dev",
+    "version": "1.0.0"
+  },
+  "transport": {
+    "type": "streamable-http",
+    "endpoint": "https://mdelixir.dev/mcp"
+  },
+  "capabilities": {
+    "tools": true,
+    "resources": true,
+    "prompts": true
+  }
+}
