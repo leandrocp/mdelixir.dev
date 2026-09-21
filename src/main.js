@@ -1,8 +1,11 @@
 import "./styles.css";
+import { inject } from "@vercel/analytics";
 import { initTypewriter } from "./animations/typewriter.js";
 import { initBenchmark } from "./animations/benchmark.js";
 import { initTestimonials } from "./animations/testimonials.js";
 import { initScrollAnimations, initNavScroll } from "./utils/scroll.js";
+
+inject();
 
 document.addEventListener("DOMContentLoaded", () => {
   initNavScroll();
