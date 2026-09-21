@@ -35,7 +35,13 @@
     },
     {
       "source": "/",
-      "headers": [{ "key": "Vary", "value": "Accept" }]
+      "headers": [
+        { "key": "Vary", "value": "Accept" },
+        {
+          "key": "Link",
+          "value": "</index.md>; rel=\"describedby\"; type=\"text/markdown\", </llms.txt>; rel=\"service-doc\"; type=\"text/plain\""
+        }
+      ]
     }
   ],
   "redirects": [
