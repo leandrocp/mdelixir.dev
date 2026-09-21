@@ -1,0 +1,21 @@
+{
+  "issuer": "https://mdelixir.dev",
+  "authorization_endpoint": "https://mdelixir.dev/oauth/authorize",
+  "token_endpoint": "https://mdelixir.dev/oauth/token",
+  "jwks_uri": "https://mdelixir.dev/oauth/jwks",
+  "grant_types_supported": [],
+  "response_types_supported": [],
+  "scopes_supported": ["public"],
+  "token_endpoint_auth_methods_supported": [],
+  "agent_auth": {
+    "skill": "https://mdelixir.dev/auth.md",
+    "register_uri": "https://mdelixir.dev/agent/auth",
+    "registration_required": false,
+    "identity_types_supported": ["anonymous"],
+    "credential_types_supported": ["none"],
+    "anonymous": {
+      "credential_types_supported": ["none"],
+      "claim_uri": "https://mdelixir.dev/agent/auth"
+    }
+  }
+}

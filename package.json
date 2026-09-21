@@ -9,9 +9,10 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "lint": "oxlint src/ vite/",
-    "fmt": "oxfmt src/ vite/",
-    "fmt:check": "oxfmt --check src/ vite/"
+    "test": "node --test",
+    "lint": "oxlint api/ src/ test/ vite/",
+    "fmt": "oxfmt api/ public/.well-known/ public/auth.md public/api.md public/openapi.json src/ test/ vercel.json vite/",
+    "fmt:check": "oxfmt --check api/ public/.well-known/ public/auth.md public/api.md public/openapi.json src/ test/ vercel.json vite/"
   },
   "devDependencies": {
     "@lumis-sh/lumis": "^0.7.1",

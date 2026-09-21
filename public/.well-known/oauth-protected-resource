@@ -1,0 +1,7 @@
+{
+  "resource": "https://mdelixir.dev/",
+  "resource_name": "MDEx public discovery APIs",
+  "authorization_servers": ["https://mdelixir.dev"],
+  "scopes_supported": ["public"],
+  "bearer_methods_supported": ["header"]
+}

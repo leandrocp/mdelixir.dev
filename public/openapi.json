@@ -65,6 +65,60 @@
         }
       }
     },
+    "/.well-known/oauth-protected-resource": {
+      "get": {
+        "summary": "Get OAuth Protected Resource Metadata",
+        "operationId": "getOAuthProtectedResourceMetadata",
+        "responses": {
+          "200": {
+            "description": "RFC 9728 metadata describing anonymous public access",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/.well-known/oauth-authorization-server": {
+      "get": {
+        "summary": "Get OAuth Authorization Server Metadata",
+        "operationId": "getOAuthAuthorizationServerMetadata",
+        "responses": {
+          "200": {
+            "description": "RFC 8414 and Auth.md metadata describing anonymous public access",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/.well-known/mcp/server-card.json": {
+      "get": {
+        "summary": "Get the MCP Server Card",
+        "operationId": "getMcpServerCard",
+        "responses": {
+          "200": {
+            "description": "MCP Server Card for the read-only MDEx server",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/index.md": {
       "get": {
         "summary": "Get the agent-oriented MDEx guide",
@@ -115,6 +169,71 @@
                 }
               }
             }
+          }
+        }
+      }
+    },
+    "/agent/auth": {
+      "get": {
+        "summary": "Get the anonymous agent-registration descriptor",
+        "operationId": "getAgentAuthDescriptor",
+        "responses": {
+          "200": {
+            "description": "Registration is not required and no credential is issued",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "Confirm anonymous agent access",
+        "operationId": "confirmAnonymousAgentAccess",
+        "responses": {
+          "200": {
+            "description": "Registration is not required and no credential is issued",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/mcp": {
+      "post": {
+        "summary": "Call the public read-only MCP server",
+        "operationId": "callMcpServer",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "JSON-RPC response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "202": {
+            "description": "JSON-RPC notification accepted"
           }
         }
       }
