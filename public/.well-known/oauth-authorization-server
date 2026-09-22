@@ -10,6 +10,7 @@
   "agent_auth": {
     "skill": "https://mdelixir.dev/auth.md",
     "register_uri": "https://mdelixir.dev/agent/auth",
+    "claim_uri": "https://mdelixir.dev/agent/auth",
     "registration_required": false,
     "identity_types_supported": ["anonymous"],
     "credential_types_supported": ["none"],

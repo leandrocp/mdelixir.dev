@@ -18,7 +18,25 @@ The supported scope is `public`.
 
 ## Register
 
-Registration is not required. `GET` or `POST` <https://mdelixir.dev/agent/auth> returns a read-only descriptor confirming that no account is created and no credential is issued. Do not submit user identity or authentication data.
+Registration is not required. The endpoint advertised as `agent_auth.register_uri` is <https://mdelixir.dev/agent/auth>, and `GET`, `HEAD`, and `POST` all return the same read-only descriptor confirming that no account is created and no credential is issued. Do not submit user identity or authentication data.
+
+```http
+POST /agent/auth HTTP/1.1
+Host: mdelixir.dev
+Accept: application/json
+```
+
+```json
+{
+  "registration_required": false,
+  "resource": "https://mdelixir.dev/",
+  "identity_types_supported": ["anonymous"],
+  "credential_types_supported": ["none"],
+  "scope": "public"
+}
+```
+
+The response is not a credential. Do not store it, and do not send an `Authorization` header afterwards.
 
 ## Authentication
 
@@ -50,4 +68,6 @@ Useful resources:
 
 ## Claim and revocation
 
-Claiming and revocation do not apply. MDEx does not create an account, session, token, API key, or other credential through this website.
+`agent_auth.claim_uri` points back at <https://mdelixir.dev/agent/auth>. There is no claim ceremony: the endpoint completes immediately, issues nothing, and never returns a `user_code` or a verification URL to poll.
+
+Revocation does not apply and no `revocation_uri` is advertised. MDEx does not create an account, session, token, API key, or other credential through this website, so there is nothing to claim or revoke.

@@ -41,11 +41,16 @@ test("OAuth metadata consistently describes anonymous access", async () => {
   assert.equal(authorizationServer.issuer, protectedResource.authorization_servers[0]);
   assert.deepEqual(authorizationServer.grant_types_supported, []);
   assert.deepEqual(authorizationServer.response_types_supported, []);
+  assert.equal(authorizationServer.agent_auth.skill, "https://mdelixir.dev/auth.md");
   assert.deepEqual(authorizationServer.agent_auth.identity_types_supported, ["anonymous"]);
   assert.deepEqual(authorizationServer.agent_auth.credential_types_supported, ["none"]);
+  assert.deepEqual(authorizationServer.agent_auth.anonymous.credential_types_supported, ["none"]);
+  assert.equal(authorizationServer.agent_auth.register_uri, "https://mdelixir.dev/agent/auth");
+  // Scanners read claim_uri from agent_auth itself, so advertise it there and under anonymous.
+  assert.equal(authorizationServer.agent_auth.claim_uri, "https://mdelixir.dev/agent/auth");
   assert.equal(
     authorizationServer.agent_auth.anonymous.claim_uri,
-    "https://mdelixir.dev/agent/auth",
+    authorizationServer.agent_auth.claim_uri,
   );
   assert.deepEqual(protectedResource.scopes_supported, ["public"]);
   assert.ok(protectedResource.bearer_methods_supported.includes("header"));
