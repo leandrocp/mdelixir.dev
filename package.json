@@ -27,8 +27,8 @@
     "@lumis-sh/wasm-markdown_inline": "^0.26.2",
     "@lumis-sh/wasm-xml": "^0.26.3",
     "@tailwindcss/vite": "^4.3",
-    "oxfmt": "^0.68",
-    "oxlint": "^1.83",
+    "oxfmt": "^0.70",
+    "oxlint": "^1.85",
     "tailwindcss": "^4.3",
     "tidewave": "^0.9",
     "vite": "^8.3"
