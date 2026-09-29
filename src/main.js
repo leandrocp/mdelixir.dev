@@ -37,8 +37,7 @@ function initCopyButtons() {
       if (!customText && !codeEl) return;
 
       try {
-        // Lumis ends each line with a newline, so the last one would trail the copy.
-        await navigator.clipboard.writeText(customText || codeEl.textContent.trimEnd());
+        await navigator.clipboard.writeText(customText || codeEl.textContent);
         const originalHTML = btn.innerHTML;
         btn.innerHTML =
           '<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>';
