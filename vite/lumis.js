@@ -1,63 +1,49 @@
 import { createHighlighter } from "@lumis-sh/lumis";
 import { htmlMultiThemes } from "@lumis-sh/lumis/formatters";
-import bash from "@lumis-sh/lumis/langs/bash";
-import comment from "@lumis-sh/lumis/langs/comment";
-import css from "@lumis-sh/lumis/langs/css";
-import elixir from "@lumis-sh/lumis/langs/elixir";
-import html from "@lumis-sh/lumis/langs/html";
-import json from "@lumis-sh/lumis/langs/json";
-import markdown from "@lumis-sh/lumis/langs/markdown";
-import markdownInline from "@lumis-sh/lumis/langs/markdown_inline";
+import { multiThemesPreAttrs, openTag } from "@lumis-sh/lumis/formatters/html";
 import plaintext from "@lumis-sh/lumis/langs/plaintext";
-import xml from "@lumis-sh/lumis/langs/xml";
 import latte from "@lumis-sh/themes/catppuccin_latte";
 import macchiato from "@lumis-sh/themes/catppuccin_macchiato";
+import lumis from "@lumis-sh/vite";
+import bash from "@lumis-sh/wasm-bash";
+import elixir from "@lumis-sh/wasm-elixir";
+import html from "@lumis-sh/wasm-html";
+import json from "@lumis-sh/wasm-json";
+import markdown from "@lumis-sh/wasm-markdown";
+import xml from "@lumis-sh/wasm-xml";
 
 /**
  * Build-time syntax highlighting with Lumis.
  *
- * Any `<pre data-lumis="LANG">` or `<code data-lumis="LANG">` in index.html holds
- * plain (HTML-escaped) source. This plugin replaces its contents with highlighted
- * markup, keeping every attribute the author wrote on the element. Highlighting
- * runs in Node during dev and build, so the browser downloads no highlighter and
- * no parsers — it only ever receives finished HTML.
+ * Code blocks are written as `<pre><code class="language-LANG">` holding plain
+ * (HTML-escaped) source, and `@lumis-sh/vite` highlights them in place, keeping
+ * every attribute written on either element. Inline snippets are a `<code
+ * data-lumis="LANG">` that is not the first child of a `<pre>`, so the Vite
+ * plugin leaves it alone and `lumisInlineCode` highlights it instead.
+ * Everything runs in Node during dev and build, so the browser downloads no
+ * highlighter and no parsers — it only ever receives finished HTML.
  *
  * Themes are emitted as `light-dark()` values, which follows the site's
  * `prefers-color-scheme` dark mode without any JavaScript.
  */
 const THEMES = { light: latte, dark: macchiato };
+const DEFAULT_THEME = "light-dark()";
+
+/** The site's own chrome paints code backgrounds; Lumis appends this after the theme's. */
+const TRANSPARENT = { style: "background-color: transparent;" };
 
 /**
- * Every language the page needs, loaded before the first highlight.
+ * Every language the markup names, loaded before the first highlight.
  *
- * Three are never named by a `data-lumis` attribute and are only ever reached as
- * an injected grammar: `markdown_inline` inside the markdown sample, `comment`
- * inside Elixir comments, and `css` inside HTML. Each language here except
- * `plaintext`, which needs no parser, has a matching `@lumis-sh/wasm-*`
- * devDependency, so a build resolves every parser from `node_modules` and never
- * reaches for the CDN.
+ * Injected grammars are not listed: Lumis loads them from the installed parser
+ * packages while it highlights. That covers `comment` inside Elixir comments and
+ * `css` inside HTML, each a devDependency of its own, and `markdown_inline`,
+ * which `@lumis-sh/wasm-markdown` brings along. `plaintext` needs no parser.
  */
-const LANGUAGES = [
-  bash,
-  comment,
-  css,
-  elixir,
-  html,
-  json,
-  markdown,
-  markdownInline,
-  plaintext,
-  xml,
-];
+const LANGUAGES = [bash, elixir, html, json, markdown, plaintext, xml];
 
-/** Marks a snippet that stays on one line, so the line wrapper must not be a block. */
-const INLINE_CLASS = "lumis-inline";
-
-const PRE_ELEMENT = /<pre((?:[^>"']|"[^"]*"|'[^']*')*)>([\s\S]*?)<\/pre>/g;
-const CODE_ELEMENT = /<code((?:[^>"']|"[^"]*"|'[^']*')*)>([\s\S]*?)<\/code>/g;
+const INLINE_CODE = /<code((?:[^>"']|"[^"]*"|'[^']*')*)>([^<]*)<\/code>/g;
 const ATTRIBUTE = /([a-zA-Z_:][-\w:.]*)(?:\s*=\s*(?:"([^"]*)"|'([^']*)'|([^\s"'=<>`]+)))?/g;
-const LUMIS_OUTPUT = /^<pre([^>]*)><code([^>]*)>([\s\S]*)<\/code><\/pre>$/;
-
 const NAMED_ENTITIES = { lt: "<", gt: ">", quot: '"', apos: "'", nbsp: " ", amp: "&" };
 
 function decodeEntities(text) {
@@ -74,111 +60,59 @@ function decodeEntities(text) {
 }
 
 function parseAttributes(source) {
-  const attributes = new Map();
+  const attributes = {};
   for (const [, name, doubled, singled, bare] of source.matchAll(ATTRIBUTE)) {
-    attributes.set(name.toLowerCase(), doubled ?? singled ?? bare ?? "");
+    attributes[name.toLowerCase()] = decodeEntities(doubled ?? singled ?? bare ?? "");
   }
   return attributes;
 }
 
-function serializeAttributes(attributes) {
-  return Array.from(attributes, ([name, value]) =>
-    value === "" ? ` ${name}` : ` ${name}="${value.replaceAll('"', "&quot;")}"`,
-  ).join("");
+function formatter(language, structure) {
+  return htmlMultiThemes({
+    language,
+    themes: THEMES,
+    defaultTheme: DEFAULT_THEME,
+    preAttrs: TRANSPARENT,
+    structure,
+  });
 }
 
-/** The site's own chrome paints code-block backgrounds, so drop the theme's. */
-function withoutBackground(style) {
-  return style
-    .split(";")
-    .map((declaration) => declaration.trim())
-    .filter((declaration) => declaration && !/^background-color\s*:/.test(declaration))
-    .join("; ");
-}
+/**
+ * Highlight `<code data-lumis="LANG">` snippets that sit in the page's own markup.
+ *
+ * The inline structure writes the token spans alone, so the authored `<code>`
+ * takes the theme's base color the way a block's `<pre>` would.
+ */
+function lumisInlineCode() {
+  let ready;
 
-function mergeClasses(...values) {
-  const classes = new Set();
-  for (const value of values) {
-    for (const name of (value ?? "").split(/\s+/)) if (name) classes.add(name);
-  }
-  return Array.from(classes).join(" ");
-}
+  return {
+    name: "lumis-inline-code",
 
-/** Fold author attributes onto the ones Lumis generated; `class` unions, others win. */
-function merge(generated, authored) {
-  const merged = new Map(generated);
-  for (const [name, value] of authored) {
-    merged.set(name, name === "class" ? mergeClasses(merged.get(name), value) : value);
-  }
-  return merged;
+    async transformIndexHtml(source) {
+      ready ??= createHighlighter({ languages: LANGUAGES });
+      const highlighter = await ready;
+
+      return source.replace(INLINE_CODE, (match, attributeSource, rawSource) => {
+        const { "data-lumis": language, ...authored } = parseAttributes(attributeSource);
+        if (!language) return match;
+
+        const spans = highlighter.highlight(
+          decodeEntities(rawSource),
+          formatter(language, "inline"),
+        );
+        const attrs = multiThemesPreAttrs({
+          themes: THEMES,
+          defaultTheme: DEFAULT_THEME,
+          attrs: { ...TRANSPARENT, ...authored },
+        });
+
+        return `${openTag("code", attrs)}${spans}</code>`;
+      });
+    },
+  };
 }
 
 export function lumisHighlight() {
-  let highlighter;
-  let loading;
-
-  /** One highlighter for the whole process, with every parser already loaded. */
-  async function ready() {
-    loading ??= createHighlighter({ languages: LANGUAGES }).then((created) => {
-      highlighter = created;
-    });
-    await loading;
-  }
-
-  function highlightBlock(source, language) {
-    const output = highlighter.highlight(
-      source,
-      htmlMultiThemes({ language, themes: THEMES, defaultTheme: "light-dark()" }),
-    );
-
-    const parsed = output.match(LUMIS_OUTPUT);
-    if (!parsed) throw new Error(`Unexpected Lumis output for language "${language}"`);
-
-    const [, preAttributes, codeAttributes, inner] = parsed;
-    const pre = parseAttributes(preAttributes);
-    pre.set("style", withoutBackground(pre.get("style") ?? ""));
-
-    return { pre, code: parseAttributes(codeAttributes), inner };
-  }
-
-  function replaceBlocks(source, pattern, tag) {
-    return source.replace(pattern, (match, attributeSource, rawSource) => {
-      if (!attributeSource.includes("data-lumis")) return match;
-
-      const authored = parseAttributes(attributeSource);
-      const language = authored.get("data-lumis");
-      const codeId = authored.get("data-lumis-code-id");
-      authored.delete("data-lumis");
-      authored.delete("data-lumis-code-id");
-
-      const { pre, code, inner } = highlightBlock(decodeEntities(rawSource), language);
-
-      if (tag === "pre") {
-        if (codeId) code.set("id", codeId);
-        return `<pre${serializeAttributes(merge(pre, authored))}><code${serializeAttributes(code)}>${inner}</code></pre>`;
-      }
-
-      // No `<pre>` wrapper of our own: carry the theme's base color and stay on one line.
-      code.set("style", pre.get("style"));
-      code.set("class", mergeClasses(code.get("class"), "lumis", INLINE_CLASS));
-      return `<code${serializeAttributes(merge(code, authored))}>${inner}</code>`;
-    });
-  }
-
-  return {
-    name: "lumis-highlight",
-
-    // Pay the parser load once, before any HTML is transformed.
-    buildStart: ready,
-    configureServer: ready,
-
-    async transformIndexHtml(source) {
-      await ready();
-
-      // `<pre>` first, since one may wrap a `<code data-lumis>` that the second
-      // pass then finds. Generated `<code>` elements carry no `data-lumis`, so
-      // the second pass leaves them alone.
-      return replaceBlocks(replaceBlocks(source, PRE_ELEMENT, "pre"), CODE_ELEMENT, "code");
-    },
-  };
+  return [lumis({ languages: LANGUAGES, formatter }), lumisInlineCode()];
 }

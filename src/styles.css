@@ -68,17 +68,6 @@ html {
   color-scheme: light dark;
 }
 
-/* Lumis wraps each line in a block element; the newline it keeps is the line break */
-.lumis .l-line {
-  display: block;
-}
-
-/* Single-line snippets rendered without a <pre> stay in the surrounding flow */
-.lumis-inline,
-.lumis-inline .l-line {
-  display: inline;
-}
-
 ::selection {
   background-color: color-mix(in srgb, var(--color-brand) 20%, transparent);
   color: var(--color-text-primary);

@@ -193,11 +193,12 @@
               <span>[x]</span>
             </div>
           </div>
-          <pre class="p-4 sm:p-6 text-sm sm:text-base overflow-x-auto bg-white dark:bg-stone-900"><code id="hero-code-content" class="text-stone-800 dark:text-stone-200 min-h-[2.5rem] sm:min-h-[3rem] block"></code><span id="code-cursor" class="animate-blink text-brand">_</span></pre>
+          <!-- A span, not a code element: @lumis-sh/vite highlights every pre > code, and this one is filled at runtime -->
+          <pre class="p-4 sm:p-6 text-sm sm:text-base overflow-x-auto bg-white dark:bg-stone-900"><span id="hero-code-content" class="text-stone-800 dark:text-stone-200 min-h-[2.5rem] sm:min-h-[3rem] block"></span><span id="code-cursor" class="animate-blink text-brand">_</span></pre>
 
           <!-- Highlighted at build time; the typewriter types its tokens into #hero-code-content -->
-          <template id="hero-code-source"><pre data-lumis="elixir">MDEx.new(markdown: "# Hello **MDEx**")
-#MDEx.Document(4 nodes)&lt;...&gt;</pre></template>
+          <template id="hero-code-source"><pre><code class="language-elixir">MDEx.new(markdown: "# Hello **MDEx**")
+#MDEx.Document(4 nodes)&lt;...&gt;</code></pre></template>
         </div>
 
         <div id="hero-cta" class="flex flex-col sm:flex-row justify-center gap-4 opacity-0 max-w-2xl mx-auto">
@@ -245,9 +246,9 @@
                   <span class="text-stone-300 dark:text-stone-600 text-xs hidden sm:inline">[-][o][x]</span>
                 </div>
               </div>
-              <pre class="p-3 sm:p-4 text-sm overflow-x-auto bg-white dark:bg-stone-900" data-lumis="elixir" data-lumis-code-id="code-mix">def deps do
+              <pre class="p-3 sm:p-4 text-sm overflow-x-auto bg-white dark:bg-stone-900"><code id="code-mix" class="language-elixir">def deps do
   [{:mdex, "~> 0.12"}]
-end</pre>
+end</code></pre>
             </div>
           </div>
 
@@ -292,7 +293,7 @@ end</pre>
               </div>
               <span class="text-stone-300 dark:text-stone-600 text-xs">[-][o][x]</span>
             </div>
-            <pre class="flex-1 p-4 text-sm overflow-auto min-h-[280px] bg-white dark:bg-stone-900" data-lumis="markdown"># Welcome to **MDEx**
+            <pre class="flex-1 p-4 text-sm overflow-auto min-h-[280px] bg-white dark:bg-stone-900"><code class="language-markdown"># Welcome to **MDEx**
 
 Features:
 - Fast
@@ -301,7 +302,7 @@ Features:
 
 ```elixir
 Enum.map(1..3, &amp;(&amp;1 * 2))
-```</pre>
+```</code></pre>
           </div>
 
           <div class="code-block flex flex-col">
@@ -318,7 +319,7 @@ Enum.map(1..3, &amp;(&amp;1 * 2))
               </div>
             </div>
             <div class="flex-1 p-4 overflow-auto min-h-[280px] bg-white dark:bg-stone-900">
-              <pre data-panel="ast" id="panel-ast" role="tabpanel" aria-label="AST output" class="text-sm" data-lumis="plaintext">#MDEx.Document(17 nodes)&lt;
+              <pre data-panel="ast" id="panel-ast" role="tabpanel" aria-label="AST output" class="text-sm"><code class="language-plaintext">#MDEx.Document(17 nodes)&lt;
 ├── 1 [heading] level: 1
 │   ├── 2 [text] literal: "Welcome to "
 │   └── 3 [strong]
@@ -336,9 +337,9 @@ Enum.map(1..3, &amp;(&amp;1 * 2))
 │       └── 15 [paragraph]
 │           └── 16 [text] literal: "Phoenix-ready"
 └── 17 [code_block] info: "elixir", fenced: true
-&gt;</pre>
+&gt;</code></pre>
 
-              <pre data-panel="html" id="panel-html" role="tabpanel" aria-label="HTML output" class="hidden text-sm" data-lumis="html">&lt;h1&gt;Welcome to &lt;strong&gt;MDEx&lt;/strong&gt;&lt;/h1&gt;
+              <pre data-panel="html" id="panel-html" role="tabpanel" aria-label="HTML output" class="hidden text-sm"><code class="language-html">&lt;h1&gt;Welcome to &lt;strong&gt;MDEx&lt;/strong&gt;&lt;/h1&gt;
 &lt;p&gt;Features:&lt;/p&gt;
 &lt;ul&gt;
   &lt;li&gt;Fast&lt;/li&gt;
@@ -347,21 +348,21 @@ Enum.map(1..3, &amp;(&amp;1 * 2))
 &lt;/ul&gt;
 &lt;pre class="lumis" style="..."&gt;
   &lt;code class="language-elixir"&gt;
-    &lt;div class="l-line" data-line="1"&gt;&lt;span style="..."&gt;
+    &lt;span class="l-line" data-line="1"&gt;&lt;span style="..."&gt;
       Enum.map(1..3, &amp;(&amp;1 * 2))
-    &lt;/span&gt;&lt;/div&gt;
+    &lt;/span&gt;&lt;/span&gt;
   &lt;/code&gt;
-&lt;/pre&gt;</pre>
+&lt;/pre&gt;</code></pre>
 
-              <pre data-panel="heex" id="panel-heex" role="tabpanel" aria-label="HEEx output" class="hidden text-sm" data-lumis="elixir">%Phoenix.LiveView.Rendered{
+              <pre data-panel="heex" id="panel-heex" role="tabpanel" aria-label="HEEx output" class="hidden text-sm"><code class="language-elixir">%Phoenix.LiveView.Rendered{
   static: ["&lt;h1&gt;Welcome to &lt;strong&gt;MDEx&lt;/strong&gt;&lt;/h1&gt;\n..."],
   dynamic: #Function&lt;42.81571850/1 in :erl_eval.expr/6&gt;,
   fingerprint: 52776307825337990075203022359966918684,
   root: false,
   caller: :not_available
-}</pre>
+}</code></pre>
 
-              <pre data-panel="json" id="panel-json" role="tabpanel" aria-label="JSON output" class="hidden text-sm" data-lumis="json">{
+              <pre data-panel="json" id="panel-json" role="tabpanel" aria-label="JSON output" class="hidden text-sm"><code class="language-json">{
   "type": "document",
   "children": [
     {
@@ -375,9 +376,9 @@ Enum.map(1..3, &amp;(&amp;1 * 2))
       ...
     }
   ]
-}</pre>
+}</code></pre>
 
-              <pre data-panel="xml" id="panel-xml" role="tabpanel" aria-label="XML output" class="hidden text-sm" data-lumis="xml">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+              <pre data-panel="xml" id="panel-xml" role="tabpanel" aria-label="XML output" class="hidden text-sm"><code class="language-xml">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;!DOCTYPE document SYSTEM "CommonMark.dtd"&gt;
 &lt;document xmlns="http://commonmark.org/xml/1.0"&gt;
   &lt;heading level="1"&gt;
@@ -395,9 +396,9 @@ Enum.map(1..3, &amp;(&amp;1 * 2))
     &lt;item&gt;&lt;paragraph&gt;&lt;text&gt;Phoenix-ready&lt;/text&gt;&lt;/paragraph&gt;&lt;/item&gt;
   &lt;/list&gt;
   &lt;code_block info="elixir"&gt;Enum.map(1..3, &amp;(&amp;1 * 2))&lt;/code_block&gt;
-&lt;/document&gt;</pre>
+&lt;/document&gt;</code></pre>
 
-              <pre data-panel="delta" id="panel-delta" role="tabpanel" aria-label="Quill Delta output" class="hidden text-sm" data-lumis="elixir">[
+              <pre data-panel="delta" id="panel-delta" role="tabpanel" aria-label="Quill Delta output" class="hidden text-sm"><code class="language-elixir">[
   %{"insert" =&gt; "Welcome to "},
   %{"attributes" =&gt; %{"bold" =&gt; true}, "insert" =&gt; "MDEx"},
   %{"attributes" =&gt; %{"header" =&gt; 1}, "insert" =&gt; "\n"},
@@ -409,16 +410,16 @@ Enum.map(1..3, &amp;(&amp;1 * 2))
   %{"insert" =&gt; "Phoenix-ready"},
   %{"attributes" =&gt; %{"list" =&gt; "bullet"}, "insert" =&gt; "\n"},
   ...
-]</pre>
+]</code></pre>
 
-              <pre data-panel="slack" id="panel-slack" role="tabpanel" aria-label="Slack mrkdwn output" class="hidden text-sm" data-lumis="markdown">*Welcome to MDEx*
+              <pre data-panel="slack" id="panel-slack" role="tabpanel" aria-label="Slack mrkdwn output" class="hidden text-sm"><code class="language-markdown">*Welcome to MDEx*
 Features:
 - Fast
 - Extensible
 - Phoenix-ready
 ```
 Enum.map(1..3, &amp;(&amp;1 * 2))
-```</pre>
+```</code></pre>
             </div>
           </div>
         </div>
@@ -678,7 +679,7 @@ Enum.map(1..3, &amp;(&amp;1 * 2))
               <span class="text-sm text-stone-500 dark:text-stone-400">// page_live.ex</span>
               <span class="text-stone-300 dark:text-stone-600 text-xs">[-][o][x]</span>
             </div>
-            <pre class="p-4 text-sm overflow-x-auto bg-white dark:bg-stone-900" data-lumis="elixir">def render(assigns) do
+            <pre class="p-4 text-sm overflow-x-auto bg-white dark:bg-stone-900"><code class="language-elixir">def render(assigns) do
   ~MD"""
   # Welcome, {@user.name}!
 
@@ -688,7 +689,7 @@ Enum.map(1..3, &amp;(&amp;1 * 2))
 
   Your plan: **{@plan}**
   """HEEX
-end</pre>
+end</code></pre>
           </div>
 
           <div class="border border-dashed border-stone-300 dark:border-stone-700 p-8 bg-white dark:bg-stone-900">
@@ -737,10 +738,10 @@ end</pre>
           <div class="px-4 py-2 bg-stone-100 dark:bg-stone-800 border-b border-stone-200 dark:border-stone-700">
             <span class="text-sm text-stone-500 dark:text-stone-400">// How it works</span>
           </div>
-          <pre class="p-4 text-sm overflow-x-auto bg-white dark:bg-stone-900" data-lumis="elixir">MDEx.new(streaming: true)
+          <pre class="p-4 text-sm overflow-x-auto bg-white dark:bg-stone-900"><code class="language-elixir">MDEx.new(streaming: true)
 |> MDEx.Document.put_markdown("**The Rust")
 |> MDEx.to_html!()
-# => "&lt;p&gt;&lt;strong&gt;The Rust&lt;/strong&gt;&lt;/p&gt;"</pre>
+# => "&lt;p&gt;&lt;strong&gt;The Rust&lt;/strong&gt;&lt;/p&gt;"</code></pre>
         </div>
       </div>
     </section>

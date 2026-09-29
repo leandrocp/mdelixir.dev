@@ -8,8 +8,9 @@ const PROMPT = { text: "iex> ", className: "text-stone-500 dark:text-stone-400" 
 /**
  * Flatten the build-time highlighted snippet into typeable runs.
  *
- * Lumis wraps each line in a `div.l-line` and each token in a styled `span`, so
- * the nearest styled ancestor of a text node carries that run's colors.
+ * Lumis wraps each line in a `span.l-line`, joins lines with a newline, and puts
+ * each token in a styled `span`, so the nearest styled ancestor of a text node
+ * carries that run's colors.
  */
 function highlightedTokens(templateId) {
   const template = document.getElementById(templateId);
@@ -29,11 +30,7 @@ function highlightedTokens(templateId) {
 
   walk(template.content, "");
 
-  // Lumis ends every line with a newline; the last one would type a trailing blank line.
-  const last = tokens.at(-1);
-  if (last) last.text = last.text.replace(/\n$/, "");
-
-  return tokens.filter((token) => token.text);
+  return tokens;
 }
 
 function renderToken({ text, style, className }) {
