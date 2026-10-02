@@ -12,6 +12,10 @@ export function initBenchmark() {
     bar.style.transform = "scaleX(0)";
   });
 
+  chart.querySelectorAll(".benchmark-counter").forEach((counter) => {
+    counter.textContent = "0";
+  });
+
   const observer = new IntersectionObserver(
     (entries) => {
       if (entries[0].isIntersecting && !hasAnimated) {
