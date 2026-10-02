@@ -173,15 +173,15 @@
       <div class="relative z-10 text-center max-w-2xl mx-auto w-full">
         <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight text-stone-900 dark:text-stone-100">
           <span class="text-brand">#</span>
-          <span id="hero-title"></span>
-          <span id="hero-cursor" class="animate-blink text-brand">_</span>
+          <span id="hero-title">Markdown for Elixir</span>
+          <span id="hero-cursor" class="animate-blink text-brand" aria-hidden="true">_</span>
         </h1>
 
-        <p id="hero-subtitle" class="text-lg sm:text-xl md:text-2xl text-stone-600 dark:text-stone-400 mb-10 opacity-0">
+        <p id="hero-subtitle" class="text-lg sm:text-xl md:text-2xl text-stone-600 dark:text-stone-400 mb-10">
           <a href="#blazingly-fast" class="hover:text-brand transition">Fast</a>. <a href="#features" class="hover:text-brand transition">Extensible</a>. <a href="#phoenix-liveview-ready" class="hover:text-brand transition">Phoenix-native</a>. <a href="#built-for-ai-applications" class="hover:text-brand transition">AI-ready</a>.
         </p>
 
-        <div id="hero-code" class="code-block text-left max-w-2xl mx-auto mb-10 opacity-0">
+        <div id="hero-code" class="code-block text-left max-w-2xl mx-auto mb-10">
           <div class="flex items-center justify-between px-4 py-2 bg-stone-100 dark:bg-stone-800 border-b border-stone-200 dark:border-stone-700">
             <div class="flex items-center gap-3">
               <span class="text-brand text-sm">iex></span>
@@ -193,15 +193,12 @@
               <span>[x]</span>
             </div>
           </div>
-          <!-- A span, not a code element: @lumis-sh/vite highlights every pre > code, and this one is filled at runtime -->
-          <pre class="p-4 sm:p-6 text-sm sm:text-base overflow-x-auto bg-white dark:bg-stone-900"><span id="hero-code-content" class="text-stone-800 dark:text-stone-200 min-h-[2.5rem] sm:min-h-[3rem] block"></span><span id="code-cursor" class="animate-blink text-brand">_</span></pre>
-
-          <!-- Highlighted at build time; the typewriter types its tokens into #hero-code-content -->
-          <template id="hero-code-source"><pre><code class="language-elixir">MDEx.new(markdown: "# Hello **MDEx**")
-#MDEx.Document(4 nodes)&lt;...&gt;</code></pre></template>
+          <!-- The typewriter animates this build-time highlighted, readable example. -->
+          <pre class="p-4 sm:p-6 text-sm sm:text-base overflow-x-auto bg-white dark:bg-stone-900"><code id="hero-code-content" class="language-elixir">MDEx.new(markdown: "# Hello **MDEx**")
+#MDEx.Document(4 nodes)&lt;...&gt;</code></pre>
         </div>
 
-        <div id="hero-cta" class="flex flex-col sm:flex-row justify-center gap-4 opacity-0 max-w-2xl mx-auto">
+        <div id="hero-cta" class="flex flex-col sm:flex-row justify-center gap-4 max-w-2xl mx-auto">
           <a href="#getting-started" class="px-8 py-3 bg-brand hover:bg-brand-dark text-white font-semibold transition-all hover:scale-105 text-center">
             [ Get Started ]
           </a>
@@ -211,7 +208,7 @@
           </a>
         </div>
 
-        <p id="hero-powered" class="mt-8 text-sm text-stone-400 dark:text-stone-500 opacity-0">
+        <p id="hero-powered" class="mt-8 text-sm text-stone-400 dark:text-stone-500">
           powered by
           <a href="https://comrak.ee" target="_blank" rel="noopener" class="hover:text-brand transition">comrak</a> |
           <a href="https://crates.io/crates/ammonia" target="_blank" rel="noopener" class="hover:text-brand transition">ammonia</a> |
@@ -444,11 +441,11 @@ Enum.map(1..3, &amp;(&amp;1 * 2))
             <div class="flex items-center justify-between mb-2">
               <span class="font-semibold text-stone-500 dark:text-stone-400">mdex_native</span>
               <span class="text-sm text-stone-500 dark:text-stone-400">
-                <span class="benchmark-counter">0</span> ops/s
+                <span class="benchmark-counter">6560.90</span> ops/s
               </span>
             </div>
             <div class="h-4 bg-stone-100 dark:bg-stone-800 border border-stone-200 dark:border-stone-700 overflow-hidden">
-              <div class="benchmark-bar h-full w-full bg-stone-400 origin-left scale-x-0 transition-transform duration-[2500ms] ease-out"></div>
+              <div class="benchmark-bar h-full w-full bg-stone-400 origin-left transition-transform duration-[2500ms] ease-out"></div>
             </div>
             <div class="text-xs text-stone-400 dark:text-stone-500 mt-1">Rust NIF &middot; direct comrak bindings &middot; 0.00008 MB</div>
           </div>
@@ -457,11 +454,11 @@ Enum.map(1..3, &amp;(&amp;1 * 2))
             <div class="flex items-center justify-between mb-2">
               <span class="font-bold text-brand">>> MDEx</span>
               <span class="text-sm text-stone-600 dark:text-stone-400">
-                <span class="benchmark-counter">0</span> ops/s
+                <span class="benchmark-counter">395.26</span> ops/s
               </span>
             </div>
             <div class="h-5 bg-stone-100 dark:bg-stone-800 border border-stone-200 dark:border-stone-700 overflow-hidden">
-              <div class="benchmark-bar h-full w-full bg-brand origin-left scale-x-0 transition-transform duration-[2500ms] ease-out"></div>
+              <div class="benchmark-bar h-full w-full bg-brand origin-left transition-transform duration-[2500ms] ease-out" style="transform: scaleX(0.060244)"></div>
             </div>
             <div class="text-xs text-stone-400 dark:text-stone-500 mt-1">full MDEx document pipeline &middot; 2.36 MB</div>
           </div>
@@ -472,7 +469,7 @@ Enum.map(1..3, &amp;(&amp;1 * 2))
           </div>
         </div>
 
-        <div id="memory-comparison" class="mt-8 text-center p-6 border border-dashed border-stone-300 dark:border-stone-700 bg-white dark:bg-stone-900 opacity-0">
+        <div id="memory-comparison" class="mt-8 text-center p-6 border border-dashed border-stone-300 dark:border-stone-700 bg-white dark:bg-stone-900">
           <pre class="text-stone-300 dark:text-stone-600 text-xs mb-4" aria-hidden="true">┌─────────────────────────────────────┐</pre>
           <div class="text-4xl sm:text-5xl font-bold text-brand mb-2">0 ms</div>
           <div class="text-stone-600 dark:text-stone-400">with the <code class="text-brand">~MD</code> sigil</div>
@@ -491,7 +488,7 @@ Enum.map(1..3, &amp;(&amp;1 * 2))
         </h2>
 
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          <div class="feature-card opacity-0 translate-y-4 group p-6 bg-white dark:bg-stone-900 border border-dashed border-stone-300 dark:border-stone-700 hover:border-brand transition-all duration-300 relative">
+          <div class="feature-card group p-6 bg-white dark:bg-stone-900 border border-dashed border-stone-300 dark:border-stone-700 hover:border-brand transition-all duration-300 relative">
             <span class="card-corner absolute -top-2 -left-1 text-stone-300 dark:text-stone-600 group-hover:text-brand text-sm select-none bg-stone-50 dark:bg-stone-950">+</span>
             <span class="card-corner absolute -top-2 -right-1 text-stone-300 dark:text-stone-600 group-hover:text-brand text-sm select-none bg-stone-50 dark:bg-stone-950">+</span>
             <span class="card-corner absolute -bottom-2 -left-1 text-stone-300 dark:text-stone-600 group-hover:text-brand text-sm select-none bg-stone-50 dark:bg-stone-950">+</span>
@@ -510,7 +507,7 @@ Enum.map(1..3, &amp;(&amp;1 * 2))
             </code>
           </div>
 
-          <div class="feature-card opacity-0 translate-y-4 group p-6 bg-white dark:bg-stone-900 border border-dashed border-stone-300 dark:border-stone-700 hover:border-brand transition-all duration-300 relative">
+          <div class="feature-card group p-6 bg-white dark:bg-stone-900 border border-dashed border-stone-300 dark:border-stone-700 hover:border-brand transition-all duration-300 relative">
             <span class="card-corner absolute -top-2 -left-1 text-stone-300 dark:text-stone-600 group-hover:text-brand text-sm select-none bg-stone-50 dark:bg-stone-950">+</span>
             <span class="card-corner absolute -top-2 -right-1 text-stone-300 dark:text-stone-600 group-hover:text-brand text-sm select-none bg-stone-50 dark:bg-stone-950">+</span>
             <span class="card-corner absolute -bottom-2 -left-1 text-stone-300 dark:text-stone-600 group-hover:text-brand text-sm select-none bg-stone-50 dark:bg-stone-950">+</span>
@@ -530,7 +527,7 @@ Enum.map(1..3, &amp;(&amp;1 * 2))
             </div>
           </div>
 
-          <div class="feature-card opacity-0 translate-y-4 group p-6 bg-white dark:bg-stone-900 border border-dashed border-stone-300 dark:border-stone-700 hover:border-brand transition-all duration-300 relative">
+          <div class="feature-card group p-6 bg-white dark:bg-stone-900 border border-dashed border-stone-300 dark:border-stone-700 hover:border-brand transition-all duration-300 relative">
             <span class="card-corner absolute -top-2 -left-1 text-stone-300 dark:text-stone-600 group-hover:text-brand text-sm select-none bg-stone-50 dark:bg-stone-950">+</span>
             <span class="card-corner absolute -top-2 -right-1 text-stone-300 dark:text-stone-600 group-hover:text-brand text-sm select-none bg-stone-50 dark:bg-stone-950">+</span>
             <span class="card-corner absolute -bottom-2 -left-1 text-stone-300 dark:text-stone-600 group-hover:text-brand text-sm select-none bg-stone-50 dark:bg-stone-950">+</span>
@@ -549,7 +546,7 @@ Enum.map(1..3, &amp;(&amp;1 * 2))
             </code>
           </div>
 
-          <div class="feature-card opacity-0 translate-y-4 group p-6 bg-white dark:bg-stone-900 border border-dashed border-stone-300 dark:border-stone-700 hover:border-brand transition-all duration-300 relative">
+          <div class="feature-card group p-6 bg-white dark:bg-stone-900 border border-dashed border-stone-300 dark:border-stone-700 hover:border-brand transition-all duration-300 relative">
             <span class="card-corner absolute -top-2 -left-1 text-stone-300 dark:text-stone-600 group-hover:text-brand text-sm select-none bg-stone-50 dark:bg-stone-950">+</span>
             <span class="card-corner absolute -top-2 -right-1 text-stone-300 dark:text-stone-600 group-hover:text-brand text-sm select-none bg-stone-50 dark:bg-stone-950">+</span>
             <span class="card-corner absolute -bottom-2 -left-1 text-stone-300 dark:text-stone-600 group-hover:text-brand text-sm select-none bg-stone-50 dark:bg-stone-950">+</span>
@@ -566,7 +563,7 @@ Enum.map(1..3, &amp;(&amp;1 * 2))
             <span class="text-xs text-brand">>> </span><a href="https://mdex.hexdocs.pm/plugins.html" target="_blank" rel="noopener" class="text-xs text-brand hover:underline">Plugins</a>
           </div>
 
-          <div class="feature-card opacity-0 translate-y-4 group p-6 bg-white dark:bg-stone-900 border border-dashed border-stone-300 dark:border-stone-700 hover:border-brand transition-all duration-300 relative">
+          <div class="feature-card group p-6 bg-white dark:bg-stone-900 border border-dashed border-stone-300 dark:border-stone-700 hover:border-brand transition-all duration-300 relative">
             <span class="card-corner absolute -top-2 -left-1 text-stone-300 dark:text-stone-600 group-hover:text-brand text-sm select-none bg-stone-50 dark:bg-stone-950">+</span>
             <span class="card-corner absolute -top-2 -right-1 text-stone-300 dark:text-stone-600 group-hover:text-brand text-sm select-none bg-stone-50 dark:bg-stone-950">+</span>
             <span class="card-corner absolute -bottom-2 -left-1 text-stone-300 dark:text-stone-600 group-hover:text-brand text-sm select-none bg-stone-50 dark:bg-stone-950">+</span>
@@ -585,7 +582,7 @@ Enum.map(1..3, &amp;(&amp;1 * 2))
             </code>
           </div>
 
-          <div class="feature-card opacity-0 translate-y-4 group p-6 bg-white dark:bg-stone-900 border border-dashed border-stone-300 dark:border-stone-700 hover:border-brand transition-all duration-300 relative">
+          <div class="feature-card group p-6 bg-white dark:bg-stone-900 border border-dashed border-stone-300 dark:border-stone-700 hover:border-brand transition-all duration-300 relative">
             <span class="card-corner absolute -top-2 -left-1 text-stone-300 dark:text-stone-600 group-hover:text-brand text-sm select-none bg-stone-50 dark:bg-stone-950">+</span>
             <span class="card-corner absolute -top-2 -right-1 text-stone-300 dark:text-stone-600 group-hover:text-brand text-sm select-none bg-stone-50 dark:bg-stone-950">+</span>
             <span class="card-corner absolute -bottom-2 -left-1 text-stone-300 dark:text-stone-600 group-hover:text-brand text-sm select-none bg-stone-50 dark:bg-stone-950">+</span>
@@ -604,7 +601,7 @@ Enum.map(1..3, &amp;(&amp;1 * 2))
             </code>
           </div>
 
-          <div class="feature-card opacity-0 translate-y-4 group p-6 bg-white dark:bg-stone-900 border border-dashed border-stone-300 dark:border-stone-700 hover:border-brand transition-all duration-300 relative">
+          <div class="feature-card group p-6 bg-white dark:bg-stone-900 border border-dashed border-stone-300 dark:border-stone-700 hover:border-brand transition-all duration-300 relative">
             <span class="card-corner absolute -top-2 -left-1 text-stone-300 dark:text-stone-600 group-hover:text-brand text-sm select-none bg-stone-50 dark:bg-stone-950">+</span>
             <span class="card-corner absolute -top-2 -right-1 text-stone-300 dark:text-stone-600 group-hover:text-brand text-sm select-none bg-stone-50 dark:bg-stone-950">+</span>
             <span class="card-corner absolute -bottom-2 -left-1 text-stone-300 dark:text-stone-600 group-hover:text-brand text-sm select-none bg-stone-50 dark:bg-stone-950">+</span>
@@ -621,7 +618,7 @@ Enum.map(1..3, &amp;(&amp;1 * 2))
             <span class="text-xs text-brand">>> </span><a href="https://mdex.hexdocs.pm/safety.html" target="_blank" rel="noopener" class="text-xs text-brand hover:underline">Safety</a>
           </div>
 
-          <div class="feature-card opacity-0 translate-y-4 group p-6 bg-white dark:bg-stone-900 border border-dashed border-stone-300 dark:border-stone-700 hover:border-brand transition-all duration-300 relative">
+          <div class="feature-card group p-6 bg-white dark:bg-stone-900 border border-dashed border-stone-300 dark:border-stone-700 hover:border-brand transition-all duration-300 relative">
             <span class="card-corner absolute -top-2 -left-1 text-stone-300 dark:text-stone-600 group-hover:text-brand text-sm select-none bg-stone-50 dark:bg-stone-950">+</span>
             <span class="card-corner absolute -top-2 -right-1 text-stone-300 dark:text-stone-600 group-hover:text-brand text-sm select-none bg-stone-50 dark:bg-stone-950">+</span>
             <span class="card-corner absolute -bottom-2 -left-1 text-stone-300 dark:text-stone-600 group-hover:text-brand text-sm select-none bg-stone-50 dark:bg-stone-950">+</span>
@@ -640,7 +637,7 @@ Enum.map(1..3, &amp;(&amp;1 * 2))
             </code>
           </div>
 
-          <div class="feature-card opacity-0 translate-y-4 group p-6 bg-white dark:bg-stone-900 border border-dashed border-stone-300 dark:border-stone-700 hover:border-brand transition-all duration-300 relative">
+          <div class="feature-card group p-6 bg-white dark:bg-stone-900 border border-dashed border-stone-300 dark:border-stone-700 hover:border-brand transition-all duration-300 relative">
             <span class="card-corner absolute -top-2 -left-1 text-stone-300 dark:text-stone-600 group-hover:text-brand text-sm select-none bg-stone-50 dark:bg-stone-950">+</span>
             <span class="card-corner absolute -top-2 -right-1 text-stone-300 dark:text-stone-600 group-hover:text-brand text-sm select-none bg-stone-50 dark:bg-stone-950">+</span>
             <span class="card-corner absolute -bottom-2 -left-1 text-stone-300 dark:text-stone-600 group-hover:text-brand text-sm select-none bg-stone-50 dark:bg-stone-950">+</span>
@@ -729,7 +726,7 @@ end</code></pre>
             </div>
 
             <div id="streaming-content" class="text-stone-800 dark:text-stone-200 leading-relaxed min-h-[100px]">
-              <span class="animate-blink text-brand">_</span>
+              <span class="animate-blink text-brand" aria-hidden="true">_</span>
             </div>
           </div>
         </div>
@@ -1072,6 +1069,13 @@ end</code></pre>
         Built with Elixir and Rust by
         <a href="https://github.com/leandrocp" target="_blank" rel="noopener" class="text-brand hover:underline">Leandro Pereira</a>
       </p>
+
+      <nav aria-label="Resources" class="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm mb-6 text-stone-500 dark:text-stone-400">
+        <a href="https://hexdocs.pm/mdex" class="hover:text-brand transition">Documentation</a>
+        <a href="/index.md" class="hover:text-brand transition">Markdown overview</a>
+        <a href="/llms.txt" class="hover:text-brand transition">llms.txt</a>
+        <a href="/api.md" class="hover:text-brand transition">Discovery API</a>
+      </nav>
 
       <pre class="text-stone-300 dark:text-stone-600 text-xs" aria-hidden="true">+------------------------------------------------------------------+</pre>
     </div>

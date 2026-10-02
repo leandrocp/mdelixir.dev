@@ -2,9 +2,6 @@ import { animateCounterById } from "./counter.js";
 
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-/** The iex prompt is chrome, not Elixir, so it is styled here rather than highlighted. */
-const PROMPT = { text: "iex> ", className: "text-stone-500 dark:text-stone-400" };
-
 /**
  * Flatten the build-time highlighted snippet into typeable runs.
  *
@@ -12,10 +9,7 @@ const PROMPT = { text: "iex> ", className: "text-stone-500 dark:text-stone-400" 
  * each token in a styled `span`, so the nearest styled ancestor of a text node
  * carries that run's colors.
  */
-function highlightedTokens(templateId) {
-  const template = document.getElementById(templateId);
-  if (!template) return [];
-
+function highlightedTokens(element) {
   const tokens = [];
 
   function walk(node, style) {
@@ -28,24 +22,17 @@ function highlightedTokens(templateId) {
     }
   }
 
-  walk(template.content, "");
+  walk(element, "");
 
   return tokens;
 }
 
-function renderToken({ text, style, className }) {
-  const escaped = text
-    .replaceAll("&", "&amp;")
-    .replaceAll("<", "&lt;")
-    .replaceAll(">", "&gt;")
-    .replaceAll("\n", "<br>");
+function renderToken({ text, style }) {
+  const escaped = text.replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;");
 
-  if (!style && !className) return escaped;
+  if (!style) return escaped;
 
-  const attributes = [className && `class="${className}"`, style && `style="${style}"`]
-    .filter(Boolean)
-    .join(" ");
-  return `<span ${attributes}>${escaped}</span>`;
+  return `<span style="${style}">${escaped}</span>`;
 }
 
 export function initTypewriter() {
@@ -59,7 +46,7 @@ export function initTypewriter() {
 
   if (!titleEl) return;
 
-  const text = "Markdown for Elixir";
+  const text = titleEl.textContent;
 
   if (prefersReducedMotion) {
     titleEl.textContent = text;
@@ -74,6 +61,11 @@ export function initTypewriter() {
     return;
   }
 
+  // Content is visible in the initial HTML; only hide it once animation is ready.
+  titleEl.textContent = "";
+  [subtitleEl, statsEl, codeEl, ctaEl, poweredEl].forEach((el) => {
+    if (el) el.classList.add("opacity-0");
+  });
   let charIndex = 0;
 
   function typeChar() {
@@ -132,18 +124,17 @@ export function initTypewriter() {
 
   function typeCode(instant) {
     const codeContent = document.getElementById("hero-code-content");
-    const codeCursor = document.getElementById("code-cursor");
     if (!codeContent) return;
 
-    const tokens = [PROMPT, ...highlightedTokens("hero-code-source")];
-    if (tokens.length === 1) return;
+    const tokens = highlightedTokens(codeContent);
+    if (tokens.length === 0) return;
 
     if (instant) {
       codeContent.innerHTML = tokens.map(renderToken).join("");
-      if (codeCursor) codeCursor.classList.add("opacity-0");
       return;
     }
 
+    codeContent.textContent = "";
     let tokenIndex = 0;
     let charIndex = 0;
     let typed = "";
@@ -166,7 +157,6 @@ export function initTypewriter() {
       charIndex = 0;
 
       if (tokenIndex < tokens.length) setTimeout(typeNext, 0);
-      else if (codeCursor) codeCursor.classList.add("opacity-0");
     }
 
     setTimeout(typeNext, 300);

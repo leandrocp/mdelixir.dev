@@ -6,6 +6,12 @@ export function initBenchmark() {
   const chart = document.getElementById("benchmark-chart");
   if (!chart || hasAnimated) return;
 
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+  chart.querySelectorAll(".benchmark-bar").forEach((bar) => {
+    bar.style.transform = "scaleX(0)";
+  });
+
   const observer = new IntersectionObserver(
     (entries) => {
       if (entries[0].isIntersecting && !hasAnimated) {
