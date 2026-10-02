@@ -1,6 +1,8 @@
 import { initBenchmark } from "../animations/benchmark.js";
 
 export function initScrollAnimations() {
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
   const animatedElements = document.querySelectorAll("[data-animate]");
 
   const observer = new IntersectionObserver(
@@ -46,7 +48,10 @@ function initFeatureCards() {
     { threshold: 0.1 },
   );
 
-  cards.forEach((card) => observer.observe(card));
+  cards.forEach((card) => {
+    card.classList.add("opacity-0", "translate-y-4");
+    observer.observe(card);
+  });
 }
 
 export function initNavScroll() {
