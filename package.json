@@ -15,7 +15,7 @@
     "fmt:check": "oxfmt --check api/ public/.well-known/ public/auth.md public/api.md public/openapi.json src/ test/ vercel.json vite/"
   },
   "devDependencies": {
-    "@lumis-sh/lumis": "^0.9.2",
+    "@lumis-sh/lumis": "^0.9.4",
     "@lumis-sh/themes": "^0.4.0",
     "@lumis-sh/vite": "^0.2.0",
     "@lumis-sh/wasm-bash": "^0.26.6",
