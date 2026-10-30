@@ -16,7 +16,7 @@
   },
   "devDependencies": {
     "@lumis-sh/lumis": "^0.9.4",
-    "@lumis-sh/themes": "^0.4.0",
+    "@lumis-sh/themes": "^0.4.1",
     "@lumis-sh/vite": "^0.2.0",
     "@lumis-sh/wasm-bash": "^0.26.6",
     "@lumis-sh/wasm-comment": "^0.26.3",
