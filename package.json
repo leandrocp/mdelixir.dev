@@ -30,7 +30,7 @@
     "oxfmt": "^0.75",
     "oxlint": "^1.89",
     "tailwindcss": "^4.3",
-    "tidewave": "^0.9",
+    "tidewave": "^0.10",
     "vite": "^8.3"
   },
   "dependencies": {
