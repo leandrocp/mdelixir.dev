@@ -16,8 +16,8 @@ importers:
         specifier: ^0.9.4
         version: 0.9.4
       '@lumis-sh/themes':
-        specifier: ^0.4.0
-        version: 0.4.0
+        specifier: ^0.4.1
+        version: 0.4.1
       '@lumis-sh/vite':
         specifier: ^0.2.0
         version: 0.2.0(vite@8.3.4(esbuild@0.27.4)(jiti@2.7.0))
@@ -303,8 +303,8 @@ packages:
   '@lumis-sh/rehype-lumis@0.3.0':
     resolution: {integrity: sha512-Z3Ojnib3F35FjgNPrkDoui761iV4LuZI3CGXO+9jqR9mn/MVcsxIOVlcJ2puQipS8Y8jiYkkhvdvf+fxPfZwnA==}
 
-  '@lumis-sh/themes@0.4.0':
-    resolution: {integrity: sha512-qwu/1Cq5U5zMqVA5cuCkKJkA3FMRHK8a8fqs715WuRZvAH2hyZ4V7t8Hm/sUGAWz12oIsZSh+y1yDC7j0rp88A==}
+  '@lumis-sh/themes@0.4.1':
+    resolution: {integrity: sha512-nP3t2LE9YiWbP07g3/8TmHVDo91Eem00OfWST3r1XeT7fX+HavfDy/GGwoXrP4iFpYGrearnAnlDi4m58vZk4Q==}
 
   '@lumis-sh/vite@0.2.0':
     resolution: {integrity: sha512-rIpdyHNNCOWEKmBV6vaXrOXiWCntRafPQLXv/zx3LD3E0PO0G1gnyV44JjtdwK7oPG8UwxQr6eN7DEFpi8NBig==}
@@ -1838,7 +1838,7 @@ snapshots:
       unified: 11.0.5
       unist-util-visit: 5.1.0
 
-  '@lumis-sh/themes@0.4.0': {}
+  '@lumis-sh/themes@0.4.1': {}
 
   '@lumis-sh/vite@0.2.0(vite@8.3.4(esbuild@0.27.4)(jiti@2.7.0))':
     dependencies:
