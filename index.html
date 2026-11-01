@@ -16,16 +16,22 @@
   <meta property="og:url" content="https://mdelixir.dev/">
   <meta property="og:title" content="MDEx - Fast Markdown for Elixir">
   <meta property="og:description" content="Fast and Extensible Markdown for Elixir with native Phoenix LiveView HEEx integration.">
-  <meta property="og:image" content="https://mdelixir.dev/images/mdex_card.png">
+  <meta property="og:image" content="https://mdelixir.dev/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
 
-  <meta property="twitter:card" content="summary_large_image">
+  <meta name="twitter:card" content="summary_large_image">
   <meta property="twitter:url" content="https://mdelixir.dev/">
   <meta property="twitter:title" content="MDEx - Fast Markdown for Elixir">
   <meta property="twitter:description" content="Fast and Extensible Markdown for Elixir with native Phoenix LiveView HEEx integration.">
-  <meta property="twitter:image" content="https://mdelixir.dev/images/mdex_card.png">
+  <meta property="twitter:image" content="https://mdelixir.dev/og-image.png">
 
-  <link rel="icon" type="image/png" href="/images/mdex_favicon.png">
-  <link rel="apple-touch-icon" href="/images/mdex_icon.png">
+  <link rel="icon" href="/favicon.ico" sizes="48x48">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#FAFAF9" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0C0A09" media="(prefers-color-scheme: dark)">
 
   <link rel="canonical" href="https://mdelixir.dev/">
   <link rel="alternate" type="text/markdown" href="https://mdelixir.dev/index.md" title="MDEx for coding agents">
@@ -237,14 +243,14 @@
               <div class="flex items-center justify-between px-3 sm:px-4 py-2 bg-stone-100 dark:bg-stone-800 border-b border-stone-200 dark:border-stone-700">
                 <span class="text-sm text-stone-500 dark:text-stone-400">// mix.exs</span>
                 <div class="flex items-center gap-2">
-                  <button data-copy="code-mix" data-copy-text="{:mdex, &quot;~> 0.12&quot;}" class="text-stone-400 dark:text-stone-500 hover:text-brand transition text-xs" aria-label="Copy code">
+                  <button data-copy="code-mix" data-copy-text="{:mdex, &quot;~> 0.14&quot;}" class="text-stone-400 dark:text-stone-500 hover:text-brand transition text-xs" aria-label="Copy code">
                     [copy]
                   </button>
                   <span class="text-stone-300 dark:text-stone-600 text-xs hidden sm:inline">[-][o][x]</span>
                 </div>
               </div>
               <pre class="p-3 sm:p-4 text-sm overflow-x-auto bg-white dark:bg-stone-900"><code id="code-mix" class="language-elixir">def deps do
-  [{:mdex, "~> 0.12"}]
+  [{:mdex, "~> 0.14"}]
 end</code></pre>
             </div>
           </div>

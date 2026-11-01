@@ -25,7 +25,7 @@ MDEx is a fast, extensible Markdown library for Elixir powered by a Rust parser.
 ```elixir
 def deps do
   [
-    {:mdex, "~> 0.12"}
+    {:mdex, "~> 0.14"}
   ]
 end
 ```
