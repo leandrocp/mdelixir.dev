@@ -115,11 +115,11 @@ function handleRequest(message) {
           content: [
             {
               type: "text",
-              text: 'Add {:mdex, "~> 0.13"} to mix.exs or run mix igniter.install mdex.',
+              text: 'Add {:mdex, "~> 0.14"} to mix.exs or run mix igniter.install mdex.',
             },
           ],
           structuredContent: {
-            mix: '{:mdex, "~> 0.13"}',
+            mix: '{:mdex, "~> 0.14"}',
             igniter: "mix igniter.install mdex",
           },
         });
