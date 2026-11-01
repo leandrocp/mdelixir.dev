@@ -4,6 +4,9 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+overrides:
+  '@lumis-sh/lumis': ^0.10.0
+
 importers:
 
   .:
@@ -250,33 +253,14 @@ packages:
     cpu: [arm64]
     os: [darwin]
 
-  '@lumis-sh/lumis-native-darwin-arm64@0.9.5':
-    resolution: {integrity: sha512-QdlKxBGnxKZ8Yk7w2tItJjoqBU72Ebj43B/yi9sz0qNqjzTJF7RV/tOmhDQrDMreBgh04EKpb0JtIxYbTrNwtg==}
-    engines: {node: '>=18'}
-    cpu: [arm64]
-    os: [darwin]
-
   '@lumis-sh/lumis-native-darwin-x64@0.10.0':
     resolution: {integrity: sha512-0Qbtpy2p2SSKU1x6shzZvjZ1ses1/ee2OpYG+wQwfKDJhFEoEYRByvne4uZbhMvk9gzkV9in82Bujis6ARO8zw==}
     engines: {node: '>=18'}
     cpu: [x64]
     os: [darwin]
 
-  '@lumis-sh/lumis-native-darwin-x64@0.9.5':
-    resolution: {integrity: sha512-aH5MhKHJeLp9bN2ipl7UCYuRTjqyYk9ZCDZEFWRirVTLTW+69KFG8VtfcX82uj508l2Y+f3N3ag6Vx/9c86jGA==}
-    engines: {node: '>=18'}
-    cpu: [x64]
-    os: [darwin]
-
   '@lumis-sh/lumis-native-linux-arm64-gnu@0.10.0':
     resolution: {integrity: sha512-7jCBIXM5TZRk4kGLkWwjqZWJ8B7ZCb2pdSAP6NQWK/whc3GczMhntrEHuy1LpAQSddVu+1HHl/jTOnolDyC2Mg==}
-    engines: {node: '>=18'}
-    cpu: [arm64]
-    os: [linux]
-    libc: [glibc]
-
-  '@lumis-sh/lumis-native-linux-arm64-gnu@0.9.5':
-    resolution: {integrity: sha512-y1IbmDc1sAb1Urx0nqZp9XVRU2gVlSlU9lpkM4lGyEBoscb1NydTjFFToywhGGMHLTAp6H6nqfzjyVssLnPqjA==}
     engines: {node: '>=18'}
     cpu: [arm64]
     os: [linux]
@@ -289,22 +273,8 @@ packages:
     os: [linux]
     libc: [musl]
 
-  '@lumis-sh/lumis-native-linux-arm64-musl@0.9.5':
-    resolution: {integrity: sha512-V4GYjnL+2yUGLvRYpijZrMXrSculUgjY2sVFJ016ptmUIKGvQxS1BkEv70RFwwlpHgaxQCh5wdnkU+gK/bj92g==}
-    engines: {node: '>=18'}
-    cpu: [arm64]
-    os: [linux]
-    libc: [musl]
-
   '@lumis-sh/lumis-native-linux-x64-gnu@0.10.0':
     resolution: {integrity: sha512-VBkeT6Pd5s2dJrmWKAC9Q6J4d214GBlzZxzHpADL2H6F0omjEZ9SsRwsVgc+gKkHzDST0hzhpJ+5R36I5xuDfA==}
-    engines: {node: '>=18'}
-    cpu: [x64]
-    os: [linux]
-    libc: [glibc]
-
-  '@lumis-sh/lumis-native-linux-x64-gnu@0.9.5':
-    resolution: {integrity: sha512-fQK0iXyKiLKVCigesTOc8FdayUj0YaN0+HmG5RATB3nIFwNo/uxtw9pClmsyWNLN/ylQs+U3yhRYOoxVs3vzAg==}
     engines: {node: '>=18'}
     cpu: [x64]
     os: [linux]
@@ -317,21 +287,8 @@ packages:
     os: [linux]
     libc: [musl]
 
-  '@lumis-sh/lumis-native-linux-x64-musl@0.9.5':
-    resolution: {integrity: sha512-8jqIPHpcH3SmPSgMkUrZPBgO1TYbLcQ0GNdAqN+j4XVBZuNXu4V+toFu/IWKepdwMXPWEwbf9QPi2UGZ4hYw0A==}
-    engines: {node: '>=18'}
-    cpu: [x64]
-    os: [linux]
-    libc: [musl]
-
   '@lumis-sh/lumis-native-win32-arm64-msvc@0.10.0':
     resolution: {integrity: sha512-XyBp1TGqSc3TCq6n8XPcizW/YGL3syti3i6ZaN3chOL8Nh4FuMghNziBar7MQ24FH36SM8UPuH2NJwWp5psA/A==}
-    engines: {node: '>=18'}
-    cpu: [arm64]
-    os: [win32]
-
-  '@lumis-sh/lumis-native-win32-arm64-msvc@0.9.5':
-    resolution: {integrity: sha512-1QUrkXJDXrg/cUlKZMeJOEL+qH2B7dCSUYQaG5J1cIIuSPAm1iVtHDZEj7ZgFy3cl7IMRimHTdBwVJOIVRx7rg==}
     engines: {node: '>=18'}
     cpu: [arm64]
     os: [win32]
@@ -342,18 +299,8 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@lumis-sh/lumis-native-win32-x64-msvc@0.9.5':
-    resolution: {integrity: sha512-yw3JSKUa8oxswYYp7U4qAySNsWAXKsWBjfmwOh3esIoXiHrYPcoX+Rt13Hctzculfq0cAdgDemba36nrOm30mw==}
-    engines: {node: '>=18'}
-    cpu: [x64]
-    os: [win32]
-
   '@lumis-sh/lumis@0.10.0':
     resolution: {integrity: sha512-y1x+0nl+BacS1jhU81Pry1Krj+PUiCu55ZCdlHo2xLCs2jXkbjNzJgnpyrFKclk6BLtY+Xuzx7nUG//xQJoTvA==}
-    engines: {node: '>=18'}
-
-  '@lumis-sh/lumis@0.9.5':
-    resolution: {integrity: sha512-CPaGN7Bg4mGEqOmlX/YW1X9Jzwcd1N+FoOhh20byOntHRLVpfs0peuou6u1FHVdsQA56tY1xlrXiS2yn6mgzwA==}
     engines: {node: '>=18'}
 
   '@lumis-sh/rehype-lumis@0.3.0':
@@ -370,7 +317,7 @@ packages:
   '@lumis-sh/wasm-bash@0.26.6':
     resolution: {integrity: sha512-JEDmTIo+eAX4hVf6N6vhqq3Ks9qhDDCHG9Bytuf32aCqSEfavgnayt+2/0FciP+LCaYwA6laXum7kw+1yyRCCw==}
     peerDependencies:
-      '@lumis-sh/lumis': '>=0.9.0'
+      '@lumis-sh/lumis': ^0.10.0
     peerDependenciesMeta:
       '@lumis-sh/lumis':
         optional: true
@@ -378,7 +325,7 @@ packages:
   '@lumis-sh/wasm-comment@0.26.3':
     resolution: {integrity: sha512-xm0nFU/LeW7GKSukuxFCMn6w6XyvcPt8HpZriV2l63/IFSvkbu3o+TsTM4Yv4caSYhFWCM4+nyoC60GYePcljg==}
     peerDependencies:
-      '@lumis-sh/lumis': '>=0.9.0'
+      '@lumis-sh/lumis': ^0.10.0
     peerDependenciesMeta:
       '@lumis-sh/lumis':
         optional: true
@@ -386,7 +333,7 @@ packages:
   '@lumis-sh/wasm-css@0.26.4':
     resolution: {integrity: sha512-ZgX7kOsiiXtu8ZkITUDVdQCPDFuxqioBUXWlWG4gr9WMx4IjNW3+bDRgGXxaVYnYi7uSJTIiF3xWQTwpNbZFIg==}
     peerDependencies:
-      '@lumis-sh/lumis': '>=0.9.0'
+      '@lumis-sh/lumis': ^0.10.0
     peerDependenciesMeta:
       '@lumis-sh/lumis':
         optional: true
@@ -394,7 +341,7 @@ packages:
   '@lumis-sh/wasm-elixir@0.26.8':
     resolution: {integrity: sha512-dB/3nd5md6J/AkH4/axpzs5I6wExp1+bDv75ja5boRyBZopGA8mutV0iT4H4siiarnIqR/i4w7di23Qc7WlFBg==}
     peerDependencies:
-      '@lumis-sh/lumis': '>=0.9.0'
+      '@lumis-sh/lumis': ^0.10.0
     peerDependenciesMeta:
       '@lumis-sh/lumis':
         optional: true
@@ -402,7 +349,7 @@ packages:
   '@lumis-sh/wasm-html@0.26.4':
     resolution: {integrity: sha512-FV9eYeI1/AxiOAqe+CTaJEC7T7xi3n2jV1QAG5n8y21Y9LCS6BWx7SE4LFV9MnB0euI1VrIw+TdFlBjs388tEw==}
     peerDependencies:
-      '@lumis-sh/lumis': '>=0.9.0'
+      '@lumis-sh/lumis': ^0.10.0
     peerDependenciesMeta:
       '@lumis-sh/lumis':
         optional: true
@@ -410,7 +357,7 @@ packages:
   '@lumis-sh/wasm-json@0.26.5':
     resolution: {integrity: sha512-cK2n5sR+DC8C1VA0N8HzyUx2SK/Eo+eSRDwKyI1xGNPTopTx0hdXUcnTCAxB5WmcOF5G6SgB/8cso8TtbzZBAg==}
     peerDependencies:
-      '@lumis-sh/lumis': '>=0.9.0'
+      '@lumis-sh/lumis': ^0.10.0
     peerDependenciesMeta:
       '@lumis-sh/lumis':
         optional: true
@@ -418,7 +365,7 @@ packages:
   '@lumis-sh/wasm-markdown@0.26.3':
     resolution: {integrity: sha512-GRe1w37RcqGozzqX4wGLAYpOGCqab/zhHSKX8ltTy2UBGi2kdVi7tkUxja9etbOwxYlTB4y1lvGWtB+SXLNZng==}
     peerDependencies:
-      '@lumis-sh/lumis': '>=0.9.0'
+      '@lumis-sh/lumis': ^0.10.0
     peerDependenciesMeta:
       '@lumis-sh/lumis':
         optional: true
@@ -426,7 +373,7 @@ packages:
   '@lumis-sh/wasm-markdown_inline@0.26.3':
     resolution: {integrity: sha512-by5gTOzo0x5o2riitlmr9PTMJu1X5wgR+js9A0yrO6LGDgO1ALSNc0N6VDiOQlvk2GHYVqbYurwTVrC831IfgQ==}
     peerDependencies:
-      '@lumis-sh/lumis': '>=0.9.0'
+      '@lumis-sh/lumis': ^0.10.0
     peerDependenciesMeta:
       '@lumis-sh/lumis':
         optional: true
@@ -434,7 +381,7 @@ packages:
   '@lumis-sh/wasm-xml@0.26.4':
     resolution: {integrity: sha512-yKXDNZo92EJJpsopF2GjfvQM5EUzwtCtYCcHboJjxlNCp042Asc4YgZo4w6iwagbwYAxuCeOQ1H1kue6FqwlNw==}
     peerDependencies:
-      '@lumis-sh/lumis': '>=0.9.0'
+      '@lumis-sh/lumis': ^0.10.0
     peerDependenciesMeta:
       '@lumis-sh/lumis':
         optional: true
@@ -1860,49 +1807,25 @@ snapshots:
   '@lumis-sh/lumis-native-darwin-arm64@0.10.0':
     optional: true
 
-  '@lumis-sh/lumis-native-darwin-arm64@0.9.5':
-    optional: true
-
   '@lumis-sh/lumis-native-darwin-x64@0.10.0':
-    optional: true
-
-  '@lumis-sh/lumis-native-darwin-x64@0.9.5':
     optional: true
 
   '@lumis-sh/lumis-native-linux-arm64-gnu@0.10.0':
     optional: true
 
-  '@lumis-sh/lumis-native-linux-arm64-gnu@0.9.5':
-    optional: true
-
   '@lumis-sh/lumis-native-linux-arm64-musl@0.10.0':
-    optional: true
-
-  '@lumis-sh/lumis-native-linux-arm64-musl@0.9.5':
     optional: true
 
   '@lumis-sh/lumis-native-linux-x64-gnu@0.10.0':
     optional: true
 
-  '@lumis-sh/lumis-native-linux-x64-gnu@0.9.5':
-    optional: true
-
   '@lumis-sh/lumis-native-linux-x64-musl@0.10.0':
-    optional: true
-
-  '@lumis-sh/lumis-native-linux-x64-musl@0.9.5':
     optional: true
 
   '@lumis-sh/lumis-native-win32-arm64-msvc@0.10.0':
     optional: true
 
-  '@lumis-sh/lumis-native-win32-arm64-msvc@0.9.5':
-    optional: true
-
   '@lumis-sh/lumis-native-win32-x64-msvc@0.10.0':
-    optional: true
-
-  '@lumis-sh/lumis-native-win32-x64-msvc@0.9.5':
     optional: true
 
   '@lumis-sh/lumis@0.10.0':
@@ -1920,24 +1843,9 @@ snapshots:
       '@lumis-sh/lumis-native-win32-arm64-msvc': 0.10.0
       '@lumis-sh/lumis-native-win32-x64-msvc': 0.10.0
 
-  '@lumis-sh/lumis@0.9.5':
-    dependencies:
-      '@noble/hashes': 2.4.0
-      pathe: 2.0.3
-      semver: 7.8.5
-    optionalDependencies:
-      '@lumis-sh/lumis-native-darwin-arm64': 0.9.5
-      '@lumis-sh/lumis-native-darwin-x64': 0.9.5
-      '@lumis-sh/lumis-native-linux-arm64-gnu': 0.9.5
-      '@lumis-sh/lumis-native-linux-arm64-musl': 0.9.5
-      '@lumis-sh/lumis-native-linux-x64-gnu': 0.9.5
-      '@lumis-sh/lumis-native-linux-x64-musl': 0.9.5
-      '@lumis-sh/lumis-native-win32-arm64-msvc': 0.9.5
-      '@lumis-sh/lumis-native-win32-x64-msvc': 0.9.5
-
   '@lumis-sh/rehype-lumis@0.3.0':
     dependencies:
-      '@lumis-sh/lumis': 0.9.5
+      '@lumis-sh/lumis': 0.10.0
       hast-util-from-html: 2.0.3
       hast-util-to-string: 3.0.1
       property-information: 7.2.0
