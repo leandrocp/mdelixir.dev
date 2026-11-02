@@ -2,7 +2,7 @@ const testimonials = [
   {
     author: "Pedro Piñera",
     handle: "pepicrft",
-    text: "@leandrocesquini Thank you for building it. I use it in every Elixir project of mine.",
+    text: "Thank you for building it. I use it in every Elixir project of mine.",
     url: "https://x.com/pepicrft/status/2084343772800819640",
     avatar: "https://unavatar.io/x/pepicrft",
   },
