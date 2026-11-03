@@ -39,12 +39,15 @@ function initCopyButtons() {
       try {
         await navigator.clipboard.writeText(customText || codeEl.textContent);
         const originalHTML = btn.innerHTML;
+        btn.style.minWidth = `${btn.offsetWidth}px`;
         btn.innerHTML =
+          btn.dataset.copiedLabel ||
           '<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>';
         btn.classList.add("text-emerald-600");
 
         setTimeout(() => {
           btn.innerHTML = originalHTML;
+          btn.style.minWidth = "";
           btn.classList.remove("text-emerald-600");
         }, 2000);
       } catch (err) {
