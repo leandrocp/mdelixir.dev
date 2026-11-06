@@ -43,8 +43,8 @@ importers:
         specifier: ^0.26.5
         version: 0.26.5(@lumis-sh/lumis@0.10.0)
       '@lumis-sh/wasm-markdown':
-        specifier: ^0.26.3
-        version: 0.26.3(@lumis-sh/lumis@0.10.0)
+        specifier: ^0.26.5
+        version: 0.26.5(@lumis-sh/lumis@0.10.0)
       '@lumis-sh/wasm-xml':
         specifier: ^0.26.4
         version: 0.26.4(@lumis-sh/lumis@0.10.0)
@@ -362,16 +362,16 @@ packages:
       '@lumis-sh/lumis':
         optional: true
 
-  '@lumis-sh/wasm-markdown@0.26.3':
-    resolution: {integrity: sha512-GRe1w37RcqGozzqX4wGLAYpOGCqab/zhHSKX8ltTy2UBGi2kdVi7tkUxja9etbOwxYlTB4y1lvGWtB+SXLNZng==}
+  '@lumis-sh/wasm-markdown@0.26.5':
+    resolution: {integrity: sha512-cCATSbUEqbXDJBGxVY3anLNwFqsGlBLzt2txRjxmUnPcIJG5ytLpM/FEWWCncpCuip91JgSFmWM8a/8Vn6HRrg==}
     peerDependencies:
       '@lumis-sh/lumis': ^0.10.0
     peerDependenciesMeta:
       '@lumis-sh/lumis':
         optional: true
 
-  '@lumis-sh/wasm-markdown_inline@0.26.3':
-    resolution: {integrity: sha512-by5gTOzo0x5o2riitlmr9PTMJu1X5wgR+js9A0yrO6LGDgO1ALSNc0N6VDiOQlvk2GHYVqbYurwTVrC831IfgQ==}
+  '@lumis-sh/wasm-markdown_inline@0.26.5':
+    resolution: {integrity: sha512-W2VCTSxv+kNU5wi/6frp1cLHSmwsikWpa1UsX+seuorLpXuQ3FFZlENb6qEFEA3sCOZxMF7+CYr4YAhRNoPDtQ==}
     peerDependencies:
       '@lumis-sh/lumis': ^0.10.0
     peerDependenciesMeta:
@@ -1887,13 +1887,13 @@ snapshots:
     optionalDependencies:
       '@lumis-sh/lumis': 0.10.0
 
-  '@lumis-sh/wasm-markdown@0.26.3(@lumis-sh/lumis@0.10.0)':
+  '@lumis-sh/wasm-markdown@0.26.5(@lumis-sh/lumis@0.10.0)':
     dependencies:
-      '@lumis-sh/wasm-markdown_inline': 0.26.3(@lumis-sh/lumis@0.10.0)
+      '@lumis-sh/wasm-markdown_inline': 0.26.5(@lumis-sh/lumis@0.10.0)
     optionalDependencies:
       '@lumis-sh/lumis': 0.10.0
 
-  '@lumis-sh/wasm-markdown_inline@0.26.3(@lumis-sh/lumis@0.10.0)':
+  '@lumis-sh/wasm-markdown_inline@0.26.5(@lumis-sh/lumis@0.10.0)':
     optionalDependencies:
       '@lumis-sh/lumis': 0.10.0
 
