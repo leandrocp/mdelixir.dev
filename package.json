@@ -20,7 +20,7 @@
     "@lumis-sh/vite": "^0.2.0",
     "@lumis-sh/wasm-bash": "^0.26.6",
     "@lumis-sh/wasm-comment": "^0.26.3",
-    "@lumis-sh/wasm-css": "^0.26.4",
+    "@lumis-sh/wasm-css": "^0.26.5",
     "@lumis-sh/wasm-elixir": "^0.26.8",
     "@lumis-sh/wasm-html": "^0.26.5",
     "@lumis-sh/wasm-json": "^0.26.5",
