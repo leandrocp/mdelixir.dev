@@ -22,8 +22,8 @@ importers:
         specifier: ^0.4.1
         version: 0.4.1
       '@lumis-sh/vite':
-        specifier: ^0.2.0
-        version: 0.2.0(vite@8.3.4(esbuild@0.27.4)(jiti@2.7.0))
+        specifier: ^0.2.3
+        version: 0.2.3(@lumis-sh/lumis@0.10.0)(vite@8.3.4(esbuild@0.27.4)(jiti@2.7.0))
       '@lumis-sh/wasm-bash':
         specifier: ^0.26.6
         version: 0.26.6(@lumis-sh/lumis@0.10.0)
@@ -303,15 +303,18 @@ packages:
     resolution: {integrity: sha512-y1x+0nl+BacS1jhU81Pry1Krj+PUiCu55ZCdlHo2xLCs2jXkbjNzJgnpyrFKclk6BLtY+Xuzx7nUG//xQJoTvA==}
     engines: {node: '>=18'}
 
-  '@lumis-sh/rehype-lumis@0.3.0':
-    resolution: {integrity: sha512-Z3Ojnib3F35FjgNPrkDoui761iV4LuZI3CGXO+9jqR9mn/MVcsxIOVlcJ2puQipS8Y8jiYkkhvdvf+fxPfZwnA==}
+  '@lumis-sh/rehype-lumis@0.3.3':
+    resolution: {integrity: sha512-VvVfZ86NUW5cJLNDREE9TOI5rITC1cLfzTYknHYMDqpJTZZ5A5DW2FvVSz55edk2EJUXjPWKl9kG32u7tawjEg==}
+    peerDependencies:
+      '@lumis-sh/lumis': ^0.10.0
 
   '@lumis-sh/themes@0.4.1':
     resolution: {integrity: sha512-nP3t2LE9YiWbP07g3/8TmHVDo91Eem00OfWST3r1XeT7fX+HavfDy/GGwoXrP4iFpYGrearnAnlDi4m58vZk4Q==}
 
-  '@lumis-sh/vite@0.2.0':
-    resolution: {integrity: sha512-rIpdyHNNCOWEKmBV6vaXrOXiWCntRafPQLXv/zx3LD3E0PO0G1gnyV44JjtdwK7oPG8UwxQr6eN7DEFpi8NBig==}
+  '@lumis-sh/vite@0.2.3':
+    resolution: {integrity: sha512-vkuD718/THmGkuOwENRutaJxIpu6AzizT3+XLu5nhiqB4m05pU6NzIV05HXq3c1P0/DP+5/sF0+cuShR+NxN6g==}
     peerDependencies:
+      '@lumis-sh/lumis': ^0.10.0
       vite: '>=6.0.0'
 
   '@lumis-sh/wasm-bash@0.26.6':
@@ -1112,14 +1115,14 @@ packages:
   hast-util-from-html@2.0.3:
     resolution: {integrity: sha512-CUSRHXyKjzHov8yKsQjGOElXy/3EKpyX56ELnkHH34vDVw1N1XSQ1ZcAvTyAPtGqLTuKP/uxM+aLkSPqF/EtMw==}
 
-  hast-util-from-parse5@8.0.3:
-    resolution: {integrity: sha512-3kxEVkEKt0zvcZ3hCRYI8rqrgwtlIOFMWkbclACvjlDw8Li9S2hk/d51OI0nr/gIpdMHNepwgOKqZ/sy0Clpyg==}
+  hast-util-from-parse5@8.0.4:
+    resolution: {integrity: sha512-Yq7XlXor0Cpb71sI2E0zpv8QxQ5a6rfhDEETk4bcgrFX2SvJAY2PHocWwFtL6U9qyfiyByW3wZ6sZEfP2kW81g==}
 
   hast-util-parse-selector@4.0.0:
     resolution: {integrity: sha512-wkQCkSYoOGCRKERFWcxMVMOcYE2K1AaNLU8DXS9arxnLOUEWbOXKXiJUNzEpqZ3JOKpnha3jkFrumEjVliDe7A==}
 
-  hast-util-to-html@9.0.5:
-    resolution: {integrity: sha512-OguPdidb+fbHQSU4Q4ZiLKnzWo8Wwsf5bZfbvu7//a9oTYoqD/fWpe96NuHkoS9h0ccGOTe0C4NGXdtS0iObOw==}
+  hast-util-to-html@9.0.6:
+    resolution: {integrity: sha512-1SZUxCN3TtJAE7e2BQN2MBHsoZ1gnmi9GoCP5Di59CSWptIezSAW09yDZyVbanb78V9eCwrKqdQsjtfVTxYHWA==}
 
   hast-util-to-string@3.0.1:
     resolution: {integrity: sha512-XelQVTDWvqcl3axRfI0xSeoVKzyIFPwsAGSLIsKdJKQMXDYJS4WYrBNF/8J7RdhIcFI2BOHgAifggsvsxp/3+A==}
@@ -1127,8 +1130,8 @@ packages:
   hast-util-whitespace@3.0.0:
     resolution: {integrity: sha512-88JUN06ipLwsnv+dVn+OIYOvAuvBMy/Qoi6O7mQHxdPXpjy+Cd6xRkWwux7DKO+4sYILtLBRIKgsdpS2gQc7qw==}
 
-  hastscript@9.0.1:
-    resolution: {integrity: sha512-g7df9rMFX/SPi34tyGCyUBREQoKkapwdY/T04Qn9TDWfHhAYt4/I0gMVirzK5wEzeUqIjEB+LXC/ypb7Aqno5w==}
+  hastscript@9.0.3:
+    resolution: {integrity: sha512-1ALZXSmCGmW3h8AMz4R4+QKSKFi7sNgXLVwmwB8FYVtl1CwQ3WDkSAEY/d5tp1g/vbQgq2s1WlHgfO3jbw1TsA==}
 
   hono@4.13.14:
     resolution: {integrity: sha512-yhRLQ21U6qa9Hsu2N7Qcbh8tE+WKEcoErjIo56LeSGiGXGp9sA7UpE86Ui9uexb61KakiGwuHMn2QdV7w6i6kQ==}
@@ -1601,11 +1604,11 @@ packages:
   unist-util-stringify-position@4.0.0:
     resolution: {integrity: sha512-0ASV06AAoKCDkS2+xw5RXJywruurpbC4JZSm7nr7MOt1ojAzvyyaO+UxZf18j8FCF6kmzCZKcAgN/yu2gm2XgQ==}
 
-  unist-util-visit-parents@6.0.2:
-    resolution: {integrity: sha512-goh1s1TBrqSqukSc8wrjwWhL0hiJxgA8m4kFxGlQ+8FYQ3C/m11FcTs4YYem7V664AhHVvgoQLk890Ssdsr2IQ==}
+  unist-util-visit-parents@6.1.0:
+    resolution: {integrity: sha512-vKXxz6O38sKDj1mtx/k2cWvkkFBuYGx6uGrlzBkVeWCRF/F8sdI0j3Wbkz/5rVNRRuVc8UrgRdbCxNhmYXgP3w==}
 
-  unist-util-visit@5.1.0:
-    resolution: {integrity: sha512-m+vIdyeCOpdr/QeQCu2EzxX/ohgS8KbnPDgFni4dQsfSCtpz8UqDyY5GjRru8PDKuYn7Fq19j1CQ+nJSsGKOzg==}
+  unist-util-visit@5.2.0:
+    resolution: {integrity: sha512-fpsYs/VVoZxfGY9/j3FQpZmN8wdLJaV1Pt38AaJNZu9uKIHcFU3halCdBveEq1HGKO1OEfJY65w1zvoFV1b3qQ==}
 
   unpipe@1.0.0:
     resolution: {integrity: sha512-pjy2bYhSsufwWlKwPc+l3cN7+wuJlK6uz0YdJEOlQDbl6jo/YlPi4mb8agUkVC8BF7V8NuzeyPNqRksA3hztKQ==}
@@ -1843,24 +1846,25 @@ snapshots:
       '@lumis-sh/lumis-native-win32-arm64-msvc': 0.10.0
       '@lumis-sh/lumis-native-win32-x64-msvc': 0.10.0
 
-  '@lumis-sh/rehype-lumis@0.3.0':
+  '@lumis-sh/rehype-lumis@0.3.3(@lumis-sh/lumis@0.10.0)':
     dependencies:
       '@lumis-sh/lumis': 0.10.0
       hast-util-from-html: 2.0.3
       hast-util-to-string: 3.0.1
       property-information: 7.2.0
       unified: 11.0.5
-      unist-util-visit: 5.1.0
+      unist-util-visit: 5.2.0
 
   '@lumis-sh/themes@0.4.1': {}
 
-  '@lumis-sh/vite@0.2.0(vite@8.3.4(esbuild@0.27.4)(jiti@2.7.0))':
+  '@lumis-sh/vite@0.2.3(@lumis-sh/lumis@0.10.0)(vite@8.3.4(esbuild@0.27.4)(jiti@2.7.0))':
     dependencies:
-      '@lumis-sh/rehype-lumis': 0.3.0
+      '@lumis-sh/lumis': 0.10.0
+      '@lumis-sh/rehype-lumis': 0.3.3(@lumis-sh/lumis@0.10.0)
       hast-util-from-html: 2.0.3
-      hast-util-to-html: 9.0.5
+      hast-util-to-html: 9.0.6
       unified: 11.0.5
-      unist-util-visit: 5.1.0
+      unist-util-visit: 5.2.0
       vite: 8.3.4(esbuild@0.27.4)(jiti@2.7.0)
 
   '@lumis-sh/wasm-bash@0.26.6(@lumis-sh/lumis@0.10.0)':
@@ -2429,17 +2433,17 @@ snapshots:
     dependencies:
       '@types/hast': 3.0.5
       devlop: 1.1.0
-      hast-util-from-parse5: 8.0.3
+      hast-util-from-parse5: 8.0.4
       parse5: 7.3.0
       vfile: 6.0.3
       vfile-message: 4.0.3
 
-  hast-util-from-parse5@8.0.3:
+  hast-util-from-parse5@8.0.4:
     dependencies:
       '@types/hast': 3.0.5
       '@types/unist': 3.0.3
       devlop: 1.1.0
-      hastscript: 9.0.1
+      hastscript: 9.0.3
       property-information: 7.2.0
       vfile: 6.0.3
       vfile-location: 5.0.3
@@ -2449,7 +2453,7 @@ snapshots:
     dependencies:
       '@types/hast': 3.0.5
 
-  hast-util-to-html@9.0.5:
+  hast-util-to-html@9.0.6:
     dependencies:
       '@types/hast': 3.0.5
       '@types/unist': 3.0.3
@@ -2471,7 +2475,7 @@ snapshots:
     dependencies:
       '@types/hast': 3.0.5
 
-  hastscript@9.0.1:
+  hastscript@9.0.3:
     dependencies:
       '@types/hast': 3.0.5
       comma-separated-tokens: 2.0.3
@@ -2628,7 +2632,7 @@ snapshots:
       micromark-util-sanitize-uri: 2.0.1
       trim-lines: 3.0.1
       unist-util-position: 5.0.0
-      unist-util-visit: 5.1.0
+      unist-util-visit: 5.2.0
       vfile: 6.0.3
 
   media-typer@1.1.1: {}
@@ -2942,16 +2946,16 @@ snapshots:
     dependencies:
       '@types/unist': 3.0.3
 
-  unist-util-visit-parents@6.0.2:
+  unist-util-visit-parents@6.1.0:
     dependencies:
       '@types/unist': 3.0.3
       unist-util-is: 6.0.1
 
-  unist-util-visit@5.1.0:
+  unist-util-visit@5.2.0:
     dependencies:
       '@types/unist': 3.0.3
       unist-util-is: 6.0.1
-      unist-util-visit-parents: 6.0.2
+      unist-util-visit-parents: 6.1.0
 
   unpipe@1.0.0: {}
 
