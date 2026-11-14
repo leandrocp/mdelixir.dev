@@ -40,8 +40,8 @@ importers:
         specifier: ^0.26.5
         version: 0.26.5(@lumis-sh/lumis@0.10.4)
       '@lumis-sh/wasm-json':
-        specifier: ^0.26.5
-        version: 0.26.5(@lumis-sh/lumis@0.10.4)
+        specifier: ^0.26.7
+        version: 0.26.7(@lumis-sh/lumis@0.10.4)
       '@lumis-sh/wasm-markdown':
         specifier: ^0.26.5
         version: 0.26.5(@lumis-sh/lumis@0.10.4)
@@ -357,8 +357,8 @@ packages:
       '@lumis-sh/lumis':
         optional: true
 
-  '@lumis-sh/wasm-json@0.26.5':
-    resolution: {integrity: sha512-cK2n5sR+DC8C1VA0N8HzyUx2SK/Eo+eSRDwKyI1xGNPTopTx0hdXUcnTCAxB5WmcOF5G6SgB/8cso8TtbzZBAg==}
+  '@lumis-sh/wasm-json@0.26.7':
+    resolution: {integrity: sha512-QJCp7883oLEgsVCxAAcY/oIgOfzgV75VnY0HWBdiASXiFW/m2/W8SPjd1MurIB/XbXLFXXxJusNXoT3aVQ1DKg==}
     peerDependencies:
       '@lumis-sh/lumis': ^0.10.4
     peerDependenciesMeta:
@@ -1887,7 +1887,7 @@ snapshots:
     optionalDependencies:
       '@lumis-sh/lumis': 0.10.4
 
-  '@lumis-sh/wasm-json@0.26.5(@lumis-sh/lumis@0.10.4)':
+  '@lumis-sh/wasm-json@0.26.7(@lumis-sh/lumis@0.10.4)':
     optionalDependencies:
       '@lumis-sh/lumis': 0.10.4
 
