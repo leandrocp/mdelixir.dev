@@ -32,6 +32,7 @@ function initCopyButtons() {
   // A visually hidden live region, so screen readers hear the result the button shows.
   const status = document.getElementById("copy-status");
   let lastMessage = "";
+  let clearTimer;
 
   function announce(message) {
     // VoiceOver skips a message identical to the last one; a no-break space makes it differ.
@@ -39,6 +40,9 @@ function initCopyButtons() {
     lastMessage = message;
     status.textContent = "";
     requestAnimationFrame(() => (status.textContent = message));
+    // One timer for the shared region, so an earlier button's reset cannot clear a later message.
+    clearTimeout(clearTimer);
+    clearTimer = setTimeout(() => (status.textContent = ""), 2000);
   }
 
   document.querySelectorAll("[data-copy]").forEach((btn) => {
@@ -66,7 +70,6 @@ function initCopyButtons() {
           btn.innerHTML = originalHTML;
           btn.style.minWidth = "";
           btn.classList.remove("text-emerald-600");
-          status.textContent = "";
         }, 2000);
       } catch (err) {
         announce("Copy failed");
