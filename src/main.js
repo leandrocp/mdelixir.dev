@@ -29,7 +29,22 @@ function initHashNavigation() {
 }
 
 function initCopyButtons() {
+  // A visually hidden live region, so screen readers hear the result the button shows.
+  const status = document.getElementById("copy-status");
+  let lastMessage = "";
+
+  function announce(message) {
+    // VoiceOver skips a message identical to the last one; a no-break space makes it differ.
+    if (message === lastMessage) message += "\u00A0";
+    lastMessage = message;
+    status.textContent = "";
+    requestAnimationFrame(() => (status.textContent = message));
+  }
+
   document.querySelectorAll("[data-copy]").forEach((btn) => {
+    const originalHTML = btn.innerHTML;
+    let resetTimer;
+
     btn.addEventListener("click", async () => {
       const customText = btn.dataset.copyText;
       const targetId = btn.dataset.copy;
@@ -38,19 +53,23 @@ function initCopyButtons() {
 
       try {
         await navigator.clipboard.writeText(customText || codeEl.textContent);
-        const originalHTML = btn.innerHTML;
-        btn.style.minWidth = `${btn.offsetWidth}px`;
+        // A second click within the reset window restarts it instead of saving the check icon as the label.
+        clearTimeout(resetTimer);
+        if (!btn.style.minWidth) btn.style.minWidth = `${btn.offsetWidth}px`;
         btn.innerHTML =
           btn.dataset.copiedLabel ||
-          '<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>';
+          '<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>';
         btn.classList.add("text-emerald-600");
+        announce("Copied");
 
-        setTimeout(() => {
+        resetTimer = setTimeout(() => {
           btn.innerHTML = originalHTML;
           btn.style.minWidth = "";
           btn.classList.remove("text-emerald-600");
+          status.textContent = "";
         }, 2000);
       } catch (err) {
+        announce("Copy failed");
         console.error("Failed to copy:", err);
       }
     });
@@ -87,11 +106,14 @@ function initTabs() {
     tab.focus();
 
     panels.forEach((panel) => {
+      // Only the visible panel is a tab stop, so keyboard users can reach and scroll it.
       if (panel.dataset.panel === target) {
         panel.classList.remove("hidden");
         panel.classList.add("animate-fade-in");
+        panel.setAttribute("tabindex", "0");
       } else {
         panel.classList.add("hidden");
+        panel.removeAttribute("tabindex");
       }
     });
   }

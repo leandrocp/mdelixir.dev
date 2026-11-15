@@ -163,7 +163,7 @@ function createCard(t) {
       <p class="text-stone-700 dark:text-stone-300 text-sm leading-relaxed flex-1">${t.text.replace(/\n/g, "<br>")}</p>
     </div>
     <div class="flex items-center gap-3 pl-7">
-      <img src="${avatar}" alt="${t.author}" class="w-8 h-8 rounded-full border border-stone-200 dark:border-stone-700" loading="lazy">
+      <img src="${avatar}" alt="" class="w-8 h-8 rounded-full border border-stone-200 dark:border-stone-700" loading="lazy">
       <div>
         <p class="text-sm font-semibold text-stone-900 dark:text-stone-100">${t.author}</p>
         <p class="text-xs text-brand">@${t.handle}</p>
