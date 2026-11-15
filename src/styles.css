@@ -163,7 +163,9 @@ pre::-webkit-scrollbar-thumb:hover {
   animation: marquee-reverse 45s linear infinite;
 }
 
-.marquee-row:hover {
+/* Keyboard focus pauses too, so a focused card does not slide away */
+.marquee-row:hover,
+.marquee-row:focus-within {
   animation-play-state: paused;
 }
 
