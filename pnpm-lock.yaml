@@ -34,8 +34,8 @@ importers:
         specifier: ^0.26.5
         version: 0.26.5(@lumis-sh/lumis@0.10.4)
       '@lumis-sh/wasm-elixir':
-        specifier: ^0.26.8
-        version: 0.26.8(@lumis-sh/lumis@0.10.4)
+        specifier: ^0.26.10
+        version: 0.26.10(@lumis-sh/lumis@0.10.4)
       '@lumis-sh/wasm-html':
         specifier: ^0.26.6
         version: 0.26.6(@lumis-sh/lumis@0.10.4)
@@ -341,8 +341,8 @@ packages:
       '@lumis-sh/lumis':
         optional: true
 
-  '@lumis-sh/wasm-elixir@0.26.8':
-    resolution: {integrity: sha512-dB/3nd5md6J/AkH4/axpzs5I6wExp1+bDv75ja5boRyBZopGA8mutV0iT4H4siiarnIqR/i4w7di23Qc7WlFBg==}
+  '@lumis-sh/wasm-elixir@0.26.10':
+    resolution: {integrity: sha512-rXdfRjUugP8U+F87F8V6FdjaI12cIyyvk0+hmTcnfvhxdGpssAQLKDTNNwKp3K0v3l5Dj3XbbiZ1y8v7W99DWg==}
     peerDependencies:
       '@lumis-sh/lumis': ^0.10.4
     peerDependenciesMeta:
@@ -1879,7 +1879,7 @@ snapshots:
     optionalDependencies:
       '@lumis-sh/lumis': 0.10.4
 
-  '@lumis-sh/wasm-elixir@0.26.8(@lumis-sh/lumis@0.10.4)':
+  '@lumis-sh/wasm-elixir@0.26.10(@lumis-sh/lumis@0.10.4)':
     optionalDependencies:
       '@lumis-sh/lumis': 0.10.4
 
